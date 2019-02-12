@@ -1,0 +1,25 @@
+*{
+    box-sizing: border-box;
+}
+.navbar{
+    height: 64px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+
+.navbar-brand{
+    width: 1.6em;
+}
+.icon-bar{
+    float: left;
+    height: 0 auto;
+    width:70%;
+}
+.icon-bar a{
+    float: left;
+    align-items: center;
+    width: 2.5em;
+    text-decoration: none;
+    margin: 2em;
+}
+ 
