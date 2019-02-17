@@ -1,0 +1,12 @@
+*{
+    height: 750px;
+    width: 100%;
+    font-family:;
+    font-size: 3em;
+}
+div{
+    margin: 0 auto;
+    width: 80%;
+    height: 0 auto;
+    padding: 100px;
+}
