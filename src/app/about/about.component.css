@@ -1,19 +1,5 @@
-/* @font-face {
-    font-family: Poppins;
-    src: url(../../assets/fonts/Poppins-Medium.ttf) format("opentype");
-    src: url(../../assets/fonts/Poppins-MediumItalic.ttf) format("opentype");
-    src: url(../../assets/fonts/Poppins-Bold.ttf) format("opentype");
-} */
-
-@font-face {
-    font-family: Titania;
-    src: url(../../assets/fonts/titania-regular.ttf) format("opentype");
-}
-
 *{
-    height: 750px;
-    width: 100%;
-    font-family: Poppins;
+    font-weight: 700;
     font-size: 1.8em;
     line-height: 65px;
 }
@@ -23,12 +9,12 @@ div{
     width: 87%;
     height: 0 auto;
     padding-top: 120px;
+    margin-bottom: 300px;
 }
-p{
-    font-weight: 700;
-}
+
 .titania{
     font-family: Titania;
+    font-weight: 400;
     font-size: 1.1em;
 
 }

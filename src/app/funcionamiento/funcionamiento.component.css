@@ -1,69 +1,72 @@
-/* @font-face {
-    font-family: Poppins;
-    src: url(../../assets/fonts/Poppins-Medium.ttf) format("opentype");
-    src: url(../../assets/fonts/Poppins-MediumItalic.ttf) format("opentype");
-    src: url(../../assets/fonts/Poppins-Bold.ttf) format("opentype");
-} */
-
 *{
-    font-family: Poppins-Bold;
-}
-
-.receta{
-    width: 60%;
-    height: 0 auto;
-    margin: 120px;
-    font-size: 1.2em;
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
 }
 
 h3{
-    font-size: 4em;
-    margin-left: -50px;
-    margin-bottom: 20px;
+    font-size: 5em;
 }
 
-div .lista{
-    line-height: 10px;
+.lista{
+    margin-left: 50px;
+    font-size: 1.2em;
+    line-height: 160%;
 }
 
 .poppinsItalic{
-    font-family: Poppins 700;
+    font-weight: 700;
+    font-style: italic;
 }
 
-div .img{
+.img{
+    width: 25%;
+    height: 300px;
     position: relative;
-    left: 600px;
-    top: -80px;
+    float: left;
+    top: 60px;
+    bottom: 300px;
 }
 
-.paso{
-    font-size: 2em;
-    
+/* .img{
+    width: 35%;
+    height: 300px;
+    position: relative;
+    float: left;
+    top: 80px;
+    bottom: 300px;
+} */
+
+.num{
+    font-size: 2.5em;
+    position: absolute;
 }
 
 .uno{
+    width: 35%;
     position: absolute;
-    width: 8%;
+    left: 90px;
+    top: 30px;
 }
 
 .dos{
+    width: 80%;
     position: absolute;
-    width: 16%;
-    left: 400px;
+    left: 30px;
+    top: 20px;
+
 }
 
 .tres{
+    width: 65%;
     position: absolute;
-    width: 13%;
-    top: 290px;
-    left: -50px;
-
+    left: 50px;
+    top: 20px;
 }
 
 .cuatro{
     position: absolute;
-    width: 17%;
-    top: 290px;
-    left: 400px;
+    left: 50px;
+    top: 30px;
 }
-
