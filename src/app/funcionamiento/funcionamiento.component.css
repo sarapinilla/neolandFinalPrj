@@ -1,9 +1,9 @@
-@font-face {
+/* @font-face {
     font-family: Poppins;
     src: url(../../assets/fonts/Poppins-Medium.ttf) format("opentype");
     src: url(../../assets/fonts/Poppins-MediumItalic.ttf) format("opentype");
     src: url(../../assets/fonts/Poppins-Bold.ttf) format("opentype");
-}
+} */
 
 *{
     font-family: Poppins-Bold;
@@ -27,7 +27,7 @@ div .lista{
 }
 
 .poppinsItalic{
-    font-family: Poppins-MediumItalic;
+    font-family: Poppins 700;
 }
 
 div .img{

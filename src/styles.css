@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Poppins:500,500i,700,700i');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
