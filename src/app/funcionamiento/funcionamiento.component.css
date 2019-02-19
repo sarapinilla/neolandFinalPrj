@@ -1,0 +1,70 @@
+*{
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.container{
+    margin-bottom: 450px;
+}
+
+h3{
+    font-size: 5em;
+}
+
+.lista{
+    margin-left: 50px;
+    font-size: 1.2em;
+    line-height: 160%;
+}
+
+.poppinsItalic{
+    font-weight: 700;
+    font-style: italic;
+}
+
+.img{
+    height: 300px;
+    position: relative;
+    float: left;
+    top: 60px;
+    padding-top: 5%;
+    bottom: 300px;
+}
+
+.num{
+    font-size: 2.5em;
+    position: absolute;
+    top: -3%;
+}
+
+/* IMÁGENES */
+
+.uno{
+    width: 35%;
+    position: absolute;
+    margin: 0 auto;
+    left: 30%;
+}
+
+.dos{
+    width: 80%;
+    position: absolute;
+    margin: 0 auto;
+    left: 20%;
+
+}
+
+.tres{
+    width: 65%;
+    position: absolute;
+    margin: 0 auto;
+    left: 30%;
+}
+
+.cuatro{
+    position: absolute;
+    margin: 0 auto;
+    left: 30%;
+}

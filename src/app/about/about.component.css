@@ -1,0 +1,24 @@
+*{
+    font-weight: 700;
+    font-size: 1.8em;
+    line-height: 65px;
+}
+
+div{
+    margin: 0 auto;
+    width: 87%;
+    height: 0 auto;
+    padding-top: 120px;
+    margin-bottom: 300px;
+}
+
+.titania{
+    font-family: Titania;
+    font-weight: 400;
+    font-size: 1.1em;
+
+}
+
+.more:hover{
+    color: #0000ff;
+}
