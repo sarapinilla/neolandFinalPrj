@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { AboutComponent } from './about/about.component';
 import { FuncionamientoComponent } from './funcionamiento/funcionamiento.component';
+import { GaleriaComponent } from './galeria/galeria.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     AboutComponent,
-    FuncionamientoComponent
+    FuncionamientoComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,

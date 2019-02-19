@@ -1,0 +1,27 @@
+*{
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.container{
+    margin-bottom: 500px;
+}
+
+.cabecera{
+    display: inline-block;
+}
+
+h3{
+    font-size: 5em;
+}
+
+input{
+    font-weight: 500;
+    font-style: italic;
+    width: 100%;
+    color:rgba(0,0,0,0.2);
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
