@@ -10,18 +10,15 @@ import { PiezasService } from '../piezas.service';
 })
 export class GaleriaComponent implements OnInit {
 
-  autores: Autor[]
-  piezas: Pieza[]
+  // autores: Autor[]
+  // piezas: Pieza[]
 
-  constructor(private autoresService: AutoresService, private piezasService: PiezasService) { 
-    // this.autoresService.getAllAutores().subscribe(res =>{
-    //   this.autores = res
+  constructor() { // private autoresService: AutoresService, private piezasService: PiezasService
+    // this.piezasService.getAllPiezas().subscribe(res => {
+    //   this.piezas = res
     // })
-    this.piezasService.getAllPiezas().subscribe(res => {
-      this.piezas = res
-    })
   }
-
+  
   ngOnInit() {
   }
 
