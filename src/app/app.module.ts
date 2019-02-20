@@ -4,24 +4,18 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-<<<<<<< HEAD
 import { MainComponent } from './main/main.component';
 import { AboutComponent } from './about/about.component';
 import { FuncionamientoComponent } from './funcionamiento/funcionamiento.component';
-=======
 import { HeaderComponent } from './header/header.component';
->>>>>>> feature/header
 
 @NgModule({
   declarations: [
     AppComponent,
-<<<<<<< HEAD
     MainComponent,
     AboutComponent,
-    FuncionamientoComponent
-=======
+    FuncionamientoComponent,
     HeaderComponent
->>>>>>> feature/header
   ],
   imports: [
     BrowserModule,
