@@ -9,6 +9,7 @@
   width: 100%;
   height: 10%;
   border-bottom: 1px solid black;
+  box-shadow: none;
   }
 .container{
   width: 10%;
