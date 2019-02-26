@@ -21,4 +21,5 @@ div{
 
 .more:hover{
     color: #0000ff;
+    cursor: pointer;
 }
