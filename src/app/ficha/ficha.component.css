@@ -1,0 +1,122 @@
+*{
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.container-fluid{
+    margin: 100px 0;
+}
+
+/* INICIO VENTANAS INFORMACIÓN ARTISTA/OBRA */
+
+div .ventana{
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+/* 
+#drop-zone{
+    cursor: pointer;
+} */
+
+div .header{
+    width: 100%;
+    height: 30px;
+    padding: 8px;
+    border-bottom: 1px solid black;
+}
+
+div .content{
+    width: 100%;
+    height: 0 auto;
+    padding: 20px;
+    
+}
+
+/* FIN VENTANAS INFORMACIÓN ARTISTA/OBRA */
+
+/* INICIO SIDEBAR ARCHIVO */
+
+div .menu{
+    height: 600px;
+    position: relative;
+    left: 150px;
+    margin: 20px;
+}
+
+.menu-artista{
+    height: 40%;
+    width: 100%;
+    position: absolute;
+}
+
+.menu-pieza{
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    top: 250px;
+}
+
+div .title{
+    width: 100%;
+    height: 45px;
+    padding: 10px 15px 0;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+div .profile{
+    width: 60%;
+    height: 70%;
+    padding: 10px;
+    margin-right: 5%;
+    border: 1px solid black;
+    border-radius: 10px;
+    float: left;
+}
+
+div .social{
+    width: 35%;
+    height: 70%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    float: left;
+}
+
+div .piezas{
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+div .piezas a{
+    text-decoration: none;
+    color: black;
+    width: 20%;
+    height: 0 auto;
+    position: relative;
+    margin: 10px;
+}
+
+div .piezas a img{
+    position: absolute;
+}
+
+div .piezas a p{
+    position: absolute;
+    left: 15px;
+    top:25px;
+}
+
+/* FIN SIDEBAR ARCHIVO */
