@@ -1,0 +1,42 @@
+*{
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+/* Estilos texto */
+.info{
+    width: 100%;
+    padding-top: 6%;
+    padding-bottom: 15%;
+    margin-left: 50px;
+    font-size: 1.2em;
+    line-height: 160%;
+ }
+
+h2{
+    font-size: 5em;
+}
+
+.chartitania{
+    font-family: Titania;
+    font-size: 1.5em;
+}
+.poppinsItalic{
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* Estilos imagen */
+
+.img{
+  
+   padding-top: 5%;
+   padding-left: 20%;
+   
+}
+
+.appimg{
+    width: 100%;
+    
+}
