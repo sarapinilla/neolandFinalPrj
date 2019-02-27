@@ -9,6 +9,7 @@ import { AboutComponent } from './about/about.component';
 import { FuncionamientoComponent } from './funcionamiento/funcionamiento.component';
 import { HeaderComponent } from './header/header.component';
 import { DownloadComponent } from './download/download.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DownloadComponent } from './download/download.component';
     AboutComponent,
     FuncionamientoComponent,
     HeaderComponent,
-    DownloadComponent
+    DownloadComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
