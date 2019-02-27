@@ -12,15 +12,15 @@ export class PiezasService {
     this.url = ''
   }
 
-  getAllPiezas():Pieza[]{
+  getAllPiezas(){
     // return this.httpClient.get(this.url)
   }
 
-  getPiezasById(id):Pieza[]{
+  getPiezasById(id){
     // return this.httpClient.get(`${this.url}/${pieza.id}`)
   }
 
-  getPiezasByAutor(autor):Pieza[]{
+  getPiezasByAutor(autor){
     // return this.httpClient.get(`${this.url}/${pieza.autor}`)
   }
 }

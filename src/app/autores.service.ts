@@ -11,15 +11,15 @@ export class AutoresService {
     this.url = ''
    }
 
-  getAllAutores():Autor[]{
+  getAllAutores(){
     // return this.httpClient.get(this.url)
   }
 
-  getAutoresById(id):Autor[]{
+  getAutoresById(id){
     // return this.httpClient.get(`${this.url}/${autor.id}`)
   }
 
-  getAutoresByPieza(pieza):Autor[]{
+  getAutoresByPieza(pieza){
     // return this.httpClient.get(`${this.url}/${autor.pieza}`)
   }
 }

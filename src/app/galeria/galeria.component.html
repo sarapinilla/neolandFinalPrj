@@ -1,12 +1,13 @@
 <div class="container">
   <div class="cabecera col col-lg-12">
-    <h3>Galeria</h3>
+    <h2>Galería</h2>
     <div class="md-form mt-0 col col-lg-3">
       <input (click)="filtrar($event)" class="form-control" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
     </div>
   </div>
 
-  <div class="simbolos col col-lg-12 mb-3 pull-right">
+  <!-- Inicio Símbolos -->
+  <div class="simbolos col col-lg-12 mb-3">
     <div class="symbol col-3">
       <img class="tres" src="../../assets/images/simbolo3.svg" alt="simbolo_tres">
     </div>
@@ -21,7 +22,9 @@
     </div>
   </div>
 </div>
+ <!-- Fin Símbolos -->
 
+ <!-- Inicio Lista Galería -->
 <div>
   <div class="titulos row">
     <p class="col-lg-4">Pieza</p>
@@ -34,5 +37,6 @@
       <p class="col-lg-4">año</p> <!-- {{pieza.year}} -->
   </div>
   <div class="cover"></div> 
+  <!-- Fin Lista Galería -->
 </div>
 
