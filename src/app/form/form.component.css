@@ -1,0 +1,63 @@
+*{
+    /* color:indigo; */
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+    border-radius: 10px;
+    text-align: left; 
+    font-size: 1.1em;
+}
+.titania{
+    font-family: Titania;
+    font-weight: 400;
+    font-size: 1.1em;
+    
+}
+
+.header{
+    font-size: 5em;
+    padding-top: 50px;
+    border-radius: 0px;
+    /* border-bottom: 1px solid darkgreen; */
+}
+.info{
+    font-size: 0.75em;
+    line-height: 1.3em;
+}
+label{
+    font-size: 0.9em;
+}
+
+input, textarea{
+    border: 1px solid black;
+}
+input.ng-valid.ng-touched{
+    color:blue;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+input.ng-invalid.ng-touched{
+    color:lightgrey;
+    border: 1px solid tomato;
+}
+small{
+    color: tomato;
+    font-size: 8px;
+}
+.custom-file, .custom-file-input{
+    font-size: 0.5em;
+    background-color: rgba(255, 255, 255, 0);
+    border: 1px solid black;
+}
+button{
+    border: 1px solid black;
+    transition: 0.5s;
+    margin: 0 auto;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    float: right;
+}
+button:hover{
+    box-shadow: 4px 4px black;
+}
