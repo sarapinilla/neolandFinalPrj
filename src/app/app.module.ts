@@ -10,6 +10,7 @@ import { FuncionamientoComponent } from './funcionamiento/funcionamiento.compone
 import { HeaderComponent } from './header/header.component';
 import { DownloadComponent } from './download/download.component';
 import { FichaComponent } from './ficha/ficha.component';
+import { GaleriaComponent } from './galeria/galeria.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { FichaComponent } from './ficha/ficha.component';
     FuncionamientoComponent,
     DownloadComponent,
     HeaderComponent,
-    FichaComponent
+    FichaComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
