@@ -1,0 +1,149 @@
+*{
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.container-fluid{
+    margin: 100px 0;
+}
+
+
+/* INICIO SIDEBAR ARCHIVO */
+
+div .menu{
+    height: 600px;
+    left: auto;
+    float: left;
+    margin-right: 20px;
+}
+
+.menu-artista{
+    height: 40%;
+    width: 100%;
+    position: absolute;
+}
+
+.menu-pieza{
+    height: 60%;
+    width: 100%;
+    position: absolute;
+    top: 250px;
+}
+
+div .title{
+    width: 100%;
+    height: 45px;
+    padding: 10px 15px 0;
+    margin-bottom: 15px;
+    border: 1px solid black;
+    border-radius: 10px;
+    font-size: 1.2em;
+}
+
+div .profile{
+    width: 60%;
+    height: 70%;
+    padding: 10px;
+    margin-right: 5%;
+    border: 1px solid black;
+    border-radius: 10px;
+    float: left;
+}
+
+div .social{
+    width: 35%;
+    height: 70%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    float: left;
+}
+
+div .piezas{
+    width: 100%;
+    height: 80%;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+div .piezas a{
+    text-decoration: none;
+    color: black;
+    width: 20%;
+    height: 20%;
+    position: relative;
+    margin: 2px 5px;
+}
+
+div .piezas a:hover{
+    color: #0000ff;
+}
+
+div .piezas a img{
+    position: absolute;
+}
+
+div .piezas a p{
+    position: absolute;
+    left:25%;
+    top:50%;
+}
+
+/* FIN SIDEBAR ARCHIVO */
+
+/* INICIO VENTANAS INFORMACIÓN ARTISTA/OBRA */
+
+div .ventana{
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* POSICION RELATIVE PROVISIONAL */
+#a{
+    position: relative;
+    left: 50px;
+    top:100px;
+}
+
+#no{
+    position: relative;
+}
+
+
+div #a{
+    /* background-image: url(""); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div #no{
+    /* background-image: url(""); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div .header{
+    width: 100%;
+    height: 30px;
+    padding: 8px;
+    border-bottom: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+}
+
+div .content{
+    width: 100%;
+    height: 92%;
+    padding: 20px;
+}
+
+
+/* FIN VENTANAS INFORMACIÓN ARTISTA/OBRA */
