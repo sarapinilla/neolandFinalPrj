@@ -9,45 +9,14 @@
     margin: 100px 0;
 }
 
-/* INICIO VENTANAS INFORMACIÓN ARTISTA/OBRA */
-
-div .ventana{
-    width: 400px;
-    height: 400px;
-    float: left;
-    margin: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: white;
-}
-/* 
-#drop-zone{
-    cursor: pointer;
-} */
-
-div .header{
-    width: 100%;
-    height: 30px;
-    padding: 8px;
-    border-bottom: 1px solid black;
-}
-
-div .content{
-    width: 100%;
-    height: 0 auto;
-    padding: 20px;
-    
-}
-
-/* FIN VENTANAS INFORMACIÓN ARTISTA/OBRA */
 
 /* INICIO SIDEBAR ARCHIVO */
 
 div .menu{
     height: 600px;
-    position: relative;
-    left: 150px;
-    margin: 20px;
+    left: auto;
+    float: left;
+    margin-right: 20px;
 }
 
 .menu-artista{
@@ -104,9 +73,13 @@ div .piezas a{
     text-decoration: none;
     color: black;
     width: 20%;
-    height: 0 auto;
+    height: 20%;
     position: relative;
-    margin: 10px;
+    margin: 2px 5px;
+}
+
+div .piezas a:hover{
+    color: #0000ff;
 }
 
 div .piezas a img{
@@ -115,8 +88,62 @@ div .piezas a img{
 
 div .piezas a p{
     position: absolute;
-    left: 15px;
-    top:25px;
+    left:25%;
+    top:50%;
 }
 
 /* FIN SIDEBAR ARCHIVO */
+
+/* INICIO VENTANAS INFORMACIÓN ARTISTA/OBRA */
+
+div .ventana{
+    width: 400px;
+    height: 400px;
+    float: left;
+    margin: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+/* POSICION RELATIVE PROVISIONAL */
+#a{
+    position: relative;
+    left: 50px;
+    top:100px;
+}
+
+#no{
+    position: relative;
+}
+
+
+div #a{
+    /* background-image: url(""); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div #no{
+    /* background-image: url(""); */
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+div .header{
+    width: 100%;
+    height: 30px;
+    padding: 8px;
+    border-bottom: 1px solid black;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+}
+
+div .content{
+    width: 100%;
+    height: 92%;
+    padding: 20px;
+}
+
+
+/* FIN VENTANAS INFORMACIÓN ARTISTA/OBRA */
