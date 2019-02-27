@@ -9,6 +9,8 @@ import { AboutComponent } from './about/about.component';
 import { FuncionamientoComponent } from './funcionamiento/funcionamiento.component';
 import { HeaderComponent } from './header/header.component';
 import { DownloadComponent } from './download/download.component';
+import { FichaComponent } from './ficha/ficha.component';
+import { GaleriaComponent } from './galeria/galeria.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,10 @@ import { DownloadComponent } from './download/download.component';
     MainComponent,
     AboutComponent,
     FuncionamientoComponent,
+    DownloadComponent,
     HeaderComponent,
-    DownloadComponent
+    FichaComponent,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
