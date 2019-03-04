@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { DownloadComponent } from './download/download.component';
 import { FichaComponent } from './ficha/ficha.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { GaleriaComponent } from './galeria/galeria.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
