@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { DownloadComponent } from './download/download.component';
 import { FichaComponent } from './ficha/ficha.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,9 @@ import { GaleriaComponent } from './galeria/galeria.component';
     DownloadComponent,
     HeaderComponent,
     FichaComponent,
-    GaleriaComponent
+    GaleriaComponent,
+    DownloadComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
