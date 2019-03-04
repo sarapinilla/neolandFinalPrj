@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="cabecera col col-lg-12">
+    <h3>Galeria</h3>
+    <div class="md-form mt-0 col col-lg-3">
+      <input (click)="filtrar($event)" class="form-control" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
+    </div>
+  </div>
+
+  <div class="simbolos col col-lg-12 mb-3 pull-right">
+    <div class="symbol col-3">
+      <img class="tres" src="../../assets/images/simbolo3.svg" alt="simbolo_tres">
+    </div>
+    <div class="symbol col-3">
+      <img class="dos" src="../../assets/images/simbolo2.svg" alt="simbolo_dos">
+    </div>
+    <div class="symbol col-3">
+      <img class="cuatro" src="../../assets/images/simbolo4.svg" alt="simbolo_cuatro">
+    </div>
+    <div class="symbol col-3">
+      <img class="uno" src="../../assets/images/simbolo1.svg" alt="simbolo_uno">
+    </div>
+  </div>
+</div>
+
+<div>
+  <div class="titulos row">
+    <p class="col-lg-4">Pieza</p>
+    <p class="col-lg-4">Autores</p>
+    <p class="col-lg-4">Año</p>
+  </div>
+  <div class="lista row"> <!-- *ngFor="let pieza of piezas" -->
+      <p class="col-lg-4">no.1</p> <!-- {{pieza.titulo}} -->
+      <p class="col-lg-4">autor</p> <!-- {{pieza.autor}} ; son múltiples-->
+      <p class="col-lg-4">año</p> <!-- {{pieza.year}} -->
+  </div>
+  <div class="cover"></div> 
+</div>
+

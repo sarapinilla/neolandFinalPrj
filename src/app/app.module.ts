@@ -9,7 +9,9 @@ import { AboutComponent } from './about/about.component';
 import { FuncionamientoComponent } from './funcionamiento/funcionamiento.component';
 import { HeaderComponent } from './header/header.component';
 import { DownloadComponent } from './download/download.component';
-import { FormComponent } from './form/form.component';
+import { FichaComponent } from './ficha/ficha.component';
+import { GaleriaComponent } from './galeria/galeria.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { FormComponent } from './form/form.component';
     MainComponent,
     AboutComponent,
     FuncionamientoComponent,
-    HeaderComponent,
     DownloadComponent,
-    FormComponent
+    HeaderComponent,
+    FichaComponent,
+    GaleriaComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
