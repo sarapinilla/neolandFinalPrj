@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Autor } from '../models/autor.model';
-import { AutoresService } from '../autores.service';
-import { PiezasService } from '../piezas.service';
+
 
 @Component({
   selector: 'galeria',
