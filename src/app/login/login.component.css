@@ -1,0 +1,147 @@
+/* #newsletter-bar {
+    text-align: center;
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 300px;
+    height: 145px;
+    z-index: 9999;
+}
+
+#newsletter-bar:before {
+    content: " ";
+    height: 145px;
+    width: 300px;
+    display: block;
+    border: 1px solid #000;
+    background: #fff;
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    z-index: 2;
+}
+
+#newsletter-bar:after {
+    content: " ";
+    height: 145px;
+    width: 300px;
+    display: block;
+    border: 1px solid #000;
+    background: #fff;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    z-index: 1;
+}
+
+.newsletter-bar-inner {
+    border: 1px solid #000;
+    background: #fff;
+    position: relative;
+    z-index: 3;
+    height: 145px;
+}
+
+.newsletter-bar-container {
+    position: relative;
+    height: 100%;
+}
+
+.newsletter-bar-container #mc_embed_signup {
+    overflow: hidden;
+    border-top: 1px solid #000;
+    line-height: 50px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    -webkit-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+    transition: all 0.3s linear;
+}
+
+.clear {
+    clear: both;
+} */
+*{
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+    align-items: center;
+}
+/* .h2{
+    margin-top: 60px;
+    font-size: 3em;
+} */
+
+/* class TITANIA */
+.titania{
+    font-family: Titania;
+    font-weight: 400;
+    font-size: 1.1em;
+}
+.info{
+    
+    font-size: 0.7em;
+}
+.form-signin {
+    width: 100%;
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+    margin-top: 8em;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+form {
+    display: block;
+}
+
+.signform{
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 3%;
+
+}
+
+/* custom BOTON */
+.customboton{
+    font-size: 1em;
+    border: 1px solid black;
+    transition: 0.5s;
+    margin-top: 30px;
+    box-shadow: none;
+
+}
+.customboton:hover{
+    box-shadow: 4px 4px black;
+}
+
+/* INPUTS */
+input{
+    /* border: 1px solid black; */
+    border-bottom: 1px solid black;
+    border-radius: 0%;
+    background-color:rgba(0,0,0,0,0);
+    width: 100%;
+}
+[_ngcontent-c2] {
+    color:black;
+     font-weight:400;   
+}
+
+
+.text-center {
+    text-align: center!important;
+}
+
+*{
+    align-items: center;
+}
+
+
