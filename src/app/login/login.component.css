@@ -82,7 +82,10 @@
     font-weight: 400;
     font-size: 1.1em;
 }
-
+.info{
+    
+    font-size: 0.7em;
+}
 .form-signin {
     width: 100%;
     max-width: 330px;
@@ -99,10 +102,6 @@ form {
     display: block;
 }
 
-
-.form-control{
-    
-}
 .signform{
     border: 1px solid black;
     padding: 30px;
