@@ -9,19 +9,21 @@ import { HttpClient } from '@angular/common/http';
 export class AutoresService {
 
   url:string
-  constructor() {
-    this.url = ''
+  autor: Autor
+
+  constructor(private httpClient: HttpClient) {
+    this.url = 'http://localhost:3000/api/autores'
    }
 
   getAllAutores(){
-    // return this.httpClient.get(this.url)
+    return this.httpClient.get(this.url)
   }
 
   getAutoresById(id){
-    // return this.httpClient.get(`${this.url}/${autor.id}`)
+    return this.httpClient.get(`${this.url}/${this.autor.id}`)
   }
 
-  getAutoresByPieza(pieza){
-    // return this.httpClient.get(`${this.url}/${autor.pieza}`)
-  }
+  // getAutoresByPieza(pieza){
+  //    return this.httpClient.get(`${this.url}/${this.autor.pieza}`)
+  // }
 }

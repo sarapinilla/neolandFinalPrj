@@ -27,14 +27,16 @@
  <!-- Inicio Lista Galería -->
 <div>
   <div class="titulos row">
-    <p class="col-lg-4">Pieza</p>
-    <p class="col-lg-4">Autores</p>
-    <p class="col-lg-4">Año</p>
+    <p class="col-lg-3">Pieza</p>
+    <p class="col-lg-3">Autor</p>
+    <p class="col-lg-3">Categoría</p>
+    <p class="col-lg-3">Año</p>
   </div>
-  <div class="lista row"> <!-- *ngFor="let pieza of piezas" -->
-      <p class="col-lg-4">no.1</p> <!-- {{pieza.titulo}} -->
-      <p class="col-lg-4">autor</p> <!-- {{pieza.autor}} ; son múltiples-->
-      <p class="col-lg-4">año</p> <!-- {{pieza.year}} -->
+  <div class="lista row" *ngFor="let pieza of piezas"> 
+      <p class="col-lg-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
+      <p class="col-lg-3" (click)="getAutor($event)">{{pieza.autores}}</p> 
+      <p class="col-lg-3">{{pieza.categorias}}</p>  
+      <p class="col-lg-3">{{pieza.year}}</p> 
   </div>
   <div class="cover"></div> 
   <!-- Fin Lista Galería -->

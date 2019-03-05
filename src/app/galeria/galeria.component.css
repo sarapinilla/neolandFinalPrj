@@ -46,6 +46,7 @@ input{
     font-size: 1.5em;
     display: inline;
     text-align: center;
+    padding-bottom: 10px;
 }
 
 .lista{
