@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Autor } from './models/autor.model'
+// import { Autor } from './models/autor.model'
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +11,15 @@ export class AutoresService {
     this.url = ''
    }
 
-  getAllAutores():Autor[]{
-    // return this.httpClient.get(this.url)
-  }
+  // getAllAutores():Autor[]{
+  //   // return this.httpClient.get(this.url)
+  // }
 
-  getAutoresById(id):Autor[]{
-    // return this.httpClient.get(`${this.url}/${autor.id}`)
-  }
+  // getAutoresById(id):Autor[]{
+  //   // return this.httpClient.get(`${this.url}/${autor.id}`)
+  // }
 
-  getAutoresByPieza(pieza):Autor[]{
-    // return this.httpClient.get(`${this.url}/${autor.pieza}`)
-  }
+  // getAutoresByPieza(pieza):Autor[]{
+  //   // return this.httpClient.get(`${this.url}/${autor.pieza}`)
+  // }
 }
