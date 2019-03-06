@@ -1,0 +1,208 @@
+<h2 class="header ml-4 pb-2 mt-4 mb-5 text-left">
+  Registra tu <span class="titania">pieza</span>! 
+</h2>
+<!-- <form novalidate
+[formGroup]="formRegistro"
+(ngSubmit)="manejarFormulario()">
+<div> 
+  <label> 🙋🏽‍♀️🙋🏽‍♂️* </label><br>
+  <input type="text" formControlName="nombre"><br>
+  <small *ngIf="formRegistro.controls.nombre.errors?.required && formRegistro.controls.nombre.dirty"> ⚠️ El campo nombre es obligatorio
+  </small>
+  <small *ngIf="formRegistro.controls.nombre.errors?.maxlength && formRegistro.controls.nombre.dirty"> ⚠️ El campo nombre tiene un tamaño máx. de {{formRegistro.controls.nombre.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombre.errors.maxlength.actualLength}} 😚
+  </small>
+</div> 
+<div> 
+  <label> 💌 *</label><br>
+  <input type="mail" formControlName="email"><br>
+  <small *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.dirty"> ⚠️ El campo email es obligatorio
+    </small>
+    <small *ngIf="formRegistro.controls.email.errors?.pattern && formRegistro.controls.email.dirty"> El email debe estar escrito correctamente😚
+      </small>
+</div>
+<div> 
+    <label> 🤫*</label><br>
+    <input type="password" formControlName="clave"><br>
+    <small *ngIf="formRegistro.controls.clave.errors?.required && formRegistro.controls.clave.dirty"> ⚠️ La contraseña es obligatoria
+      </small>
+      <small *ngIf="formRegistro.controls.clave.errors?.pattern && formRegistro.controls.clave.dirty"> La contraseña debe tener: aA1?😚
+        </small>
+  </div>
+<div> 
+  <label> 📱 </label><br>
+  <input type="tel" formControlName="telefono"><br>
+</div>
+<div> 
+  <label>🎂</label><br>
+  <input type="text" formControlName="birth"><br>
+  <small *ngIf="formRegistro.controls.birth.errors?.birth && formRegistro.controls.birth.dirty"> 
+    {{formRegistro.controls.birth.errors.birth}}
+    </small>
+</div>
+<div> 
+  <label>💬</label><br>
+  <input type="text" formControlName="dni"><br>
+</div>
+  <button type="submit" [ngClass]="{ 'button-disabled': formRegistro.invalid } " [disabled]="formRegistro.invalid"> 💾SAVE💾 </button>
+</form> -->
+
+<!-- {{formRegistro.valid}} -->
+
+<div class="container">
+  <form>
+    <div class="form row">
+      
+      <!-- info1 -->
+      <div class="col-md-4 mb-5">
+        <h3 class="mb-3 titania">1➫Pieza</h3>
+        <p class="info mb-5">
+          <span class="titania">a.</span>  Rellena los campos con los datos de la pieza que quieras exponer en nuestra galería virtual.<br>
+          <span class="titania">b.</span>  Al recibir tu petición, <br>la validaremos y en un período máximo de 5 días recibirás una respuesta! <br>
+          <span class="titania">c.</span> Elige las fotos para mostrar tu pieza, tanto  para la cover, como el archivo de la pieza en si misma.
+        </p>
+      </div>
+      <!-- form1 -->
+        <div class="col-md-5 mb-5"> 
+          <div class="form-group ">
+            <label>título</label><br>
+            <input class="mb-4" type="text" name="nombre">
+          </div>
+          <div class="form-group ">
+            <label>info</label>
+            <textarea class="form-control mb-4" type="textarea" id="exampleFormControlTextarea1" rows="4"></textarea>
+          </div>
+          <p class="info2">Haz clik en los botones para elegir tus imágenes extensión<span class="titania"> .jpg</span> :</p><br>
+          <!-- Botones COVER | PIEZA -->
+          <div class="form row mb-4">
+            <label class="btn custom-boton">
+              cover <input type="file" hidden>
+            </label>
+            <label class="btn ml-2 custom-boton">
+              pieza <input type="file" hidden>
+            </label>
+          </div>
+
+          <!-- multiple select CATEGORIAS -->
+          <label class="mb-4" >categorías: </label><br>
+          <div class="form-group row">
+              <div class="row">
+                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  audio—<br>visual
+                </label>
+
+                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  dig—<br>gráfico
+                </label>
+
+                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  dig—<br>web
+                </label> 
+                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  foto—<br>grafía
+                </label>
+                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                    instala—<br>ción
+                  </label>
+  
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                    ilus—<br>tración
+                  </label>
+  
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                    musi—<br>ca
+                  </label> 
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                    tattoo
+                  </label>
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                      tipo—<br>grafía
+                    </label>
+    
+                    <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                      3D—<br>escultura
+                    </label>
+    
+                    <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                      o—<br>tros
+                    </label> 
+              </div>    
+          </div>
+
+        </div>
+        <!-- info2 -->
+      <div class="col-md-4  mt-5">
+          <h3 class="mb-3 titania">2➫Autor</h3>
+          <p class="info mb-5">
+              <span class="titania">a.</span> 
+              Rellena los campos con tu nombre de autor,<br>
+              un poco de info sobre ti,<br>
+              y tu foto de perfil.<br>
+            </p>
+      </div>
+        <!-- form2 -->
+      <div class="col-md-5 mt-5"> 
+        <!-- NOMBRE -->
+        <div class="form-group">
+          <label>nombre</label><br>
+          <input class="mb-4" type="text" name="nombre">
+        </div>
+        <!-- INFO -->
+        <div class="form-group ">
+          <label>info</label><br>
+          <textarea class="form-control mb-4" type="textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <!-- Botones FOTO -->
+        <div class="form row mb-4">
+            <label class="btn custom-boton">
+              foto perfil <input type="file" hidden>
+            </label>
+        </div>
+        <!-- RRSS -->
+        <div class="form-group ">
+            <label>rrss</label><br>
+          <div class="input-group mb-2">
+              <div class="input-group-prepend row">
+                <span class="input-group-text" id="basic-addon3">
+                https://www.instagram.com/</span>
+              </div>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+
+          <div class="input-group mb-2">
+              <div class="input-group-prepend row">
+                <span class="input-group-text" id="basic-addon3">
+                    https://www.behance.net/</span>
+              </div>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+
+          <div class="input-group mb-2">
+              <div class="input-group-prepend row">
+                <span class="input-group-text" id="basic-addon3">
+                https://www.</span>
+              </div>
+              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+          </div>
+        </div>
+
+      </div> 
+
+    <!-- <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> -->  
+    </div>
+    <!-- BOTON -->
+    <button  class="form-group col-sm-2" type="submit"> Resgistrar </button> 
+  </form>
+  </div>
