@@ -11,7 +11,6 @@ import { HeaderComponent } from './header/header.component';
 import { DownloadComponent } from './download/download.component';
 import { FichaComponent } from './ficha/ficha.component';
 import { GaleriaComponent } from './galeria/galeria.component';
-// import { FormComponent } from './form/form.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 
@@ -26,7 +25,6 @@ import { LoginComponent } from './login/login.component';
     FichaComponent,
     GaleriaComponent,
     DownloadComponent,
-    FormComponent,
     AdminComponent,
     DownloadComponent,
     HeaderComponent,
