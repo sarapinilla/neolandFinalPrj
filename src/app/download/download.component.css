@@ -4,6 +4,13 @@
     margin: 0px;
     border: 0px;
 }
+.container::before{
+    content: "";
+	height: 75px;
+	display:block;
+    clear: both;
+}
+
 /* Estilos texto */
 .info{
     width: 100%;

@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/RUTAS
 
 @Component({
   selector: 'galeria',
@@ -14,5 +18,9 @@ export class GaleriaComponent implements OnInit {
   ngOnInit() {
   }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> feature/RUTAS
 
 }
