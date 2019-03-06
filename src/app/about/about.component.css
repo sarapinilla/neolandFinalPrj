@@ -19,7 +19,23 @@ div{
 
 }
 
-.more:hover{
-    color: #0000ff;
+
+/* Estilos hipervinculo */
+a{
+    color: black;
+    font-family: Titania;
+    font-weight: 400;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition:0.4s;
+  }
+  
+a:hover {
+    color:black;
+    text-decoration: underline;
     cursor: pointer;
-}
+  }
+  
+/* a:visited{
+      color: black;
+  } */
