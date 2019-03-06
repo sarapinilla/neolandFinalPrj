@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { AboutComponent } from './about/about.component';
@@ -14,6 +14,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
+import { FormComponent } from './form/form.component';
 
 @NgModule({
   declarations: [
@@ -21,18 +22,14 @@ import { ContactComponent } from './contact/contact.component';
     MainComponent,
     AboutComponent,
     FuncionamientoComponent,
-    DownloadComponent,
     HeaderComponent,
     FichaComponent,
     GaleriaComponent,
     DownloadComponent,
     AdminComponent,
-    DownloadComponent,
-    HeaderComponent,
-    FichaComponent,
-    GaleriaComponent,
     LoginComponent,
-    ContactComponent
+    ContactComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,

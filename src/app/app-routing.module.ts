@@ -8,20 +8,28 @@ import { AboutComponent } from './about/about.component';
 import { FuncionamientoComponent } from './funcionamiento/funcionamiento.component';
 import { DownloadComponent } from './download/download.component';
 import { GaleriaComponent } from './galeria/galeria.component';
+import { ContactComponent } from './contact/contact.component';
+import { LoginComponent } from './login/login.component';
+import { AdminComponent } from './admin/admin.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch:'full'},
+  //MAIN
   { path: 'home', component: MainComponent, children:[
     { path: 'home/about', component: AboutComponent},
     { path: 'home/funcionamiento', component: FuncionamientoComponent},
+    //{ path: 'home/galeriaurbana', component: UrbanaComponent},
     { path: 'home/galeria', component: GaleriaComponent}, //TODO > :id
     { path: 'home/app', component:DownloadComponent}
   ]},
-  //{ path: 'contact', component: ContactComponent},
-  { path: 'registro', component: FormComponent},
+  //ROUTER-OUTLET:
   { path: 'ficha', component: FichaComponent},
+  { path: 'registro', component: FormComponent},
+  { path: 'contact', component: ContactComponent},
+  //Users only:
+  { path: 'admin', component: LoginComponent},
+  { path: 'admin/registros', component: AdminComponent},
 
-  //{ path: '/admin', component: loginComponent},
   { path: '**', component: MainComponent }
 ];
 
