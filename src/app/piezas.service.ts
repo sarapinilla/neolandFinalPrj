@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Pieza } from './models/pieza.model'
+// import { Pieza } from './models/pieza.model'
 
 @Injectable({
   providedIn: 'root'

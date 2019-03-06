@@ -13,6 +13,7 @@ import { FichaComponent } from './ficha/ficha.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LoginComponent } from './login/login.component';
     HeaderComponent,
     FichaComponent,
     GaleriaComponent,
-    LoginComponent
+    LoginComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
