@@ -1,10 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-<<<<<<< HEAD
-=======
-
->>>>>>> feature/RUTAS
-
 @Component({
   selector: 'galeria',
   templateUrl: './galeria.component.html',
@@ -17,10 +12,5 @@ export class GaleriaComponent implements OnInit {
   
   ngOnInit() {
   }
-
-<<<<<<< HEAD
-=======
-
->>>>>>> feature/RUTAS
 
 }
