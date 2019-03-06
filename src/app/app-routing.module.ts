@@ -17,11 +17,11 @@ const routes: Routes = [
     { path: 'home/galeria', component: GaleriaComponent}, //TODO > :id
     { path: 'home/app', component:DownloadComponent}
   ]},
-  //{ path: 'contact', component: ContactComponent}, //TO DO: contactComponent ---> wanna know more?
+  //{ path: 'contact', component: ContactComponent},
   { path: 'registro', component: FormComponent},
   { path: 'ficha', component: FichaComponent},
 
-  // { path: '/admin', component: loginComponent}, //TODO: only admin users
+  //{ path: '/admin', component: loginComponent},
   { path: '**', component: MainComponent }
 ];
 
