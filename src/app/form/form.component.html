@@ -49,7 +49,10 @@
 <!-- {{formRegistro.valid}} -->
 
 <div class="container">
-  <form>
+  <form novalidate
+  [formGroup]="formRegistro"
+  (ngSubmit)="manejarFormulario()">
+
     <div class="form row">
       
       <!-- info1 -->
@@ -61,24 +64,34 @@
           <span class="titania">c.</span> Elige las fotos para mostrar tu pieza, tanto  para la cover, como el archivo de la pieza en si misma.
         </p>
       </div>
-      <!-- form1 -->
+      <!-- 1-FORM PIEZA -->
         <div class="col-md-5 mb-5"> 
+          <!--título-->
           <div class="form-group ">
             <label>título</label><br>
-            <input class="mb-4" type="text" name="nombre">
+            <input class="mb-4" type="text" formControlname="tituloPieza">
+            <!-- validaciones -->
+            <small *ngIf="formRegistro.controls.tituloPieza.errors?.required && formRegistro.controls.tituloPieza.dirty"> ⚠️ El campo nombre es obligatorio
+              </small>
+              <small *ngIf="formRegistro.controls.tituloPieza.errors?.maxlength && formRegistro.controls.tituloPieza.dirty"> ⚠️ El campo nombre tiene un tamaño máx. de {{formRegistro.controls.nombre.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombre.errors.maxlength.actualLength}} 😚
+              </small>
           </div>
+          
+          <!--textarea INFO-->
           <div class="form-group ">
             <label>info</label>
-            <textarea class="form-control mb-4" type="textarea" id="exampleFormControlTextarea1" rows="4"></textarea>
+            <textarea class="form-control mb-4" type="textarea" formControlname="infoPieza" id="textarea1" rows="4"></textarea>
           </div>
+
           <p class="info2">Haz clik en los botones para elegir tus imágenes extensión<span class="titania"> .jpg</span> :</p><br>
           <!-- Botones COVER | PIEZA -->
           <div class="form row mb-4">
-            <label class="btn custom-boton">
-              cover <input type="file" hidden>
+            <label class="mb-4">cover
+              <input class="btn custom-boton insertfile" type="file" formControlname="picCover">
             </label>
-            <label class="btn ml-2 custom-boton">
-              pieza <input type="file" hidden>
+            <label class="mb-4"> pieza
+                <!--propiedad hidden borrada -->
+              <input class="btn custom-boton insertfile" type="file" formControlname="picPieza">   
             </label>
           </div>
 
@@ -125,17 +138,17 @@
                   <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
                       <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
                       tipo—<br>grafía
-                    </label>
+                  </label>
     
-                    <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                      3D—<br>escultura
-                    </label>
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                    3D—<br>escultura
+                  </label>
     
-                    <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                      o—<br>tros
-                    </label> 
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
+                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                    o—<br>tros
+                  </label> 
               </div>    
           </div>
 
@@ -155,28 +168,39 @@
         <!-- NOMBRE -->
         <div class="form-group">
           <label>nombre</label><br>
-          <input class="mb-4" type="text" name="nombre">
+          <input class="mb-4" type="text" formControlName="nombreAutor">
         </div>
+        <!-- MAIL -->
+        <div class="form-group">
+        <label>mail</label><br>
+        <input class="mb-4" type="mail" formControlName="email"><br>
+      </div>
+        <!-- <small *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.dirty"> ⚠️ El campo email es obligatorio
+        </small>
+        <small *ngIf="formRegistro.controls.email.errors?.pattern && formRegistro.controls.email.dirty"> El email debe estar escrito correctamente😚
+        </small> -->
+
         <!-- INFO -->
         <div class="form-group ">
           <label>info</label><br>
-          <textarea class="form-control mb-4" type="textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea class="form-control mb-4" type="textarea" formControlName="infoAutor" id="textarea2" rows="3"></textarea>
         </div>
-        <!-- Botones FOTO -->
+        <!-- FOTO PERFIL -->
         <div class="form row mb-4">
-            <label class="btn custom-boton">
-              foto perfil <input type="file" hidden>
+            <label>foto perfil
+              <input class="btn custom-boton insertfile" type="file" formControlname="picAutor">
             </label>
         </div>
         <!-- RRSS -->
         <div class="form-group ">
-            <label>rrss</label><br>
+          <label>rrss</label><br>
+
           <div class="input-group mb-2">
               <div class="input-group-prepend row">
                 <span class="input-group-text" id="basic-addon3">
                 https://www.instagram.com/</span>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlname="rrssIg" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
 
           <div class="input-group mb-2">
@@ -184,7 +208,7 @@
                 <span class="input-group-text" id="basic-addon3">
                     https://www.behance.net/</span>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlname="rrssBe" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
 
           <div class="input-group mb-2">
@@ -192,7 +216,7 @@
                 <span class="input-group-text" id="basic-addon3">
                 https://www.</span>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlname="rrssWeb" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
         </div>
 
