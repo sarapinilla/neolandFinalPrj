@@ -4,6 +4,13 @@
     margin: 0px;
     border: 0px;
 }
+.container::before{
+    content: "";
+	height: 75px;
+	display:block;
+    clear: both;
+}
+
 /* Estilos texto */
 .info{
     width: 100%;
@@ -26,6 +33,24 @@ h2{
     font-weight: 700;
     font-style: italic;
 }
+
+/* Estilos hipervinculo */
+a{
+    color: black;
+    font-family: titania;
+    font-size: 1.1em;
+    text-decoration: none;
+  }
+  
+a:hover {
+    color:black;
+    text-decoration: underline;
+  }
+  
+a:visited{
+      color: black;
+      font-style: oblique;
+  }
 
 /* Estilos imagen */
 
