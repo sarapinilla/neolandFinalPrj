@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Autor } from './models/autor.model'
+import { Autor } from './models/autor.model';
+import { HttpClient } from '@angular/common/http';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,19 +9,21 @@ import { Autor } from './models/autor.model'
 export class AutoresService {
 
   url:string
-  constructor() {
-    this.url = ''
+  autor: Autor
+
+  constructor(private httpClient: HttpClient) {
+    this.url = 'http://localhost:3000/api/autores'
    }
 
-  getAllAutores():Autor[]{
-    // return this.httpClient.get(this.url)
+  getAllAutores(){
+    return this.httpClient.get(this.url)
   }
 
-  getAutoresById(id):Autor[]{
-    // return this.httpClient.get(`${this.url}/${autor.id}`)
+  getAutoresById(id){
+    return this.httpClient.get(`${this.url}/${this.autor.id}`)
   }
 
-  getAutoresByPieza(pieza):Autor[]{
-    // return this.httpClient.get(`${this.url}/${autor.pieza}`)
-  }
+  // getAutoresByPieza(pieza){
+  //    return this.httpClient.get(`${this.url}/${this.autor.pieza}`)
+  // }
 }

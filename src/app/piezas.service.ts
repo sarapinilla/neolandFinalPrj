@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Pieza } from './models/pieza.model'
+import { HttpClient } from '@angular/common/http';
+import { Pieza } from './models/pieza.model';
+
 
 @Injectable({
   providedIn: 'root'
@@ -7,20 +9,21 @@ import { Pieza } from './models/pieza.model'
 export class PiezasService {
   
   url:string
+  pieza: Pieza
 
-  constructor() {
-    this.url = ''
+  constructor(private httpClient: HttpClient) {
+    this.url = 'http://localhost:3000/api'
   }
 
-  getAllPiezas():Pieza[]{
-    // return this.httpClient.get(this.url)
+  getAllPiezas(){
+    return this.httpClient.get(`${this.url}/piezas`)
   }
 
-  getPiezasById(id):Pieza[]{
-    // return this.httpClient.get(`${this.url}/${pieza.id}`)
+  getPiezasById(id){
+     return this.httpClient.get(`${this.url}/piezas/${id}`)
   }
 
-  getPiezasByAutor(autor):Pieza[]{
-    // return this.httpClient.get(`${this.url}/${pieza.autor}`)
+  getAutor(autor){
+    return this.httpClient.get(`${this.url}/autores/${autor}`)
   }
 }

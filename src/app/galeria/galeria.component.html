@@ -1,12 +1,13 @@
 <div class="container">
   <div class="cabecera col col-lg-12">
-    <h3>Galeria</h3>
-    <div class="md-form mt-0 col col-lg-3">
-      <input (click)="filtrar($event)" class="form-control" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
+    <h2>Galería</h2>
+    <div class="md-form mt-0 col col-lg-4">
+      <input (keyup)="filter($event)" class="form-control" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
     </div>
   </div>
 
-  <div class="simbolos col col-lg-12 mb-3 pull-right">
+  <!-- Inicio Símbolos -->
+  <div class="simbolos col col-lg-12 mb-3">
     <div class="symbol col-3">
       <img class="tres" src="../../assets/images/simbolo3.svg" alt="simbolo_tres">
     </div>
@@ -21,18 +22,30 @@
     </div>
   </div>
 </div>
+ <!-- Fin Símbolos -->
 
+ <!-- Inicio Lista Galería -->
 <div>
   <div class="titulos row">
-    <p class="col-lg-4">Pieza</p>
-    <p class="col-lg-4">Autores</p>
-    <p class="col-lg-4">Año</p>
+    <p class="col-lg-3">Pieza</p>
+    <p class="col-lg-3">Autor</p>
+    <p class="col-lg-3">Categoría</p>
+    <p class="col-lg-3">Año</p>
   </div>
-  <div class="lista row"> <!-- *ngFor="let pieza of piezas" -->
-      <p class="col-lg-4">no.1</p> <!-- {{pieza.titulo}} -->
-      <p class="col-lg-4">autor</p> <!-- {{pieza.autor}} ; son múltiples-->
-      <p class="col-lg-4">año</p> <!-- {{pieza.year}} -->
+  <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of piezas"> 
+      <p class="col-lg-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
+      <div class="col-lg-3">
+        <p *ngFor="let autor of pieza.autores" (click)="getAutor($event)">{{autor.nombre}}</p> 
+      </div>
+      <div class="col-lg-3">
+        <p *ngFor="let categoria of pieza.categorias">{{categoria.nombre}}</p> 
+      </div>
+      <p class="col-lg-3">{{pieza.year}}</p> 
+      <div class="cover">
+        <img [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">
+      </div> 
   </div>
-  <div class="cover"></div> 
+
+  <!-- Fin Lista Galería -->
 </div>
 
