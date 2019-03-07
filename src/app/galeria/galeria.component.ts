@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pieza } from '../models/pieza.model'
 import { PiezasService } from '../piezas.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'galeria',
@@ -13,7 +14,10 @@ export class GaleriaComponent implements OnInit {
   arrPiezas: any
 
 
-  constructor(private piezasService: PiezasService){ 
+  constructor(
+    private piezasService: PiezasService,
+    private router: Router
+    ){ 
 
     this.arrPiezas = this.piezasService.getAllPiezas().subscribe(res => {
         this.piezas = res
@@ -44,8 +48,8 @@ export class GaleriaComponent implements OnInit {
   }
 
 //Redireccionar al componente ficha según la id del autor
-  getAutor($event){
-    console.log(this.piezasService.getAutor($event))
+  getAutor(autorId){
+    this.router.navigate(['ficha', autorId])
   }
 
 //Filtrar la lista según lo que el usuario escriba

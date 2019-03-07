@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ficha',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FichaComponent implements OnInit {
 
-  constructor() { }
+  autor: any
+
+  constructor(private activatedRoute: ActivatedRoute) {
+    this.activatedRoute.params.subscribe((params) => {
+        this.autor = params.autorId
+    })
+   }
 
   ngOnInit() {
   }

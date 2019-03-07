@@ -19,17 +19,17 @@ const routes: Routes = [
     { path: 'home/about', component: AboutComponent},
     { path: 'home/funcionamiento', component: FuncionamientoComponent},
     //{ path: 'home/galeriaurbana', component: UrbanaComponent},
-    { path: 'home/galeria', component: GaleriaComponent}, //TODO > :id
+    { path: 'home/galeria', component: GaleriaComponent},
     { path: 'home/app', component:DownloadComponent}
   ]},
   //ROUTER-OUTLET:
-  { path: 'ficha', component: FichaComponent},
+  { path: 'ficha/:autorId', component: FichaComponent},
   { path: 'registro', component: FormComponent},
   { path: 'contact', component: ContactComponent},
   //Users only:
-  { path: 'admin', component: LoginComponent},
-  { path: 'admin/registros', component: AdminComponent},
-
+  { path: 'admin', component: LoginComponent, children:[
+    { path: 'admin/registros', component: AdminComponent}
+  ]},
   { path: '**', component: MainComponent }
 ];
 
