@@ -1,8 +1,8 @@
 <div class="container">
   <div class="cabecera col col-lg-12">
     <h2>Galería</h2>
-    <div class="md-form mt-0 col col-lg-3">
-      <input (click)="filtrar($event)" class="form-control" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
+    <div class="md-form mt-0 col col-lg-4">
+      <input (keyup)="filter($event)" class="form-control" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
     </div>
   </div>
 
@@ -32,13 +32,20 @@
     <p class="col-lg-3">Categoría</p>
     <p class="col-lg-3">Año</p>
   </div>
-  <div class="lista row" *ngFor="let pieza of piezas"> 
+  <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of piezas"> 
       <p class="col-lg-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
-      <p class="col-lg-3" (click)="getAutor($event)">{{pieza.autores}}</p> 
-      <p class="col-lg-3">{{pieza.categorias}}</p>  
+      <div class="col-lg-3">
+        <p *ngFor="let autor of pieza.autores" (click)="getAutor($event)">{{autor.nombre}}</p> 
+      </div>
+      <div class="col-lg-3">
+        <p *ngFor="let categoria of pieza.categorias">{{categoria.nombre}}</p> 
+      </div>
       <p class="col-lg-3">{{pieza.year}}</p> 
+      <div class="cover">
+        <img [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">
+      </div> 
   </div>
-  <div class="cover"></div> 
+
   <!-- Fin Lista Galería -->
 </div>
 

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Pieza } from './models/pieza.model';
-import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -12,12 +11,12 @@ export class PiezasService {
   url:string
   pieza: Pieza
 
-  constructor(private httpClient: HttpClient, private router: Router) {
+  constructor(private httpClient: HttpClient) {
     this.url = 'http://localhost:3000/api'
   }
 
   getAllPiezas(){
-    return this.httpClient.get(`${this.url}/piezas`) 
+    return this.httpClient.get(`${this.url}/piezas`)
   }
 
   getPiezasById(id){
@@ -25,8 +24,6 @@ export class PiezasService {
   }
 
   getAutor(autor){
-    return this.httpClient.get(`${this.url}/autores/autor/${autor}`)
-    // let urlFicha = `${this.httpClient.get(`${this.url}/autores/autor/${autor}`
-    // this.router.navigate(urlFicha)
+    return this.httpClient.get(`${this.url}/autores/${autor}`)
   }
 }
