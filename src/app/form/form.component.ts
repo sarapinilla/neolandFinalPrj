@@ -16,58 +16,84 @@ formRegistro: FormGroup
   ngOnInit() {
     this.formRegistro = new FormGroup({
       
-      titulopieza: new FormControl('Título pieza', [
+      titulopieza: new FormControl('', [
         Validators.required,
         Validators.maxLength(50)
       ]),
-      infopieza: new FormControl('Informaciónpieza',[
+      infopieza: new FormControl('',[
         Validators.required,
-        Validators.maxLength(200)
+        Validators.maxLength(250)
       ]),
-      piccover: new FormControl('Foto Cover', [
+      piccover: new FormControl('', [
         //Investigar
       ]),
-      picpieza: new FormControl('Archivo Pieza', [
+      picpieza: new FormControl('', [
         //Investigar
       ]),
-      //aqui CATEGORIAS
 
-      nombreautor: new FormControl('Nombre Autor', [
+      //aqui CATEGORIAS
+      audiovisual: new FormControl('', [
+        
+      ]),
+      diggrafico: new FormControl('', [
+        
+      ]),
+      digweb: new FormControl('', [
+        
+      ]),
+      fotografia: new FormControl('', [
+       
+      ]),
+      instalacion: new FormControl('', [
+        
+      ]),
+      ilustracion: new FormControl('', [
+        
+      ]),
+      musica: new FormControl('', [
+        
+      ]),
+      tattoo: new FormControl('', [
+       
+      ]),
+      tipografia: new FormControl('', [
+        
+      ]),
+      escultura: new FormControl('', [
+        
+      ]),
+      otros: new FormControl('', [
+        
+      ]),
+
+      nombreautor: new FormControl('', [
         Validators.required,
         Validators.maxLength(50)
       ]),
-      email: new FormControl('Email', [
+      email: new FormControl('@gmail.com', [
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
       ]),
-      infoautor: new FormControl('Info Autor', [
+      infoautor: new FormControl('', [
         Validators.required,
-        Validators.maxLength(200)
+        Validators.maxLength(250)
       ]),
-      picautor: new FormControl('Foto de perfil', [
+      picautor: new FormControl('', [
         Validators.required,
-        //Investigar
+        
       ]),
-      ig: new FormControl('Instagram', [
-        Validators.required,
-        //Investigar
-      ]),
-      be: new FormControl('Behance', [
+      ig: new FormControl('', [
         Validators.required,
         //Investigar
       ]),
-      web: new FormControl('web personal', [
+      be: new FormControl('', [
         Validators.required,
         //Investigar
       ]),
-
-  
-      
-      
-
-
-
-
+      web: new FormControl('', [
+        Validators.required,
+        //Investigar
+      ]),
 
     })
 

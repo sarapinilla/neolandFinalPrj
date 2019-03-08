@@ -24,84 +24,95 @@
           <!--título-->
           <div class="form-group ">
             <label>título</label><br>
-            <input class="mb-4" type="text" formControlname="titulopieza">
             <!-- validaciones -->
-            <small *ngIf="formRegistro.controls.titulopieza.errors?.required && formRegistro.controls.titulopieza.dirty"> ⚠️ El campo nombre es obligatorio
-              </small>
-              <small *ngIf="formRegistro.controls.titulopieza.errors?.maxlength && formRegistro.controls.titulopieza.dirty"> ⚠️ El campo nombre tiene un tamaño máx. de {{formRegistro.controls.nombre.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombre.errors.maxlength.actualLength}} 😚
-              </small>
+            <small *ngIf="formRegistro.controls.titulopieza.errors?.required && formRegistro.controls.titulopieza.dirty"> ⚠️ El campo título es obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.titulopieza.errors?.maxlength && formRegistro.controls.titulopieza.dirty"> ⚠️ El campo título tiene una extensión máx. de {{formRegistro.controls.titulopieza.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.titulopieza.errors.maxlength.actualLength}}
+            </small>
+            <input class="mb-4" type="text" formControlName="titulopieza">
           </div>
           
           <!--textarea INFO-->
           <div class="form-group ">
-            <label>info</label>
-            <textarea class="form-control mb-4" type="textarea" formControlname="infopieza" id="textarea1" rows="4"></textarea>
+            <label>info</label><br>
+            <!-- validaciones -->
+            <small *ngIf="formRegistro.controls.infopieza.errors?.required && formRegistro.controls.infopieza.dirty"> ⚠️ El campo info es obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.infopieza.errors?.maxlength && formRegistro.controls.infopieza.dirty"> ⚠️ El campo info tiene un tamaño máx. de {{formRegistro.controls.infopieza.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infopieza.errors.maxlength.actualLength}}
+            </small>
+            <textarea class="form-control mb-4" type="textarea" formControlName="infopieza" id="textarea1" rows="4"></textarea>
           </div>
 
-          <p class="info2">Haz clik en los botones para elegir tus imágenes extensión<span class="titania"> .jpg</span> :</p><br>
           <!-- Botones COVER | PIEZA -->
           <div class="form row mb-4">
             <label class="mb-4">cover
-              <input class="btn custom-boton insertfile" type="file" formControlname="piccover">
+              <p class="info2 mt-2">Imagen de tu pieza:
+                Elige tus archivos extensión
+                <span class="titania"> .jpg/.gif/.png</span> :
+              </p><br>
+              <input class="btn custom-boton insertfile" type="file" formControlName="piccover">
             </label>
             <label class="mb-4"> pieza
-                <!--propiedad hidden borrada -->
-              <input class="btn custom-boton insertfile" type="file" formControlname="picpieza">   
+              <p class="info2 mt-2">
+                Url de tu pieza (en caso de video o audio) o archivo
+                <span class="titania"> .jpg/.gif/.png</span> :
+              </p><br>
+              <input class="btn custom-boton insertfile" type="file" formControlName="picpieza">   
             </label>
           </div>
 
           <!-- multiple select CATEGORIAS -->
-          <label class="mb-4" >categorías: </label><br>
+          <label class="mb-4" >categorías:</label><br>
           <div class="form-group row">
               <div class="row">
                 <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="audiovisual" formControlName="audiovisual">
                   audio—<br>visual
                 </label>
 
                 <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-1" value="diggrafico" formControlName="diggrafico">
                   dig—<br>gráfico
                 </label>
 
                 <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-2" value="digweb" formControlName="digweb">
                   dig—<br>web
                 </label> 
                 <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-3" value="fotografia" formControlName="fotografia">
                   foto—<br>grafía
                 </label>
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-4">
+                    <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="instalacion" formControlName="instalacion">
                     instala—<br>ción
                   </label>
   
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-5">
+                    <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="ilustracion" formControlName="ilustracion">
                     ilus—<br>tración
                   </label>
   
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-6">
+                    <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="musica" formControlName="musica">
                     musi—<br>ca
                   </label> 
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-7">
+                    <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="tattoo" formControlName="tattoo">
                     tattoo
                   </label>
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-8">
+                      <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="tipografia" formControlName="tipografia">
                       tipo—<br>grafía
                   </label>
     
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-9">
+                    <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="escultura" formControlName="escultura">
                     3D—<br>escultura
                   </label>
     
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
+                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-10">
+                    <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-0" value="otros" formControlName="otros">
                     o—<br>tros
                   </label> 
               </div>    
@@ -123,21 +134,28 @@
         <!-- NOMBRE -->
         <div class="form-group">
           <label>nombre</label><br>
+          <!-- validaciones -->
+          <small *ngIf="formRegistro.controls.nombreautor.errors?.required && formRegistro.controls.nombreautor.dirty"> ⚠️ El campo nombre es obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.nombreautor.errors?.maxlength && formRegistro.controls.nombreautor.dirty"> ⚠️ El campo nombre tiene una extensión máx. de {{formRegistro.controls.nombreautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombreautor.errors.maxlength.actualLength}}
+            </small>
           <input class="mb-4" type="text" formControlName="nombreautor">
         </div>
         <!-- MAIL -->
         <div class="form-group">
         <label>mail</label><br>
+
         <input class="mb-4" type="mail" formControlName="email"><br>
       </div>
-        <!-- <small *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.dirty"> ⚠️ El campo email es obligatorio
-        </small>
-        <small *ngIf="formRegistro.controls.email.errors?.pattern && formRegistro.controls.email.dirty"> El email debe estar escrito correctamente😚
-        </small> -->
-
+        
         <!-- INFO -->
         <div class="form-group ">
           <label>info</label><br>
+          <!-- validaciones -->
+          <small *ngIf="formRegistro.controls.infoautor.errors?.required && formRegistro.controls.infoautor.dirty"> ⚠️ El campo info es obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.infoautor.errors?.maxlength && formRegistro.controls.infoautor.dirty"> ⚠️El campo info tiene una extensión máx. de {{formRegistro.controls.infoautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infoautor.errors.maxlength.actualLength}}
+            </small>
           <textarea class="form-control mb-4" type="textarea" formControlName="infoautor" id="textarea2" rows="3"></textarea>
         </div>
         <!-- FOTO PERFIL -->
@@ -179,6 +197,13 @@
 
     <!-- BOTON -->
     <button (click)="updatePieza()" class="form-group col-sm-2" type="submit" > Resgistrar </button> 
+
+    <p>
+      Form Value: {{ formRegistro.value | json }}
+    </p>
+    <p>
+      Form Status: {{ formRegistro.status }}
+    </p>
   </form>
   </div>
   <!-- [ngClass]="{ 'button-disabled': formRegistro.invalid } " [disabled]="formRegistro.invalid" -->

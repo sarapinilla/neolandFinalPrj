@@ -31,7 +31,7 @@
 /* Botones COVER | PIEZA */
     /* haz click en los btn...jpg */
 .info2{
-    font-size: 0.5em;
+    font-size: 0.4em;
     font-style: oblique;
     line-height: 1em;
 }
@@ -75,26 +75,26 @@ input{
     color:white;
 } */
 
-/* 
-    input contenido valido -->
+
+    /* input contenido valido */
 input.ng-valid.ng-touched{
     color:darkgreen;
     border: 1px solid black;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
-    input contenido invalido -->
+    /* input contenido invalido */
 input.ng-invalid.ng-touched{
-    color:lightgrey;
-    border: 1px solid tomato;
-} */
-
+    color:tomato;
+    border: 1px solid black;;
+} 
 
 #exampleFormControlTextarea {
     color:black;
 }
 small{
-    color: tomato;
-    font-size: 8px;
+    color: blue;
+    font-size: 0.4em;
+    font-weight: 400;
 }
 .custom-file, .custom-file-input{
     font-size: 0.5em;
@@ -120,11 +120,9 @@ button:hover{
 .checkbox-inline{
     text-align: left;
     font-size: 0.6em;
+}
 
-}
-[_ngcontent-c2]{
-    
-}
+
 /* RRSS */
 #basic-addon3{
     font-size: 0.3em;
