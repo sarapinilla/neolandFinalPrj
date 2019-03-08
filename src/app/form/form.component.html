@@ -1,52 +1,7 @@
+<!-- {{formRegistro.valid}} -->
 <h2 class="header ml-4 pb-2 mt-4 mb-5 text-left">
   Registra tu <span class="titania">pieza</span>! 
 </h2>
-<!-- <form novalidate
-[formGroup]="formRegistro"
-(ngSubmit)="manejarFormulario()">
-<div> 
-  <label> 🙋🏽‍♀️🙋🏽‍♂️* </label><br>
-  <input type="text" formControlName="nombre"><br>
-  <small *ngIf="formRegistro.controls.nombre.errors?.required && formRegistro.controls.nombre.dirty"> ⚠️ El campo nombre es obligatorio
-  </small>
-  <small *ngIf="formRegistro.controls.nombre.errors?.maxlength && formRegistro.controls.nombre.dirty"> ⚠️ El campo nombre tiene un tamaño máx. de {{formRegistro.controls.nombre.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombre.errors.maxlength.actualLength}} 😚
-  </small>
-</div> 
-<div> 
-  <label> 💌 *</label><br>
-  <input type="mail" formControlName="email"><br>
-  <small *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.dirty"> ⚠️ El campo email es obligatorio
-    </small>
-    <small *ngIf="formRegistro.controls.email.errors?.pattern && formRegistro.controls.email.dirty"> El email debe estar escrito correctamente😚
-      </small>
-</div>
-<div> 
-    <label> 🤫*</label><br>
-    <input type="password" formControlName="clave"><br>
-    <small *ngIf="formRegistro.controls.clave.errors?.required && formRegistro.controls.clave.dirty"> ⚠️ La contraseña es obligatoria
-      </small>
-      <small *ngIf="formRegistro.controls.clave.errors?.pattern && formRegistro.controls.clave.dirty"> La contraseña debe tener: aA1?😚
-        </small>
-  </div>
-<div> 
-  <label> 📱 </label><br>
-  <input type="tel" formControlName="telefono"><br>
-</div>
-<div> 
-  <label>🎂</label><br>
-  <input type="text" formControlName="birth"><br>
-  <small *ngIf="formRegistro.controls.birth.errors?.birth && formRegistro.controls.birth.dirty"> 
-    {{formRegistro.controls.birth.errors.birth}}
-    </small>
-</div>
-<div> 
-  <label>💬</label><br>
-  <input type="text" formControlName="dni"><br>
-</div>
-  <button type="submit" [ngClass]="{ 'button-disabled': formRegistro.invalid } " [disabled]="formRegistro.invalid"> 💾SAVE💾 </button>
-</form> -->
-
-<!-- {{formRegistro.valid}} -->
 
 <div class="container">
   <form novalidate
@@ -69,29 +24,29 @@
           <!--título-->
           <div class="form-group ">
             <label>título</label><br>
-            <input class="mb-4" type="text" formControlname="tituloPieza">
+            <input class="mb-4" type="text" formControlname="titulopieza">
             <!-- validaciones -->
-            <small *ngIf="formRegistro.controls.tituloPieza.errors?.required && formRegistro.controls.tituloPieza.dirty"> ⚠️ El campo nombre es obligatorio
+            <small *ngIf="formRegistro.controls.titulopieza.errors?.required && formRegistro.controls.titulopieza.dirty"> ⚠️ El campo nombre es obligatorio
               </small>
-              <small *ngIf="formRegistro.controls.tituloPieza.errors?.maxlength && formRegistro.controls.tituloPieza.dirty"> ⚠️ El campo nombre tiene un tamaño máx. de {{formRegistro.controls.nombre.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombre.errors.maxlength.actualLength}} 😚
+              <small *ngIf="formRegistro.controls.titulopieza.errors?.maxlength && formRegistro.controls.titulopieza.dirty"> ⚠️ El campo nombre tiene un tamaño máx. de {{formRegistro.controls.nombre.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombre.errors.maxlength.actualLength}} 😚
               </small>
           </div>
           
           <!--textarea INFO-->
           <div class="form-group ">
             <label>info</label>
-            <textarea class="form-control mb-4" type="textarea" formControlname="infoPieza" id="textarea1" rows="4"></textarea>
+            <textarea class="form-control mb-4" type="textarea" formControlname="infopieza" id="textarea1" rows="4"></textarea>
           </div>
 
           <p class="info2">Haz clik en los botones para elegir tus imágenes extensión<span class="titania"> .jpg</span> :</p><br>
           <!-- Botones COVER | PIEZA -->
           <div class="form row mb-4">
             <label class="mb-4">cover
-              <input class="btn custom-boton insertfile" type="file" formControlname="picCover">
+              <input class="btn custom-boton insertfile" type="file" formControlname="piccover">
             </label>
             <label class="mb-4"> pieza
                 <!--propiedad hidden borrada -->
-              <input class="btn custom-boton insertfile" type="file" formControlname="picPieza">   
+              <input class="btn custom-boton insertfile" type="file" formControlname="picpieza">   
             </label>
           </div>
 
@@ -168,7 +123,7 @@
         <!-- NOMBRE -->
         <div class="form-group">
           <label>nombre</label><br>
-          <input class="mb-4" type="text" formControlName="nombreAutor">
+          <input class="mb-4" type="text" formControlName="nombreautor">
         </div>
         <!-- MAIL -->
         <div class="form-group">
@@ -183,12 +138,12 @@
         <!-- INFO -->
         <div class="form-group ">
           <label>info</label><br>
-          <textarea class="form-control mb-4" type="textarea" formControlName="infoAutor" id="textarea2" rows="3"></textarea>
+          <textarea class="form-control mb-4" type="textarea" formControlName="infoautor" id="textarea2" rows="3"></textarea>
         </div>
         <!-- FOTO PERFIL -->
         <div class="form row mb-4">
             <label>foto perfil
-              <input class="btn custom-boton insertfile" type="file" formControlname="picAutor">
+              <input class="btn custom-boton insertfile" type="file" formControlname="picautor">
             </label>
         </div>
         <!-- RRSS -->
@@ -200,7 +155,7 @@
                 <span class="input-group-text" id="basic-addon3">
                 https://www.instagram.com/</span>
               </div>
-              <input type="text" formControlname="rrssIg" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlname="ig" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
 
           <div class="input-group mb-2">
@@ -208,7 +163,7 @@
                 <span class="input-group-text" id="basic-addon3">
                     https://www.behance.net/</span>
               </div>
-              <input type="text" formControlname="rrssBe" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlname="be" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
 
           <div class="input-group mb-2">
@@ -216,17 +171,14 @@
                 <span class="input-group-text" id="basic-addon3">
                 https://www.</span>
               </div>
-              <input type="text" formControlname="rrssWeb" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlname="web" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
         </div>
-
       </div> 
-
-    <!-- <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> -->  
     </div>
+
     <!-- BOTON -->
-    <button  class="form-group col-sm-2" type="submit"> Resgistrar </button> 
+    <button (click)="updatePieza()" class="form-group col-sm-2" type="submit" > Resgistrar </button> 
   </form>
   </div>
+  <!-- [ngClass]="{ 'button-disabled': formRegistro.invalid } " [disabled]="formRegistro.invalid" -->

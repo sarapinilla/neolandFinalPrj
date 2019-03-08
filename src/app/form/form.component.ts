@@ -16,27 +16,50 @@ formRegistro: FormGroup
   ngOnInit() {
     this.formRegistro = new FormGroup({
       
-      tituloPieza: new FormControl('Título pieza', [
+      titulopieza: new FormControl('Título pieza', [
         Validators.required,
         Validators.maxLength(50)
       ]),
-      infoPieza: new FormControl('Informaciónpieza',[
+      infopieza: new FormControl('Informaciónpieza',[
         Validators.required,
         Validators.maxLength(200)
       ]),
-      picCover: new FormControl('Foto Cover', [
+      piccover: new FormControl('Foto Cover', [
         //Investigar
       ]),
-      picPieza: new FormControl('Archivo Pieza', [
+      picpieza: new FormControl('Archivo Pieza', [
         //Investigar
       ]),
       //aqui CATEGORIAS
 
-      nomnbreAutor: new FormControl('Nombre Autor', [
+      nombreautor: new FormControl('Nombre Autor', [
         Validators.required,
         Validators.maxLength(50)
       ]),
-
+      email: new FormControl('Email', [
+        Validators.required,
+        Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
+      ]),
+      infoautor: new FormControl('Info Autor', [
+        Validators.required,
+        Validators.maxLength(200)
+      ]),
+      picautor: new FormControl('Foto de perfil', [
+        Validators.required,
+        //Investigar
+      ]),
+      ig: new FormControl('Instagram', [
+        Validators.required,
+        //Investigar
+      ]),
+      be: new FormControl('Behance', [
+        Validators.required,
+        //Investigar
+      ]),
+      web: new FormControl('web personal', [
+        Validators.required,
+        //Investigar
+      ]),
 
   
       
@@ -48,17 +71,22 @@ formRegistro: FormGroup
 
     })
 
-    let tituloPiezaControl = this.formRegistro.controls.tituloPieza
+    let titulopiezaControl = this.formRegistro.controls.titulopieza
     //valueChanges -> observable , por eso le ponemos .subscribe
-    tituloPiezaControl.valueChanges.pipe(debounceTime(500)).subscribe((value)=>{
+    titulopiezaControl.valueChanges.pipe(debounceTime(500)).subscribe((value)=>{
       console.log(value)
     })
 
   }
   //Reset valores cuando se envía el formulario:
   manejarFormulario(){
-    console.log(this.formRegistro.value)
+    console.warn(this.formRegistro.value)
     this.formRegistro.reset()
   }
+  //Boton:
+  updatePieza(){
+    // TODO: Use EventEmitter with form value
+    this.formRegistro.patchValue({ });
 
+  }
 }
