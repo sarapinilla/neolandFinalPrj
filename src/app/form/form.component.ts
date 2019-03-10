@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators'
 
 @Component({
@@ -11,7 +11,31 @@ export class FormComponent implements OnInit {
 
 formRegistro: FormGroup
 
-  constructor() { }
+//ARRAY CATEGORIAS:
+user = {
+  categorias: [
+  { name: 'audio—visual', selected: false, id:'audiovisuales' },
+  { name: `dig—gráfico`, selected: false, id:'diggrafico' },
+  { name: 'dig—web', selected: false, id:'digweb' },
+  { name: 'foto—grafía', selected: false, id:'fotografia' },
+  { name: 'insta—lación', selected: false, id:'instalacion' },
+  { name: 'ilus—tración',selected: false,  id:'ilustracion' },
+  { name: 'música',selected: false,  id:'musica' },
+  { name: 'tattoo',selected: false, id:'tattoo' },
+  { name: 'tipo—grafía',selected: false, id:'tipografia' },
+  { name: '3D—Escultura',selected: false, id:'3descultura' },
+  { name: 'otros',selected: false, id:'otros' }
+  ]
+};
+
+arrCategorias: any[]
+
+  constructor(private fb: FormBuilder) {
+    this.formRegistro = this.fb.group({
+      categorias: this.buildCategorias()
+    });
+
+   }
 
   ngOnInit() {
     this.formRegistro = new FormGroup({
@@ -30,42 +54,56 @@ formRegistro: FormGroup
       picpieza: new FormControl('', [
         //Investigar
       ]),
-
       //aqui CATEGORIAS
-      audiovisual: new FormControl('', [
-        
-      ]),
-      diggrafico: new FormControl('', [
-        
-      ]),
-      digweb: new FormControl('', [
-        
-      ]),
-      fotografia: new FormControl('', [
-       
-      ]),
-      instalacion: new FormControl('', [
-        
-      ]),
-      ilustracion: new FormControl('', [
-        
-      ]),
-      musica: new FormControl('', [
-        
-      ]),
-      tattoo: new FormControl('', [
-       
-      ]),
-      tipografia: new FormControl('', [
-        
-      ]),
-      escultura: new FormControl('', [
-        
-      ]),
-      otros: new FormControl('', [
-        
+      categorias: new FormArray([
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false),
+        new FormControl(false)
       ]),
 
+      // categorias: new FormControl('', [
+      //   Validators.requiredTrue,
+      //   this.categoriasValidator
+      // ]),
+      // diggrafico: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // digweb: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // fotografia: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // instalacion: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // ilustracion: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // musica: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // tattoo: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // tipografia: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // escultura: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+      // otros: new FormControl('', [
+      //   Validators.requiredTrue,
+      // ]),
+//FORM AUTOR
       nombreautor: new FormControl('', [
         Validators.required,
         Validators.maxLength(50)
@@ -79,23 +117,25 @@ formRegistro: FormGroup
         Validators.maxLength(250)
       ]),
       picautor: new FormControl('', [
-        Validators.required,
+        // Validators.required,
         
       ]),
       ig: new FormControl('', [
-        Validators.required,
-        //Investigar
+        Validators.required, 
+     
       ]),
       be: new FormControl('', [
         Validators.required,
-        //Investigar
+       
       ]),
       web: new FormControl('', [
         Validators.required,
-        //Investigar
+      
       ]),
 
     })
+
+  
 
     let titulopiezaControl = this.formRegistro.controls.titulopieza
     //valueChanges -> observable , por eso le ponemos .subscribe
@@ -106,13 +146,52 @@ formRegistro: FormGroup
   }
   //Reset valores cuando se envía el formulario:
   manejarFormulario(){
-    console.warn(this.formRegistro.value)
-    this.formRegistro.reset()
+    console.log(this.formRegistro.value)
+    // this.formRegistro.reset() -->ACTIVARLO AL FINAL!
   }
   //Boton:
   updatePieza(){
     // TODO: Use EventEmitter with form value
-    this.formRegistro.patchValue({ });
+    this.formRegistro.setValue({
+      titulopieza: "",
+      infopieza: "",
+      piccover: "",
+      picpieza: "",
+      categorias: [ '', '', '', '', '', '', '', '', '', '', '' ],
+      nombreautor: "",
+      email: "@gmail.com",
+      infoautor: "",
+      picautor: "",
+      ig: "",
+      be: "",
+      web: "" 
+     });
 
   }
+
+  //Metodos array CATEGORIAS:
+  get categorias() {
+    return this.formRegistro.get('categorias');
+  };
+  buildCategorias() {
+    const arr = this.user.categorias.map(categorias => {
+      return this.fb.control(categorias.selected);
+    });
+    return this.fb.array(arr);
+  }
+//?duda Mario
+  submit(formRegistro) {
+    const formRegistroValue = Object.assign({}, formRegistro.value, {
+      categorias: formRegistro.categorias.map((selected, i) => {
+        console.warn(this.formRegistro.value)
+        return {
+          id: this.user.categorias[i].id,
+          selected
+       }
+       
+      })
+    });
+  }
+
+
 }

@@ -9,6 +9,17 @@
     font-size: 1.1em;
     color: black;
 }
+
+/* QUITAR EL FOCUS por defecto (HIGHLIGTHER BORDER) */
+*:focus {
+    outline: none;
+}
+
+input[type=text]:focus, textarea:focus, input[type=mail]:focus, input[type=url]:focus {
+    box-shadow: 0 0 5px black;
+    border: 1px solid black;
+  }
+
 /* class TITANIA */
 .titania{
     font-family: Titania;
@@ -38,6 +49,7 @@
 /* Botones COVER | PIEZA */
 .custom-boton{
     font-size: 0.9em;
+    color: gray;
     border: 1px solid black;
     box-shadow: none;
     transition: 0.5s;
@@ -66,6 +78,10 @@ input{
 .insertfile{
     font-size: 0.5em;
 }
+/* CATEGORIAS */
+.categoriaslabel{
+font-size: 0.5em;
+}
 
 /* input.insterfile{
     width: 100%;
@@ -86,11 +102,13 @@ input.ng-valid.ng-touched{
 input.ng-invalid.ng-touched{
     color:tomato;
     border: 1px solid black;;
-} 
+}
 
-#exampleFormControlTextarea {
+
+textarea .ng-touched .ng-dirty .ng-valid{
     color:black;
 }
+
 small{
     color: blue;
     font-size: 0.4em;
