@@ -4,11 +4,14 @@
 </h2>
 <p>Form Value: {{ formRegistro.value | json }}</p>
 <p>Form Status: {{ formRegistro.status }}</p>
+<!-- Observables subida file: -->
+<!-- <p> {{uploadPercent | async}}</p>
+<p> {{downloadURL | async}}</p> -->
+
 <div class="container">
   <form novalidate
   [formGroup]="formRegistro"
-  (ngSubmit)="manejarFormulario()"
-  (submit)="submit(form.value)">
+  (ngSubmit)="manejarFormulario()">
 
     <div class="form row">
       
@@ -46,22 +49,25 @@
           </div>
 
           <!-- COVER | PIEZA -->
+            <!-- COVER -->
           <div class="form row mb-4">
             <label class="mb-4">cover
               <p class="info2 mt-2">Imagen de tu pieza:
                 Elige tus archivos extensión
                 <span class="titania"> .jpg/.gif/.png</span> :
               </p><br>
-              <input class="btn custom-boton insertfile" type="file" formControlName="piccover">
+              <!-- añadir evento (change)="onChangeImage($event)"  -->        
+              <input class="btn custom-boton insertfile" type="file" formControlName="piccover"> 
             </label>
+             <!-- PIEZAS -->
+            <!-- Para visualizar la imagen subida: <img [src]="downloadURL | async"> -->
             <label class="mb-4"> pieza
               <p class="info2 mt-2">
                 Url de tu pieza (en caso de video o audio) o archivo
                 <span class="titania"> .jpg/.gif/.png</span> :
               </p><br>
-              <input class="btn custom-boton insertfile mb-2" type="file" formControlName="picpieza"> 
-              <input id="myURL" formControlName="URLpieza" type="url" placeholder="http://www.example.com">
-              
+              <input class="mb-2" formControlName="URLpieza" type="url" placeholder="http://www.example.com">
+              <input class="btn custom-boton insertfile" type="file" formControlName="picpieza"> 
             </label>
           </div>
 
@@ -74,70 +80,8 @@
               <label class="col-md-6 ml-2 mb-3 categoriaslabel"> {{user.categorias[i].name}}</label>
             </div> 
           </div>
-
-            <!-- <div formArrayName="aliases">
-                <p class="mb-2" >categorías:</p><br>
-            
-                <div *ngFor="let cat of categorias.controls; let i=index">
-            
-                  <label>
-                      {{user.categorias[i].name}}
-                    <input type="form-check-input" type="checkbox" [formControl]="cat" >
-                  </label>
-                </div>
-              </div> -->
-
-
-                <!-- <label class="col-md-4 checkbox-inline mb-3"> audio—<br>visual -->
-
-                <!-- <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-1" value="diggrafico" formControlName="diggrafico">
-                  dig—<br>gráfico
-                </label>
-
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-2" value="digweb" formControlName="digweb">
-                  dig—<br>web
-                </label> 
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-3" value="fotografia" formControlName="fotografia">
-                  foto—<br>grafía
-                </label>
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-4">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-4" value="instalacion" formControlName="instalacion">
-                  instala—<br>ción
-                </label>
-  
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-5">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-5" value="ilustracion" formControlName="ilustracion">
-                  ilus—<br>tración
-                </label>
-
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-6">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-6" value="musica" formControlName="musica">
-                  musi—<br>ca
-                </label> 
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-7">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-7" value="tattoo" formControlName="tattoo">
-                  tattoo
-                </label>
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-8">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-8" value="tipografia" formControlName="tipografia">
-                  tipo—<br>grafía
-                </label>
-  
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-9">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-9" value="escultura" formControlName="escultura">
-                  3D—<br>escultura
-                </label>
-  
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-10">
-                  <input class="mb-2" type="checkbox" name="categorias[]" id="checkboxes-10" value="otros" formControlName="otros">
-                  o—<br>tros
-                </label>  -->
-                
-
         </div>
+
         <!-- info2 -->
       <div class="col-md-4  mt-5">
           <h3 class="mb-3 titania">2➫Autor</h3>
@@ -215,7 +159,8 @@
     </div>
 
     <!-- BOTON -->
-    <button (click)="updatePieza()" class="form-group col-sm-2" type="submit" [disabled]="!formRegistro.invalid"> Resgistrar </button> 
+    <button class="form-group col-md-2 col-sm-3 fluid-text text-center" type="submit" [disabled]="!formRegistro.invalid"> Registrar </button> 
   </form>
   </div>
+
   <!-- [ngClass]="{ 'button-disabled': formRegistro.invalid } " [disabled]="formRegistro.invalid" -->

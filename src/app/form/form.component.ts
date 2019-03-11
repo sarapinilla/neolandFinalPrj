@@ -28,7 +28,6 @@ user = {
   ]
 };
 
-arrCategorias: any[]
 
   constructor(private fb: FormBuilder) {
     this.formRegistro = this.fb.group({
@@ -54,6 +53,9 @@ arrCategorias: any[]
       picpieza: new FormControl('', [
         //Investigar
       ]),
+      URLpieza: new FormControl('', [
+        //Terminar
+      ]),
       //aqui CATEGORIAS
       categorias: new FormArray([
         new FormControl(false),
@@ -69,41 +71,7 @@ arrCategorias: any[]
         new FormControl(false)
       ]),
 
-      // categorias: new FormControl('', [
-      //   Validators.requiredTrue,
-      //   this.categoriasValidator
-      // ]),
-      // diggrafico: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // digweb: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // fotografia: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // instalacion: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // ilustracion: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // musica: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // tattoo: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // tipografia: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // escultura: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-      // otros: new FormControl('', [
-      //   Validators.requiredTrue,
-      // ]),
-//FORM AUTOR
+    //FORM AUTOR
       nombreautor: new FormControl('', [
         Validators.required,
         Validators.maxLength(50)
@@ -146,29 +114,21 @@ arrCategorias: any[]
   }
   //Reset valores cuando se envía el formulario:
   manejarFormulario(){
-    console.log(this.formRegistro.value)
+    const formRegistroValue = Object.assign({}, this.formRegistro.value, {
+      categorias: this.formRegistro.value.categorias.map((selected, i) => {
+        console.warn(this.formRegistro.value)
+        return {
+          id: this.user.categorias[i].id,
+          selected
+       }
+       
+      })
+    });
+    console.log(formRegistroValue)
+    
     // this.formRegistro.reset() -->ACTIVARLO AL FINAL!
   }
-  //Boton:
-  updatePieza(){
-    // TODO: Use EventEmitter with form value
-    this.formRegistro.setValue({
-      titulopieza: "",
-      infopieza: "",
-      piccover: "",
-      picpieza: "",
-      categorias: [ '', '', '', '', '', '', '', '', '', '', '' ],
-      nombreautor: "",
-      email: "@gmail.com",
-      infoautor: "",
-      picautor: "",
-      ig: "",
-      be: "",
-      web: "" 
-     });
-
-  }
-
+  
   //Metodos array CATEGORIAS:
   get categorias() {
     return this.formRegistro.get('categorias');
@@ -179,19 +139,18 @@ arrCategorias: any[]
     });
     return this.fb.array(arr);
   }
-//?duda Mario
-  submit(formRegistro) {
-    const formRegistroValue = Object.assign({}, formRegistro.value, {
-      categorias: formRegistro.categorias.map((selected, i) => {
-        console.warn(this.formRegistro.value)
-        return {
-          id: this.user.categorias[i].id,
-          selected
-       }
-       
-      })
-    });
-  }
 
+//Validador FILE image:
+
+  // validarImagen(group){
+  //   if(this.URLimage) {
+  //     return null
+  //   }else{
+  //     return { imagen: 'Upss, el archivo de la pieza no se ha subido'}
+  //   }
+  // }
+
+  // *en el formcontrol--> this.validarImagen.bind(this)
+  //bind() es un metodo que te recuerda a nivel interno de tus validaciones que es el this conioo
 
 }
