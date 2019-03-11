@@ -30,7 +30,12 @@ export class FichaComponent implements OnInit {
    }
 
   ngOnInit() { 
-    // document.getElementById('a').style.backgroundImage = `url(${this.autor.imgautor})`
+    
+  }
+
+  //Al click cambia al cover de la pieza y su información, en la ventana obra
+  changePieza(pieza){
+    let clickedElement = pieza
   }
 
 }

@@ -69,7 +69,7 @@ div .piezas{
     border-radius: 10px;
 }
 
-div .piezas a{
+div .piezas button{
     text-decoration: none;
     color: black;
     width: 20%;
@@ -78,7 +78,7 @@ div .piezas a{
     margin: 2px 5px;
 }
 
-div .piezas a:hover{
+div .piezas button:hover{
     color: #0000ff;
 }
 
@@ -100,10 +100,11 @@ div .ventana{
     width: 400px;
     height: 400px;
     float: left;
-    margin: 10px;
+    margin: 15px;
     border: 1px solid black;
     border-radius: 10px;
     background-color: white;
+    /* cursor: move; */
 }
 
 /* POSICION RELATIVE PROVISIONAL */
@@ -118,17 +119,17 @@ div .ventana{
 }
 
 
-div #a{
-    /* background-image: url(""); */
+/* div #a{
+    background-image: url("");
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 div #no{
-    /* background-image: url(""); */
+    background-image: url("");
     background-size: cover;
     background-repeat: no-repeat;
-}
+} */
 
 div .header{
     width: 100%;
@@ -139,10 +140,24 @@ div .header{
     background-color: white;
 }
 
-div .content{
+div .ventana .content{
     width: 100%;
     height: 92%;
-    padding: 20px;
+    overflow: auto;
+}
+
+div .ventana .content::-webkit-scrollbar {
+    width: 0em;
+}
+
+div .ventana .content p{
+    padding: 10px;
+}
+
+div .ventana .content img{
+    width: 100%;
+    height: 0 auto;
+    
 }
 
 

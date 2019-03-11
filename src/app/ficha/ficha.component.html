@@ -1,8 +1,8 @@
 <div class="container-fluid">
 
   <!-- Inicio Sidebar Archivo -->
-  <div class="menu sidebar col-lg-3" *ngFor="let a of autor">
-    <!-- añadir collapse sidebar -->
+  <div class="menu col-lg-3" *ngFor="let a of autor">
+    <!-- añadir responsive collapse -->
     <div class="menu-artista">
       <div class="title">
         <p>artista</p> 
@@ -32,11 +32,13 @@
       <div class="title">
         <p>obras</p>
       </div>
-      <div class="piezas row" *ngFor="let p of autor.piezas">
-        <a href="#"> <!-- según se pinche en cada carpeta, la cover y la descripcion de la obra/No.X va cambiando -->
+
+      <!-- según se pinche en cada carpeta, la cover y la descripcion de la obra/No.X va cambiando -->
+      <div class="piezas row"> 
+        <button *ngFor="let p of a.piezas" (click)="changePieza(p.id)"> 
           <img src="../../assets/images/recurso-carpeta.svg" alt="folder">
-          <p>{{p.titulo}}</p> 
-        </a>
+          <p>{{p.titulo}}</p>
+        </button>
       </div>
       
     </div>
@@ -44,23 +46,23 @@
   <!-- Fin Sidebar Archivo -->
   <!-- Inicio Ventanas Info Artista/Obra -->
   <div *ngFor="let a of autor">
-      <div class="ventana" id="a">
+      <div class="ventana" id="a" cdkDrag>
         <div class="header">
           <p>artista/info</p>
         </div>
         <div class="content">
-            <p>{{a.infoautor}}</p> 
             <img [src]="a.imgautor" alt=""> 
+            <p>{{a.infoautor}}</p> 
         </div>
       </div>
   
-      <div class="ventana" id="no" *ngFor="let p of autor.piezas">
+      <div class="ventana" id="no" cdkDrag>
           <div class="header">
-              <p>obra/{{p.titulo}}</p> 
+              <p>obra/</p> <!-- Cambiar el titulo según se haga click en los folders -->
           </div>
-          <div class="content">
-              <p>{{p.descripcion}}</p> 
+          <div class="content" *ngFor="let p of a.piezas"> <!-- Cambiar el content según se haga click en los folders -->
               <img [src]="p.coverpieza" alt="">
+              <p>{{p.descripcion}}</p> 
           </div>
       </div>
     </div>
