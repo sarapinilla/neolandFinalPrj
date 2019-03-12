@@ -9,6 +9,17 @@
     font-size: 1.1em;
     color: black;
 }
+
+/* QUITAR EL FOCUS por defecto (HIGHLIGTHER BORDER) */
+*:focus {
+    outline: none;
+}
+
+input[type=text]:focus, textarea:focus, input[type=mail]:focus, input[type=url]:focus {
+    box-shadow: 0 0 5px black;
+    border: 1px solid black;
+  }
+
 /* class TITANIA */
 .titania{
     font-family: Titania;
@@ -31,13 +42,14 @@
 /* Botones COVER | PIEZA */
     /* haz click en los btn...jpg */
 .info2{
-    font-size: 0.5em;
+    font-size: 0.4em;
     font-style: oblique;
     line-height: 1em;
 }
 /* Botones COVER | PIEZA */
 .custom-boton{
     font-size: 0.9em;
+    color: gray;
     border: 1px solid black;
     box-shadow: none;
     transition: 0.5s;
@@ -50,6 +62,33 @@ input, textarea{
     border: 1px solid black;
     width: 100%;
 }
+/* TEXTAREA */
+#textarea1{
+    font-size: 0.6em;
+}
+#textarea2{
+    font-size: 0.6em;
+}
+/* INPUTS */
+input{
+    font-size: 0.6em;
+}
+
+/* select archivo */
+.insertfile{
+    font-size: 0.5em;
+}
+/* previsualiacion archivo img */
+.previsualizacionfile{
+width: 50%;
+height: auto;
+}
+
+/* CATEGORIAS */
+.categoriaslabel{
+font-size: 0.5em;
+}
+
 /* input.insterfile{
     width: 100%;
     border: 1px solid rgb(201, 117, 117);
@@ -58,22 +97,26 @@ input, textarea{
     color:white;
 } */
 
-/* input.ng-valid.ng-touched{
-    color:blue;
+    /* input contenido valido */
+input.ng-valid.ng-touched{
+    color:darkgreen;
     border: 1px solid black;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
+    /* input contenido invalido */
 input.ng-invalid.ng-touched{
-    color:lightgrey;
-    border: 1px solid tomato;
-} */
-
-#exampleFormControlTextarea {
-    color:black;
+    color:tomato;
+    border: 1px solid black;;
 }
+
+textarea .ng-touched .ng-pristine .ng-dirty .ng-valid{
+    color:none;
+}
+
 small{
-    color: tomato;
-    font-size: 8px;
+    color: blue;
+    font-size: 0.4em;
+    font-weight: 400;
 }
 .custom-file, .custom-file-input{
     font-size: 0.5em;
@@ -99,18 +142,20 @@ button:hover{
 .checkbox-inline{
     text-align: left;
     font-size: 0.6em;
+}
 
-}
-[_ngcontent-c2]{
-    
-}
+
+/* RRSS */
 #basic-addon3{
     font-size: 0.3em;
     color: black;
     background-color: rgba(255, 255, 255, 0);
     border: 1px solid black;
-    
 }
+#basic-url{
+    font-size: 0.6em;
+}
+
 .container{
     margin: 0px;
     border: 0px;

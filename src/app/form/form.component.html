@@ -1,182 +1,151 @@
+<!-- {{formRegistro.valid}} -->
 <h2 class="header ml-4 pb-2 mt-4 mb-5 text-left">
   Registra tu <span class="titania">pieza</span>! 
 </h2>
-<!-- <form novalidate
-[formGroup]="formRegistro"
-(ngSubmit)="manejarFormulario()">
-<div> 
-  <label> 🙋🏽‍♀️🙋🏽‍♂️* </label><br>
-  <input type="text" formControlName="nombre"><br>
-  <small *ngIf="formRegistro.controls.nombre.errors?.required && formRegistro.controls.nombre.dirty"> ⚠️ El campo nombre es obligatorio
-  </small>
-  <small *ngIf="formRegistro.controls.nombre.errors?.maxlength && formRegistro.controls.nombre.dirty"> ⚠️ El campo nombre tiene un tamaño máx. de {{formRegistro.controls.nombre.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombre.errors.maxlength.actualLength}} 😚
-  </small>
-</div> 
-<div> 
-  <label> 💌 *</label><br>
-  <input type="mail" formControlName="email"><br>
-  <small *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.dirty"> ⚠️ El campo email es obligatorio
-    </small>
-    <small *ngIf="formRegistro.controls.email.errors?.pattern && formRegistro.controls.email.dirty"> El email debe estar escrito correctamente😚
-      </small>
-</div>
-<div> 
-    <label> 🤫*</label><br>
-    <input type="password" formControlName="clave"><br>
-    <small *ngIf="formRegistro.controls.clave.errors?.required && formRegistro.controls.clave.dirty"> ⚠️ La contraseña es obligatoria
-      </small>
-      <small *ngIf="formRegistro.controls.clave.errors?.pattern && formRegistro.controls.clave.dirty"> La contraseña debe tener: aA1?😚
-        </small>
-  </div>
-<div> 
-  <label> 📱 </label><br>
-  <input type="tel" formControlName="telefono"><br>
-</div>
-<div> 
-  <label>🎂</label><br>
-  <input type="text" formControlName="birth"><br>
-  <small *ngIf="formRegistro.controls.birth.errors?.birth && formRegistro.controls.birth.dirty"> 
-    {{formRegistro.controls.birth.errors.birth}}
-    </small>
-</div>
-<div> 
-  <label>💬</label><br>
-  <input type="text" formControlName="dni"><br>
-</div>
-  <button type="submit" [ngClass]="{ 'button-disabled': formRegistro.invalid } " [disabled]="formRegistro.invalid"> 💾SAVE💾 </button>
-</form> -->
-
-<!-- {{formRegistro.valid}} -->
+<!-- 🥩🥩 -->
+<!-- <small>Form Value: {{ formRegistro.value | json }}</small>
+<small>Form Status: {{ formRegistro.status }}</small> -->
+<!-- Observables subida file: -->
+<p> {{uploadPercent | async}}</p>
 
 <div class="container">
-  <form>
+  <form novalidate
+  [formGroup]="formRegistro"
+  (ngSubmit)="manejarFormulario()">
+
     <div class="form row">
       
       <!-- info1 -->
       <div class="col-md-4 mb-5">
         <h3 class="mb-3 titania">1➫Pieza</h3>
         <p class="info mb-5">
-          <span class="titania">a.</span>  Rellena los campos con los datos de la pieza que quieras exponer en nuestra galería virtual.<br>
-          <span class="titania">b.</span>  Al recibir tu petición, <br>la validaremos y en un período máximo de 5 días recibirás una respuesta! <br>
-          <span class="titania">c.</span> Elige las fotos para mostrar tu pieza, tanto  para la cover, como el archivo de la pieza en si misma.
+          Qué bien! Así que quieres unirte a nuestra familia?!! Estamos emocionados 🥳 <br> Empecemos con tu obra <span class="titania">(pieza) :</span><br>
+          <br>
+          <span class="titania">a.</span><br> TITULO: dinos su nombre <br>INFO: hablános un poco de ella.<br>COVER: elige la foto de portada<br>PIEZA: súbela a nuestra plataforma.<br>CATEGORIAS: selecciona todas las que encajen con ella! <br>
+          <br>
+          <span class="titania">b.</span><br>Al recibir tu petición, <br>la validaremos y en un período máximo de 5 días recibirás una respuesta! <br>
         </p>
       </div>
-      <!-- form1 -->
+      <!-- 1-FORM PIEZA -->
         <div class="col-md-5 mb-5"> 
+          <!--título-->
           <div class="form-group ">
             <label>título</label><br>
-            <input class="mb-4" type="text" name="nombre">
+            <!-- validaciones -->
+            <small *ngIf="formRegistro.controls.titulopieza.errors?.required && formRegistro.controls.titulopieza.dirty"> ⚠️ Oh vaya,campo obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.titulopieza.errors?.maxlength && formRegistro.controls.titulopieza.dirty"> ⚠️ Upss,titulo tiene una extensión máx. de {{formRegistro.controls.titulopieza.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.titulopieza.errors.maxlength.actualLength}}
+            </small>
+            <input class="mb-4" type="text" formControlName="titulopieza">
           </div>
+          
+          <!--textarea INFO-->
           <div class="form-group ">
-            <label>info</label>
-            <textarea class="form-control mb-4" type="textarea" id="exampleFormControlTextarea1" rows="4"></textarea>
+            <label>info</label><br>
+            <!-- validaciones -->
+            <small *ngIf="formRegistro.controls.infopieza.errors?.required && formRegistro.controls.infopieza.dirty"> ⚠️ Oh vaya,campo obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.infopieza.errors?.maxlength && formRegistro.controls.infopieza.dirty"> ⚠️ Upss,info tiene una extensión máx. de {{formRegistro.controls.infopieza.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infopieza.errors.maxlength.actualLength}}
+            </small>
+            <textarea class="form-control mb-4" type="text" formControlName="infopieza" id="textarea1" rows="4"></textarea>
           </div>
-          <p class="info2">Haz clik en los botones para elegir tus imágenes extensión<span class="titania"> .jpg</span> :</p><br>
-          <!-- Botones COVER | PIEZA -->
+
+          <!-- COVER | PIEZA -->
+            <!-- COVER -->
           <div class="form row mb-4">
-            <label class="btn custom-boton">
-              cover <input type="file" hidden>
+            <label class="mb-4">cover
+              <p class="info2 mt-2">Imagen de portada de tu pieza:
+                Elige tus archivos extensión
+                <span class="titania"> .jpg/.gif/.png</span> :
+              </p><br>
+              <!-- Para visualizar la imagen subida: -->
+              <img class="previsualizacionfile mb-2" [src]="coverUrlImagen" *ngIf="coverUrlImagen">
+              <input class="btn custom-boton insertfile" type="file" name="coverpic" (change)="onChangeImage($event)" formControlName="coverpic"> 
             </label>
-            <label class="btn ml-2 custom-boton">
-              pieza <input type="file" hidden>
+             <!-- PIEZA -->
+            <label class="mb-4"> pieza
+
+              <p class="info2 mt-2">
+                Url de tu pieza (en caso de video o audio) o archivo
+                <span class="titania"> .jpg/.gif/.png</span> :
+              </p><br>
+
+              <input class="mb-2" formControlName="URLpieza" type="url" placeholder="http://www.example.com">
+
+              <!-- Para visualizar la imagen subida: -->
+              <img class="previsualizacionfile mb-2" [src]="piezaUrlImagen" *ngIf="piezaUrlImagen">
+              <input class="btn custom-boton insertfile" type="file" name="piezapic" (change)="onChangeImage($event)" formControlName="piezapic"> 
             </label>
           </div>
 
           <!-- multiple select CATEGORIAS -->
-          <label class="mb-4" >categorías: </label><br>
-          <div class="form-group row">
-              <div class="row">
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                  audio—<br>visual
-                </label>
-
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                  dig—<br>gráfico
-                </label>
-
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                  dig—<br>web
-                </label> 
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                  <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                  foto—<br>grafía
-                </label>
-                <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                    instala—<br>ción
-                  </label>
-  
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                    ilus—<br>tración
-                  </label>
-  
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                    musi—<br>ca
-                  </label> 
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                    <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                    tattoo
-                  </label>
-                  <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                      tipo—<br>grafía
-                    </label>
-    
-                    <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                      3D—<br>escultura
-                    </label>
-    
-                    <label class="col-md-4 checkbox-inline mb-3" for="checkboxes-0">
-                      <input class="mb-2" type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-                      o—<br>tros
-                    </label> 
-              </div>    
+          <p class="mb-2" >categorías:</p><br>
+          <div class="form-group row">   
+            <div class="col-md-6 row" *ngFor= "let cat of categorias.controls; let i=index">
+              <input class="form-check-input" type="checkbox" 
+              [formControl]="cat"/> 
+              <label class="col-md-6 ml-2 mb-3 categoriaslabel"> {{user.categorias[i].name}}</label>
+            </div> 
           </div>
-
         </div>
+
         <!-- info2 -->
       <div class="col-md-4  mt-5">
           <h3 class="mb-3 titania">2➫Autor</h3>
           <p class="info mb-5">
-              <span class="titania">a.</span> 
-              Rellena los campos con tu nombre de autor,<br>
-              un poco de info sobre ti,<br>
-              y tu foto de perfil.<br>
+              <span class="titania">a.</span> <br>
+              Ahora el protagonista eres tú,rellena los campos con tu nombre artístico,
+              tu email, un poco de info sobre ti, y tu foto de perfil.<br> Todos estos campos son obligatorios. <br>
+              <span class="titania">b.</span> <br> Estos campos no son obligatorios, pero sí muy importantes, no olvides añadir tus redes!!
             </p>
       </div>
-        <!-- form2 -->
+        <!-- 2-form -->
       <div class="col-md-5 mt-5"> 
         <!-- NOMBRE -->
         <div class="form-group">
           <label>nombre</label><br>
-          <input class="mb-4" type="text" name="nombre">
+          <!-- validaciones -->
+          <small *ngIf="formRegistro.controls.nombreautor.errors?.required && formRegistro.controls.nombreautor.dirty"> ⚠️ El campo nombre es obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.nombreautor.errors?.maxlength && formRegistro.controls.nombreautor.dirty"> ⚠️ El campo nombre tiene una extensión máx. de {{formRegistro.controls.nombreautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombreautor.errors.maxlength.actualLength}}
+            </small>
+          <input class="mb-4" type="text" formControlName="nombreautor">
         </div>
+        <!-- MAIL -->
+        <div class="form-group">
+        <label>mail</label><br>
+
+        <input class="mb-4" type="mail" formControlName="email"><br>
+        </div>
+        
         <!-- INFO -->
         <div class="form-group ">
           <label>info</label><br>
-          <textarea class="form-control mb-4" type="textarea" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <!-- validaciones -->
+          <small *ngIf="formRegistro.controls.infoautor.errors?.required && formRegistro.controls.infoautor.dirty"> ⚠️ Oh vaya,campo obligatorio
+            </small>
+            <small *ngIf="formRegistro.controls.infoautor.errors?.maxlength && formRegistro.controls.infoautor.dirty"> ⚠️Upss, campo info tiene una extensión máx. de {{formRegistro.controls.infoautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infoautor.errors.maxlength.actualLength}}
+            </small>
+          <textarea class="form-control mb-4" type="textarea" formControlName="infoautor" id="textarea2" rows="3"></textarea>
         </div>
-        <!-- Botones FOTO -->
+        <!-- FOTO PERFIL -->
         <div class="form row mb-4">
-            <label class="btn custom-boton">
-              foto perfil <input type="file" hidden>
-            </label>
+          <label>foto perfil <br>
+            <!-- Para visualizar la imagen subida: -->
+            <img class="previsualizacionfile mb-2 mt-2" [src]="autorUrlImagen" *ngIf="autorUrlImagen">
+            <input class="btn custom-boton insertfile mt-2" type="file" name="autorpic" (change)="onChangeImage($event)" formControlName="autorpic">
+          </label>
         </div>
         <!-- RRSS -->
         <div class="form-group ">
-            <label>rrss</label><br>
+          <label>rrss</label><br>
+
           <div class="input-group mb-2">
               <div class="input-group-prepend row">
                 <span class="input-group-text" id="basic-addon3">
                 https://www.instagram.com/</span>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlname="ig" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
 
           <div class="input-group mb-2">
@@ -184,7 +153,7 @@
                 <span class="input-group-text" id="basic-addon3">
                     https://www.behance.net/</span>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlName="be" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
 
           <div class="input-group mb-2">
@@ -192,17 +161,13 @@
                 <span class="input-group-text" id="basic-addon3">
                 https://www.</span>
               </div>
-              <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlName="web" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
         </div>
-
       </div> 
-
-    <!-- <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-    <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email"> -->  
     </div>
+
     <!-- BOTON -->
-    <button  class="form-group col-sm-2" type="submit"> Resgistrar </button> 
+    <button class="form-group col-md-2 col-sm-3 fluid-text text-center" type="submit" [disabled]="formRegistro.invalid"> Registrar </button> 
   </form>
   </div>

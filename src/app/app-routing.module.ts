@@ -27,9 +27,10 @@ const routes: Routes = [
   { path: 'registro', component: FormComponent},
   { path: 'contact', component: ContactComponent},
   //Users only:
-  { path: 'admin', component: LoginComponent},
-  { path: 'admin/registros', component: AdminComponent},
-
+  { path: 'admin', component: LoginComponent, children:[ //añadir GUARD canActivatedChield
+    { path: 'admin/registros', component: AdminComponent} 
+  ]},
+  
   { path: '**', component: MainComponent }
 ];
 
