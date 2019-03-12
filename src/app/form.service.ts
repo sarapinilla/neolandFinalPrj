@@ -7,39 +7,28 @@ import { HttpClient } from '@angular/common/http';
 export class FormService {
 
   url: string
-  
 
   constructor(private httpClient: HttpClient) {
     this.url = 'http://localhost:3000/api'
    }
    
-//formPIEZAS
-   postFormPiezas(values){
-    return this.httpClient.post(`${this.url}/piezas/create`, {
+//formRegistro OK
+   postFormRegistro(values){
+    return this.httpClient.post(`${this.url}/formregistro/create`, {
       'titulo': values.titulopieza,
-      //'year': values.year,
-      //'registro': values.registro,
-      'pieza': [values.piezapic, values.URLpieza], //dudaMario[]
+      'pieza': values.piezapic || values.URLpieza,
       'coverpieza': values.coverpic,
-      'descripcion': values.infopieza
+      'descripcion': values.infopieza,
+      'nombre': values.nombreautor,
+      'infoautor': values.infoautor,
+      'email': values.email,
+      'imgautor': values.autorpic,
+      'ig': values.ig,
+      'be': values.be,
+      'web': values.web,
+      'categorias': values.categorias
       })
   }
-//formAUTOR
-postFormAutores(values){
-  return this.httpClient.post(`${this.url}/autores/create`, {
-    'nombre': values.nombreautor,
-    'infoautor': values.infoautor,
-    'email': values.email,
-    'imgautor': values.autorpic,
-    'ig': values.ig,
-    'be': values.be,
-    'web': values.web
-    })
-}
-//formCATEGORIAS
-postFormCat(values){
-  //arrayCategoriasboolean-->tbipiezascat //dudaMario
-}
 
 
 

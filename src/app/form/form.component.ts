@@ -19,17 +19,17 @@ formRegistro: FormGroup
 //ARRAY CATEGORIAS:
 user = {
   categorias: [
-  { name: 'audio—visual', selected: false, id:'audiovisuales' },
-  { name: `dig—gráfico`, selected: false, id:'diggrafico' },
-  { name: 'dig—web', selected: false, id:'digweb' },
-  { name: 'foto—grafía', selected: false, id:'fotografia' },
-  { name: 'insta—lación', selected: false, id:'instalacion' },
-  { name: 'ilus—tración',selected: false,  id:'ilustracion' },
-  { name: 'música',selected: false,  id:'musica' },
-  { name: 'tattoo',selected: false, id:'tattoo' },
-  { name: 'tipo—grafía',selected: false, id:'tipografia' },
-  { name: '3D—Escultura',selected: false, id:'3descultura' },
-  { name: 'otros',selected: false, id:'otros' }
+  { name: 'audio—visual', selected: false, id:'1' },
+  { name: `dig—gráfico`, selected: false, id:'2' },
+  { name: 'dig—web', selected: false, id:'3' },
+  { name: 'foto—grafía', selected: false, id:'4' },
+  { name: 'ilus—tración',selected: false,  id:'5' },
+  { name: 'insta—lación', selected: false, id:'6' },
+  { name: 'música',selected: false,  id:'7' },
+  { name: 'tattoo',selected: false, id:'8' },
+  { name: 'tipo—grafía',selected: false, id:'9' },
+  { name: '3D—Escultura',selected: false, id:'10' },
+  { name: 'otros',selected: false, id:'11' }
   ]
 };
 //INSERT type FILE
@@ -119,33 +119,37 @@ customUrlUser:any
   manejarFormulario(){
     const formRegistroValue = Object.assign({}, this.formRegistro.value, {
       categorias: this.formRegistro.value.categorias.map((selected, i) => {
-        console.warn(this.formRegistro.value)
         return {
           id: this.user.categorias[i].id,
           selected
        }
-       
       })
+      
     });
-    console.log(formRegistroValue)
+
+    //Método para FILTRAR CATEGORIAS seleccionadas(true):
+    formRegistroValue.categorias = formRegistroValue.categorias.filter(item => item.selected == true).map(item => item.id)
 
     formRegistroValue.coverpic = this.coverUrlImagen
     formRegistroValue.piezapic = this.piezaUrlImagen
     formRegistroValue.autorpic = this.autorUrlImagen
+
     //Valor del input de RRSS:
     formRegistroValue.ig = ` https://www.instagram.com/${formRegistroValue.ig}`
     formRegistroValue.be = `https://www.behance.net/${formRegistroValue.be}`
     formRegistroValue.web = `https://www.${formRegistroValue.web}`
     
+    //FormService
+    this.formService.postFormRegistro(formRegistroValue).subscribe((res) => {
+      console.log(res)
+    })
+
     console.log(formRegistroValue)
-    
-  // this.formRegistro.reset() --> ACTIVARLO AL FINAL!
-  //FormService
-  this.formService.postFormAutores(this.formRegistro.value).subscribe((res) => {
-    
-  })
-  console.log(this.formRegistro.value)
+
+    //Reseteo al enviar formRegistro
+    this.formRegistro.reset()
   }
+  //Fin del boton submit
   
   //Metodos array CATEGORIAS:
   get categorias() {
