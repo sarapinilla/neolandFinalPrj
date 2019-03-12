@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
   <!-- Inicio Sidebar Archivo -->
-  <div class="menu col-lg-3" *ngFor="let a of autor">
+  <div class="menu col-lg-3 col-md-6 col-sm-12" *ngFor="let a of autor">
     <!-- añadir responsive collapse -->
     <div class="menu-artista">
       <div class="title">
@@ -13,17 +13,19 @@
       <div class="social" *ngIf="a.be">
         <a [href]="a.be">
           <p>
-            <i class="fab fa-behance-square"></i>
+            behance
+            <!-- <i class="fab fa-behance-square"></i> -->
           </p>
         </a>
         <a [href]="a.ig" *ngIf="a.ig">
           <p>
-            <i class="fab fa-instagram"></i>
+            instagram
+            <!-- <i class="fab fa-instagram"></i> -->
           </p>
         </a>
         <a [href]="a.web" *ngIf="a.web">
           <p>
-            web icon
+            website
           </p>
         </a>
       </div>
@@ -35,7 +37,7 @@
 
       <!-- según se pinche en cada carpeta, la cover y la descripcion de la obra/No.X va cambiando -->
       <div class="piezas row"> 
-        <button *ngFor="let p of a.piezas" (click)="changePieza(p.id)"> 
+        <button *ngFor="let p of a.piezas" (click)="showCover(p)"> 
           <img src="../../assets/images/recurso-carpeta.svg" alt="folder">
           <p>{{p.titulo}}</p>
         </button>
@@ -45,7 +47,7 @@
   </div>
   <!-- Fin Sidebar Archivo -->
   <!-- Inicio Ventanas Info Artista/Obra -->
-  <div *ngFor="let a of autor">
+  <div class="col-lg-9" *ngFor="let a of autor">
       <div class="ventana" id="a" cdkDrag>
         <div class="header">
           <p>artista/info</p>
@@ -56,16 +58,20 @@
         </div>
       </div>
   
-      <div class="ventana" id="no" cdkDrag>
+      <div class="ventana" id="no" cdkDrag *ngIf="piezaSelected">
           <div class="header">
-              <p>obra/</p> <!-- Cambiar el titulo según se haga click en los folders -->
+              <p>obra/{{piezaSelected.titulo}}</p>
           </div>
-          <div class="content" *ngFor="let p of a.piezas"> <!-- Cambiar el content según se haga click en los folders -->
-              <img [src]="p.coverpieza" alt="">
-              <p>{{p.descripcion}}</p> 
+          <div class="content">
+              <img [src]="piezaSelected.coverpieza" alt="">
+              <p>{{piezaSelected.descripcion}}</p>
           </div>
       </div>
-    </div>
+  </div>
     <!-- Fin Ventanas Info Artista/Obra -->
 
 </div>
+
+<!-- <div class="row lista" *ngFor="let autor of allAutores">
+  <p>{{autor.nombre}}</p>
+</div> -->

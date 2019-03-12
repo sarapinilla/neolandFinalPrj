@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { AutoresService } from '../autores.service';
+import { Autor } from '../models/autor.model';
 
 @Component({
   selector: 'ficha',
@@ -9,10 +10,10 @@ import { AutoresService } from '../autores.service';
 })
 export class FichaComponent implements OnInit {
 
+  allAutores: any
   autor: any
   autorId: any
-  autorImg: string
-  piezaImg: string[]
+  piezaSelected: any
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -24,8 +25,12 @@ export class FichaComponent implements OnInit {
     
     this.autoresService.getAutoresById(this.autorId).subscribe(res =>{
         this.autor = res
-        console.log(this.autor)   
+        console.log(this.autor)
     })   
+
+    this.autoresService.getAllAutores().subscribe(res =>{
+        this.allAutores = res
+    })
 
    }
 
@@ -34,8 +39,10 @@ export class FichaComponent implements OnInit {
   }
 
   //Al click cambia al cover de la pieza y su información, en la ventana obra
-  changePieza(pieza){
-    let clickedElement = pieza
+  showCover(pieza){
+    this.piezaSelected = pieza
   }
+
+
 
 }

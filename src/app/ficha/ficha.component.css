@@ -5,6 +5,25 @@
     border: 0px;
 }
 
+*:focus{
+    outline: none;
+}
+
+a{
+    color: black;
+    font-family: Titania;
+    font-weight: 400;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition:0.4s;
+  }
+  
+a:hover {
+    color:black;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
 .container-fluid{
     margin: 100px 0;
 }
@@ -157,8 +176,9 @@ div .ventana .content p{
 div .ventana .content img{
     width: 100%;
     height: 0 auto;
-    
 }
 
 
 /* FIN VENTANAS INFORMACIÓN ARTISTA/OBRA */
+
+/* INICIO  */

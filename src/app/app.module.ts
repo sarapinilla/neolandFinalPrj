@@ -18,7 +18,6 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
