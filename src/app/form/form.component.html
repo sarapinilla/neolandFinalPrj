@@ -2,11 +2,10 @@
 <h2 class="header ml-4 pb-2 mt-4 mb-5 text-left">
   Registra tu <span class="titania">pieza</span>! 
 </h2>
-<p>Form Value: {{ formRegistro.value | json }}</p>
-<p>Form Status: {{ formRegistro.status }}</p>
+<small>Form Value: {{ formRegistro.value | json }}</small>
+<small>Form Status: {{ formRegistro.status }}</small>
 <!-- Observables subida file: -->
-<!-- <p> {{uploadPercent | async}}</p>
-<p> {{downloadURL | async}}</p> -->
+<p> {{uploadPercent | async}}</p>
 
 <div class="container">
   <form novalidate
@@ -19,9 +18,11 @@
       <div class="col-md-4 mb-5">
         <h3 class="mb-3 titania">1➫Pieza</h3>
         <p class="info mb-5">
-          <span class="titania">a.</span>  Rellena los campos con los datos de la pieza que quieras exponer en nuestra galería virtual.<br>
-          <span class="titania">b.</span>  Al recibir tu petición, <br>la validaremos y en un período máximo de 5 días recibirás una respuesta! <br>
-          <span class="titania">c.</span> Elige las fotos para mostrar tu pieza, tanto  para la cover, como el archivo de la pieza en si misma.
+          Qué bien! Así que quieres unirte a nuestra familia?!! Estamos emocionados 🥳 <br> Empecemos con tu obra <span class="titania">(pieza) :</span><br>
+          <br>
+          <span class="titania">a.</span><br> TITULO: dinos su nombre <br>INFO: hablános un poco de ella.<br>COVER: elige la foto de portada<br>PIEZA: súbela a nuestra plataforma.<br>CATEGORIAS: selecciona todas las que encajen con ella! <br>
+          <br>
+          <span class="titania">b.</span><br>Al recibir tu petición, <br>la validaremos y en un período máximo de 5 días recibirás una respuesta! <br>
         </p>
       </div>
       <!-- 1-FORM PIEZA -->
@@ -52,22 +53,27 @@
             <!-- COVER -->
           <div class="form row mb-4">
             <label class="mb-4">cover
-              <p class="info2 mt-2">Imagen de tu pieza:
+              <p class="info2 mt-2">Imagen de portada de tu pieza:
                 Elige tus archivos extensión
                 <span class="titania"> .jpg/.gif/.png</span> :
               </p><br>
-              <!-- añadir evento (change)="onChangeImage($event)"  -->        
-              <input class="btn custom-boton insertfile" type="file" formControlName="piccover"> 
+              <!-- Para visualizar la imagen subida: -->
+              <img class="previsualizacionfile mb-2" [src]="coverUrlImagen" *ngIf="coverUrlImagen">
+              <input class="btn custom-boton insertfile" type="file" name="coverpic" (change)="onChangeImage($event)" formControlName="coverpic"> 
             </label>
-             <!-- PIEZAS -->
-            <!-- Para visualizar la imagen subida: <img [src]="downloadURL | async"> -->
+             <!-- PIEZA -->
             <label class="mb-4"> pieza
+
               <p class="info2 mt-2">
                 Url de tu pieza (en caso de video o audio) o archivo
                 <span class="titania"> .jpg/.gif/.png</span> :
               </p><br>
+
               <input class="mb-2" formControlName="URLpieza" type="url" placeholder="http://www.example.com">
-              <input class="btn custom-boton insertfile" type="file" formControlName="picpieza"> 
+
+              <!-- Para visualizar la imagen subida: -->
+              <img class="previsualizacionfile mb-2" [src]="piezaUrlImagen" *ngIf="piezaUrlImagen">
+              <input class="btn custom-boton insertfile" type="file" name="piezapic" (change)="onChangeImage($event)" formControlName="piezapic"> 
             </label>
           </div>
 
@@ -86,10 +92,10 @@
       <div class="col-md-4  mt-5">
           <h3 class="mb-3 titania">2➫Autor</h3>
           <p class="info mb-5">
-              <span class="titania">a.</span> 
-              Rellena los campos con tu nombre de autor,<br>
-              un poco de info sobre ti,<br>
-              y tu foto de perfil.<br>
+              <span class="titania">a.</span> <br>
+              Ahora el protagonista eres tú,rellena los campos con tu nombre artístico,
+              tu email, un poco de info sobre ti, y tu foto de perfil.<br> Todos estos campos son obligatorios. <br>
+              <span class="titania">b.</span> <br> Estos campos no son obligatorios, pero sí muy importantes, no olvides añadir tus redes!!
             </p>
       </div>
         <!-- 2-form -->
@@ -123,9 +129,11 @@
         </div>
         <!-- FOTO PERFIL -->
         <div class="form row mb-4">
-            <label>foto perfil
-              <input class="btn custom-boton insertfile" type="file" formControlname="picautor">
-            </label>
+          <label>foto perfil <br>
+            <!-- Para visualizar la imagen subida: -->
+            <img class="previsualizacionfile mb-2 mt-2" [src]="autorUrlImagen" *ngIf="autorUrlImagen">
+            <input class="btn custom-boton insertfile mt-2" type="file" name="autorpic" (change)="onChangeImage($event)" formControlName="autorpic">
+          </label>
         </div>
         <!-- RRSS -->
         <div class="form-group ">
@@ -144,7 +152,7 @@
                 <span class="input-group-text" id="basic-addon3">
                     https://www.behance.net/</span>
               </div>
-              <input type="text" formControlname="be" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlName="be" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
 
           <div class="input-group mb-2">
@@ -152,15 +160,13 @@
                 <span class="input-group-text" id="basic-addon3">
                 https://www.</span>
               </div>
-              <input type="text" formControlname="web" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+              <input type="text" formControlName="web" class="form-control" id="basic-url" aria-describedby="basic-addon3">
           </div>
         </div>
       </div> 
     </div>
 
     <!-- BOTON -->
-    <button class="form-group col-md-2 col-sm-3 fluid-text text-center" type="submit" [disabled]="!formRegistro.invalid"> Registrar </button> 
+    <button class="form-group col-md-2 col-sm-3 fluid-text text-center" type="submit" [disabled]="formRegistro.invalid"> Registrar </button> 
   </form>
   </div>
-
-  <!-- [ngClass]="{ 'button-disabled': formRegistro.invalid } " [disabled]="formRegistro.invalid" -->

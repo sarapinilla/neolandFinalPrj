@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators, FormBuilder, FormArray } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators'
+import { AngularFireStorage } from '@angular/fire/storage';
+import { Observable } from 'rxjs';
+import { finalize } from 'rxjs/operators'
+import { FormService } from '../form.service';
 
 @Component({
   selector: 'app-form',
@@ -9,6 +13,7 @@ import { debounceTime } from 'rxjs/operators'
 })
 export class FormComponent implements OnInit {
 
+//FORM:
 formRegistro: FormGroup
 
 //ARRAY CATEGORIAS:
@@ -27,9 +32,21 @@ user = {
   { name: 'otros',selected: false, id:'otros' }
   ]
 };
+//INSERT type FILE
+uploadPercent: Observable<number>;
+downloadURL: Observable<string>;
+urlImagen: string
 
+coverUrlImagen: string
+piezaUrlImagen: string
+autorUrlImagen: string
 
-  constructor(private fb: FormBuilder) {
+customUrlUser:any
+
+  constructor(
+    private fb: FormBuilder,
+    private storage: AngularFireStorage,
+    private formService: FormService) {
     this.formRegistro = this.fb.group({
       categorias: this.buildCategorias()
     });
@@ -47,16 +64,11 @@ user = {
         Validators.required,
         Validators.maxLength(250)
       ]),
-      piccover: new FormControl('', [
-        //Investigar
-      ]),
-      picpieza: new FormControl('', [
-        //Investigar
-      ]),
-      URLpieza: new FormControl('', [
-        //Terminar
-      ]),
-      //aqui CATEGORIAS
+      coverpic: new FormControl(''),
+      piezapic: new FormControl(''),
+      URLpieza: new FormControl(''),
+
+      //CATEGORIAS
       categorias: new FormArray([
         new FormControl(false),
         new FormControl(false),
@@ -84,26 +96,15 @@ user = {
         Validators.required,
         Validators.maxLength(250)
       ]),
-      picautor: new FormControl('', [
-        // Validators.required,
-        
-      ]),
-      ig: new FormControl('', [
-        Validators.required, 
-     
-      ]),
-      be: new FormControl('', [
-        Validators.required,
-       
-      ]),
-      web: new FormControl('', [
-        Validators.required,
-      
-      ]),
+      autorpic: new FormControl(''),
 
-    })
+      ig: new FormControl(''),
+      be: new FormControl(''),
+      web: new FormControl(''),
 
-  
+    }, [
+      this.validarImagen.bind(this)
+    ])
 
     let titulopiezaControl = this.formRegistro.controls.titulopieza
     //valueChanges -> observable , por eso le ponemos .subscribe
@@ -112,7 +113,9 @@ user = {
     })
 
   }
-  //Reset valores cuando se envía el formulario:
+  //-->End OnInit()
+
+  //Método submit Formulario:
   manejarFormulario(){
     const formRegistroValue = Object.assign({}, this.formRegistro.value, {
       categorias: this.formRegistro.value.categorias.map((selected, i) => {
@@ -125,8 +128,23 @@ user = {
       })
     });
     console.log(formRegistroValue)
+
+    formRegistroValue.coverpic = this.coverUrlImagen
+    formRegistroValue.piezapic = this.piezaUrlImagen
+    formRegistroValue.autorpic = this.autorUrlImagen
+    //Valor del input de RRSS:
+    formRegistroValue.ig = ` https://www.instagram.com/${formRegistroValue.ig}`
+    formRegistroValue.be = `https://www.behance.net/${formRegistroValue.be}`
+    formRegistroValue.web = `https://www.${formRegistroValue.web}`
     
-    // this.formRegistro.reset() -->ACTIVARLO AL FINAL!
+    console.log(formRegistroValue)
+    
+  // this.formRegistro.reset() --> ACTIVARLO AL FINAL!
+  //FormService
+  this.formService.postFormAutores(this.formRegistro.value).subscribe((res) => {
+    
+  })
+  console.log(this.formRegistro.value)
   }
   
   //Metodos array CATEGORIAS:
@@ -140,15 +158,54 @@ user = {
     return this.fb.array(arr);
   }
 
+//Método type:file
+onChangeImage($event){
+  let inputName = $event.target.name
+  console.log(inputName)
+  const image = $event.target.files[0] //recupera el fichero del input
+  let r = Math.random().toString(36).substring(7);
+  const filePath = `images/${inputName}/${r}.jpg`; //ruta file
+  const fileRef = this.storage.ref(filePath);
+  const task = this.storage.upload(filePath, image); //tarea de ejecución para subir la imagen al contenedor de firebase
+
+  // observe percentage changes
+  this.uploadPercent = task.percentageChanges();
+  // get notified when the download URL is available (cuando se termina de subir)
+  task.snapshotChanges().pipe(
+    finalize(() => {
+      this.downloadURL = fileRef.getDownloadURL() //url pública para recuperar las imágenes
+      this.downloadURL.subscribe(url => {
+        console.log(url)
+          if(inputName == 'coverpic'){
+            this.coverUrlImagen = url //guarda la url en un string que hemos creado nosotros
+          }else if(inputName == 'piezapic'){
+            this.piezaUrlImagen = url
+          }else if(inputName == 'autorpic'){
+            this.autorUrlImagen = url
+          }else {
+            console.log(url)
+          }
+        })     
+      }) 
+    )
+    .subscribe()
+}
+
 //Validador FILE image:
 
-  // validarImagen(group){
-  //   if(this.URLimage) {
-  //     return null
-  //   }else{
-  //     return { imagen: 'Upss, el archivo de la pieza no se ha subido'}
-  //   }
+  validarImagen(group){
+    if(this.coverUrlImagen,this.piezaUrlImagen,this.autorUrlImagen) {
+      return null
+    }else{
+      return { imagen: 'Upss, el archivo de la pieza no se ha subido'}
+    }
+  }
+
+  // //URLs:
+  // onChangeUrl($event){
+  //   this.customUrlUser= $event.target.value
   // }
+  //$event.target.value
 
   // *en el formcontrol--> this.validarImagen.bind(this)
   //bind() es un metodo que te recuerda a nivel interno de tus validaciones que es el this conioo
