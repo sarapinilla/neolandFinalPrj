@@ -9,6 +9,12 @@
     margin-bottom: 80px;
     
 }
+.container::before{
+    content: "";
+	height: 75px;
+	display:block;
+    clear: both;
+}
 
 .cabecera{
     display: inline-block;
@@ -17,7 +23,7 @@
 h2{
     font-size: 5em;
 }
-
+/* BUSCADOR */
 input{
     font-weight: 500;
     font-style: italic;
@@ -30,6 +36,12 @@ input{
 input:hover{
     border-bottom: 1px solid rgba(0,0,0,0.6);
 }
+/* En input SEARCH QUITAR EL FOCUS por defecto (HIGHLIGTHER BORDER) */
+ .md-form input[type=text]:focus:not([readonly]){
+    -webkit-box-shadow: 0 1px 0 0 black;
+    box-shadow: 0 1px 0 0 black; 
+    border-bottom: 1px solid black; 
+ }
 
 /* INICIO SÍMBOLOS */
 
