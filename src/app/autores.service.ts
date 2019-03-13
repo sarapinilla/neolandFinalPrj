@@ -22,8 +22,4 @@ export class AutoresService {
   getAutoresById(id){
     return this.httpClient.get(`${this.url}/${this.autor.id}`)
   }
-
-  // getAutoresByPieza(pieza){
-  //    return this.httpClient.get(`${this.url}/${this.autor.pieza}`)
-  // }
 }

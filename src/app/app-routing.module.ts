@@ -30,6 +30,7 @@ const routes: Routes = [
   { path: 'admin', component: LoginComponent, children:[ //añadir GUARD canActivatedChield
     { path: 'admin/registros', component: AdminComponent} 
   ]},
+  // { path: 'admin/registros', component: AdminComponent},
   
   { path: '**', component: MainComponent }
 ];

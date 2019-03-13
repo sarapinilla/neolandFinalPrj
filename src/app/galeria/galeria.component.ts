@@ -17,6 +17,7 @@ export class GaleriaComponent implements OnInit {
 
     this.arrPiezas = this.piezasService.getAllPiezas().subscribe(res => {
         this.piezas = res
+        console.log(this.piezas)
     })
   }
   
