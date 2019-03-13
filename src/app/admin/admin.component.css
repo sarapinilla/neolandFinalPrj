@@ -38,6 +38,18 @@ h2{
     background-color: lightgrey;
 }
 
+td{
+    font-size: 0.7em;
+}
+
+.infoautor{
+    width: 1em;
+    
+}
+.url{
+    width:1em;
+    display: inline-block
+}
 /* btn ACTUALIZAR */
 
 button{

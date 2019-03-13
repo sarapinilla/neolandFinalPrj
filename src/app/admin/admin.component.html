@@ -9,8 +9,8 @@
       <!-- <div class="card-header py-3">
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
       </div> -->
-        <div class="table-responsive">
-          <table class="table" id="dataTable" width="100%" cellspacing="0">
+        <div class="table-responsive-md">
+          <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">
 
             <thead>
               <!-- CABECERA 1 -->
@@ -48,8 +48,8 @@
                   <!-- datos pieza -->
                   <th class="titania">Título</th>
                   <th class="titania">Descripcion</th>
-                  <th class="titania">Cover (url)</th>
-                  <th class="titania">Pieza (url)</th>
+                  <th class="titania" >Cover (url)</th>
+                  <th class="titania" >Pieza (url)</th>
                   <th class="titania">Categorías</th>
                   <!-- datos artista -->
                   <th class="titania">Nombre</th>
@@ -69,22 +69,59 @@
             </tfoot>
 
             <tbody>
-              <tr>
+              <tr *ngFor="let pieza of piezas">
                 <!-- datos pieza -->
                 <td> <input type="checkbox" aria-label="Checkbox for following text input"> </td>
-                <td>Ej. titulo</td>
-                <td>Ej. descripcion</td>
-                <td>url</td>
-                <td>url</td>
-                <td>ej. cat</td>
+                <td >{{pieza.titulo}}</td>
+                <td>{{pieza.descripcion}}</td>
+                <td width="10%">{{pieza.coverpieza}}</td>
+                <td width="10%">{{pieza.pieza}}</td>
+                <td>
+                  <ol>
+                    <li *ngFor="let cat of pieza.categorias">
+                    <span style="font-weight: 700;font-size: 0.8em">{{cat.id}}. </span>
+                    <span style="font-size: 0.9em;">{{cat.nombre}}</span>
+                    </li>
+                  </ol>
+              </td>
                 <!-- datos autor -->
-                <td>Ej. nomnbre</td>
-                <td>Ej. info</td>
-                <td>url</td>
-                <td>url</td>
+                <td>
+                  <ol>
+                      <li *ngFor="let autor of pieza.autores">
+                      👽{{autor.nombre}}.
+                      </li>
+                    </ol>
+                </td>
+                <td class="infoautor">
+                  <ol>
+                      <li *ngFor="let autor of pieza.autores">
+                          💬<span style="font-weight: 700;font-size: 0.8em">{{autor.nombre}}:</span> {{autor.infoautor}}.<br>
+                      <br>
+                      </li>
+                  </ol>
+                </td>
+                <td>
+                  <ol>
+                      <li *ngFor="let autor of pieza.autores">
+                      {{autor.imgautor}}<br>
+                      <br>
+                      </li>
+                  </ol>
+                </td>
+                <td>
+                  <ol>
+                      <li *ngFor="let autor of pieza.autores">
+                        <span style="font-weight: 700;font-size: 0.8em">Ig: </span> {{autor.ig}} <br>
+                        <span style="font-weight: 700;font-size: 0.8em">Bē: </span> {{autor.be}} <br>
+                        <span style="font-weight: 700;font-size: 0.8em">www: </span> {{autor.web}} <br>
+                        <br>
+                      <br>
+                      </li>
+                  </ol>
+                </td>
                 <!-- datos bd -->
-                <td>ej. registro</td>
-                <td>ej. año</td>
+                <td>{{pieza.registro}}</td>
+                <td>{{pieza.year}}</td>
               </tr>
             </tbody>
 

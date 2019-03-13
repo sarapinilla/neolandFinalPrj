@@ -28,8 +28,10 @@ const routes: Routes = [
   { path: 'contact', component: ContactComponent},
   //Users only:
   { path: 'admin', component: LoginComponent, children:[ //añadir GUARD canActivatedChield
-    { path: 'admin/registros', component: AdminComponent} 
+    // { path: 'admin/registros', component: AdminComponent} 
   ]},
+  { path: 'admin/registros', component: AdminComponent},
+
   
   { path: '**', component: MainComponent }
 ];
