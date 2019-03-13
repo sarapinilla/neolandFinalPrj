@@ -71,7 +71,7 @@
             <tbody>
               <tr *ngFor="let pieza of piezas">
                 <!-- datos pieza -->
-                <td> <input type="checkbox" aria-label="Checkbox for following text input"> </td>
+                <td> <input type="checkbox" aria-label="Checkbox for following text input" (change)="mostrarPieza(pieza)" [checked]="pieza.estado"> </td>
                 <td >{{pieza.titulo}}</td>
                 <td>{{pieza.descripcion}}</td>
                 <td width="10%">{{pieza.coverpieza}}</td>
@@ -128,5 +128,5 @@
           </table>
         </div>
     </div>
-    <button class="form-group col-md-2" type="submit"> Actualizar </button>
+    <button class="form-group col-md-2" type="submit" (click)="updateRegistros()"> Actualizar </button>
   </div>

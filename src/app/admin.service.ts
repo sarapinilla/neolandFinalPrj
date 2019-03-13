@@ -19,23 +19,30 @@ export class AdminService {
   }
 
   //Actualizar la información piezas/autores/cat en la BD
-  updateTable(values){
-    return this.httpClient.post(`${this.url}/admin/registros`, {
-      'titulo': values.titulopieza,
-      'pieza': values.piezapic || values.URLpieza,
-      'coverpieza': values.coverpic,
-      'descripcion': values.infopieza,
-      'nombre': values.nombreautor,
-      'infoautor': values.infoautor,
-      'email': values.email,
-      'imgautor': values.autorpic,
-      'ig': values.ig,
-      'be': values.be,
-      'web': values.web,
-      'categorias': values.categorias,
-      'year': values.year,
-      'estado': values.estado
+  // updateTable(values){
+  //   return this.httpClient.post(`${this.url}/admin/registros`, {
+  //     'titulo': values.titulopieza,
+  //     'pieza': values.piezapic || values.URLpieza,
+  //     'coverpieza': values.coverpic,
+  //     'descripcion': values.infopieza,
+  //     'nombre': values.nombreautor,
+  //     'infoautor': values.infoautor,
+  //     'email': values.email,
+  //     'imgautor': values.autorpic,
+  //     'ig': values.ig,
+  //     'be': values.be,
+  //     'web': values.web,
+  //     'categorias': values.categorias,
+  //     'year': values.year,
+  //     'estado': values.estado
+  //     })
+  // }
+
+  updateTable(pieza){
+    return this.httpClient.post(`${this.url}/admin/update`, {
+      'estado': pieza.estado
       })
   }
+
 
 }

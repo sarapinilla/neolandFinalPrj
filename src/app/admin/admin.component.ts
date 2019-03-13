@@ -22,4 +22,17 @@ export class AdminComponent implements OnInit {
   ngOnInit() {
   }
 
+  mostrarPieza(pieza){
+
+  pieza.estado == 0 ? pieza.estado = 1 : pieza.estado = 0
+  // let checkbox = localStorage.input === 1 ? 1 : 0;
+
+    console.log(pieza.estado)
+  }
+
+  updateRegistros(){
+    this.adminService.updateTable(this.piezas).subscribe(res => {
+      console.log(res)
+    })
+  }
 }
