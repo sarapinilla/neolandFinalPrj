@@ -19,6 +19,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
+import { LoginGuard } from './login.guard';
 
 
 
@@ -47,7 +48,9 @@ import { FormComponent } from './form/form.component';
     AngularFireStorageModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    LoginGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

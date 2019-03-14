@@ -13,14 +13,18 @@ export class AdminService {
     this.url = 'http://localhost:3000/api'
    }
 
-  
+//LOGIN ADMIN
+
   accessLogin(user, password){
+   
     return this.httpClient.post(`${this.url}/admin`,{
       'user': user,
       'password': password
     })
   }
 
+
+//TABLA REGISTROS
    //Recuperar la información piezas/autores/cat de la BD 
   getAllPiezas(){
     return this.httpClient.get(`${this.url}/admin/piezas`)
