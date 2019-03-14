@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
 
 @Component({
   selector: 'login',
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private adminService: AdminService) {
+    
+   }
 
   ngOnInit() {
   }
+
+  singIn(user, password){
+    // console.log(user, password)
+    this.adminService.accessLogin(user,password).subscribe(res => {
+      console.log(res)
+    })
+  }
+
+  
 
 }

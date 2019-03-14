@@ -25,7 +25,6 @@ export class AdminComponent implements OnInit {
   mostrarPieza(pieza){
 
   pieza.estado == 0 ? pieza.estado = 1 : pieza.estado = 0
-  // let checkbox = localStorage.input === 1 ? 1 : 0;
 
     console.log(pieza.estado)
   }
