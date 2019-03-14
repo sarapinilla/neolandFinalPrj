@@ -15,7 +15,7 @@
         <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
       </div> -->
         <div class="table-responsive-md">
-          <table class="table table-sm" id="dataTable" width="100%" cellspacing="0">
+          <table class="table table-condensed table-sm" id="dataTable" width="100%" cellspacing="0">
 
             <thead>
               <!-- CABECERA 1 -->
@@ -31,7 +31,7 @@
                 <!-- datos pieza -->
                 <th class="titania">Título</th>
                 <th class="titania">Descripcion</th>
-                <th class="titania">Cover (url)</th>
+                <th class="col-sm-2 titania">Cover (url)</th>
                 <th class="titania">Pieza (url)</th>
                 <th class="titania">Categorías</th>
                 <!-- datos artista -->
@@ -79,8 +79,8 @@
                 <td> <input type="checkbox" aria-label="Checkbox for following text input" (change)="mostrarPieza(pieza)" [checked]="pieza.estado"> </td>
                 <td >{{pieza.titulo}}</td>
                 <td>{{pieza.descripcion}}</td>
-                <td width="10%">{{pieza.coverpieza}}</td>
-                <td width="10%">{{pieza.pieza}}</td>
+                <td><img class="url" [src]="pieza.coverpieza" alt="coverPieza"></td>
+                <td>{{pieza.pieza}}</td>
                 <td>
                   <ol>
                     <li *ngFor="let cat of pieza.categorias">
@@ -108,7 +108,8 @@
                 <td>
                   <ol>
                       <li *ngFor="let autor of pieza.autores">
-                      {{autor.imgautor}}<br>
+                        <img class="url" [src]="autor.imgautor" alt="imgAutor">
+                      <br>
                       <br>
                       </li>
                   </ol>
@@ -125,7 +126,7 @@
                   </ol>
                 </td>
                 <!-- datos bd -->
-                <td>{{pieza.registro}}</td>
+                <td style="font-size: 0.6em;">{{pieza.registro}}</td>
                 <td>{{pieza.year}}</td>
               </tr>
             </tbody>

@@ -5,14 +5,14 @@
   <!-- INPUTS -->
   <div class="signform">
     <!-- mail -->
-    <label for="inputEmail" class="sr-only"> mail</label>
-    <input type="email" id="inputEmail" class="form-control mb-3" placeholder="admin mail" #inputEmail>
+    <label class="sr-only"> mail</label>
+    <input type="email" id="inputEmail" class="mb-3" placeholder="admin mail" #inputEmail>
     <!-- clave -->
-    <label for="inputPassword" class="sr-only">clave</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="clave" #inputClave>
+    <label class="sr-only">clave</label>
+    <input type="password" id="inputPassword" class="" placeholder="clave" #inputClave>
 
   </div>
-    <button class="btn customboton btn-block titania" type="submit" (click)="singIn(inputEmail.value, inputClave.value)">Sign in →</button>
+    <button class="btn customboton btn-block titania" type="submit" (click)="singIn(inputEmail.value, inputClave.value)">Log in →</button>
   </form>
  
 

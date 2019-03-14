@@ -28,8 +28,4 @@ export class LoginComponent implements OnInit {
 
     })
   }
-
-  signOut(token){
-    localStorage.removeItem('token')
-  } //En admin.service.ts ?? --> btn tabla registros
 }
