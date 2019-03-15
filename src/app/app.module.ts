@@ -18,6 +18,8 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
 
+import { FilterPipe }from './filter.pipe'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,7 +33,8 @@ import { FormComponent } from './form/form.component';
     AdminComponent,
     LoginComponent,
     ContactComponent,
-    FormComponent
+    FormComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

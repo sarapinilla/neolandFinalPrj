@@ -28,9 +28,10 @@ export class FichaComponent implements OnInit {
         console.log(this.autor)
     })   
 
-    this.autoresService.getAllAutores().subscribe(res =>{
-        this.allAutores = res
-    })
+    //Crear una lista de autores general
+    // this.autoresService.getAllAutores().subscribe(res =>{
+    //     this.allAutores = res
+    // })
 
    }
 

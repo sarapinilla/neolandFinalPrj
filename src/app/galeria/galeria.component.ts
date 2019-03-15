@@ -21,6 +21,7 @@ export class GaleriaComponent implements OnInit {
 
     this.arrPiezas = this.piezasService.getAllPiezas().subscribe(res => {
         this.piezas = res
+        console.log(this.piezas)
     })
   }
   
@@ -50,22 +51,6 @@ export class GaleriaComponent implements OnInit {
 //Redireccionar al componente ficha según la id del autor
   getAutor(autorId){
     this.router.navigate(['ficha', autorId])
-  }
-
-//Filtrar la lista según lo que el usuario escriba
-filter($event){
-
-  //  let search = $event
-  //  console.log(search)
-
-  //  for(let i=0; i<this.arrPiezas.length; i++){
-  //    if(this.arrPiezas[i].indexOf(search) != 0){
-  //     this.piezasService.getAllPiezas().subscribe(res => {
-  //       this.piezas = res
-  //     })
-  //    }
-  //  }
-  //  .toLowerCase()
   }
 
 }
