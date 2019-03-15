@@ -2,7 +2,7 @@
   <div class="cabecera col col-lg-12">
     <h2>Galería</h2>
     <div class="md-form mt-0 col col-lg-4">
-      <input (keyup)="filter($event)" class="form-control buscador" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
+      <input [(ngModel)]="searchText" class="form-control" type="text" placeholder="Busca lo que encuentres..." aria-label="Search">
     </div>
   </div>
 
@@ -27,24 +27,27 @@
  <!-- Inicio Lista Galería -->
 <div>
   <div class="titulos row">
-    <p class="col-lg-3">Pieza</p>
-    <p class="col-lg-3">Autor</p>
-    <p class="col-lg-3">Categoría</p>
-    <p class="col-lg-3">Año</p>
+    <p class="col-lg-3 col-md-3 col-sm-3">Pieza</p>
+    <p class="col-lg-3 col-md-3 col-sm-3">Autor</p>
+    <p class="col-lg-3 col-md-3 col-sm-3">Categoría</p>
+    <p class="col-lg-3 col-md-3 col-sm-3">Año</p>
   </div>
-  <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of piezas"> 
-      <p class="col-lg-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
-      <div class="col-lg-3">
-        <p *ngFor="let autor of pieza.autores" (click)="getAutor($event)">{{autor.nombre}}</p> 
+  <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of (piezas | filter : searchText)" >
+      <p class="col-lg-3 col-md-3 col-sm-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <p id="aut" *ngFor="let autor of pieza.autores" (click)="getAutor(autor.fk_autor)">{{autor.nombre}}</p> 
       </div>
-      <div class="col-lg-3">
-        <p *ngFor="let categoria of pieza.categorias">{{categoria.nombre}}</p> 
+      <div class="col-lg-3 col-md-3 col-sm-3">
+        <p id="cat" *ngFor="let categoria of pieza.categorias">{{categoria.tipologia}}</p> 
       </div>
-      <p class="col-lg-3">{{pieza.year}}</p> 
+      <p class="col-lg-3 col-md-3 col-sm-3">{{pieza.year}}</p> 
       <div class="cover">
         <img [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">
       </div> 
   </div>
+  <!-- <div class="cover" *ngFor="let pieza of piezas">
+    <img [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">
+  </div>  -->
 
   <!-- Fin Lista Galería -->
 </div>

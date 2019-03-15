@@ -7,6 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage'
 import { environment } from 'src/environments/environment';
 //COMPONENTES:
+import { DragDropModule } from '@angular/cdk/drag-drop'
+
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { AboutComponent } from './about/about.component';
@@ -20,6 +22,7 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
 
+import { FilterPipe }from './filter.pipe'
 
 
 
@@ -36,7 +39,8 @@ import { FormComponent } from './form/form.component';
     AdminComponent,
     LoginComponent,
     ContactComponent,
-    FormComponent
+    FormComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -45,7 +49,8 @@ import { FormComponent } from './form/form.component';
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireStorageModule,
-    HttpClientModule
+    HttpClientModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

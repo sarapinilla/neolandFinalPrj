@@ -1,55 +1,79 @@
 <div class="container-fluid">
 
   <!-- Inicio Sidebar Archivo -->
-  <div class="menu sidebar col-lg-3">
-    <!-- añadir collapse sidebar -->
+  <div class="menu col-lg-3 col-md-6 col-sm-12" *ngFor="let a of autor">
+    <!-- añadir responsive collapse -->
     <div class="menu-artista">
       <div class="title">
         <p>artista</p> 
       </div>
       <div class="profile">
-        <p>datos</p> <!-- javascript dinamico -->
+        <p class="aut">{{a.nombre}}</p>
       </div>
-      <div class="social">
-
+      <div class="social" *ngIf="a.be">
+        <a [href]="a.be">
+          <p>
+            behance
+            <!-- <i class="fab fa-behance-square"></i> -->
+          </p>
+        </a>
+        <a [href]="a.ig" *ngIf="a.ig">
+          <p>
+            instagram
+            <!-- <i class="fab fa-instagram"></i> -->
+          </p>
+        </a>
+        <a [href]="a.web" *ngIf="a.web">
+          <p>
+            website
+          </p>
+        </a>
       </div>
     </div>
     <div class="menu-pieza">
       <div class="title">
         <p>obras</p>
       </div>
-      <div class="piezas row">
-        <a href="#"> <!-- según se pinche en cada carpeta, la cover y la descripcion de la obra/No.X va cambiando -->
+
+      <!-- según se pinche en cada carpeta, la cover y la descripcion de la obra/No.X va cambiando -->
+      <div class="piezas row"> 
+        <button *ngFor="let p of a.piezas" (click)="showCover(p)"> 
           <img src="../../assets/images/recurso-carpeta.svg" alt="folder">
-          <p>No.1</p> 
-        </a>
+          <p>{{p.titulo}}</p>
+        </button>
       </div>
       
     </div>
   </div>
   <!-- Fin Sidebar Archivo -->
   <!-- Inicio Ventanas Info Artista/Obra -->
-  <div>
-      <div class="ventana" id="a">
+  <div class="col-lg-9" *ngFor="let a of autor">
+      <div class="ventana" id="a" cdkDrag>
         <div class="header">
           <p>artista/info</p>
         </div>
         <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum harum mollitia perferendis dolorum, unde vitae ipsam adipisci aut, dolore libero accusantium recusandae! Cupiditate atque iusto maiores? Fuga aperiam delectus maxime?Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate sint magnam deleniti corrupti eos quisquam maxime deserunt aut officiis. Dicta laudantium voluptate, esse maiores non at ea perferendis perspiciatis quae.</p> <!-- javascript dinamico -->
-            <img src="" alt=""> <!-- javascript dinamico -->
+            <img [src]="a.imgautor" alt=""> 
+            <p>{{a.infoautor}}</p> 
         </div>
       </div>
   
-      <div class="ventana" id="no">
+      <div class="ventana" id="no" cdkDrag *ngIf="piezaSelected">
           <div class="header">
-              <p>obra/No.X</p> <!-- X javascript dinamico -->
+              <p>obra/{{piezaSelected.titulo}}</p>
           </div>
           <div class="content">
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Autem exercitationem, laudantium iusto necessitatibus placeat voluptate facere facilis et culpa provident sit accusamus, ex quam eius. Aspernatur quisquam necessitatibus dolores sequi?Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis optio doloribus illum deserunt autem quasi quas? Natus et voluptatibus ex nam earum pariatur iste modi reprehenderit hic, at est sed.</p> <!-- javascript dinamico -->
-              <img src="" alt=""> <!-- javascript dinamico -->
+              <img [src]="piezaSelected.coverpieza" alt="">
+              <p>{{piezaSelected.descripcion}}</p>
           </div>
       </div>
-    </div>
+  </div>
     <!-- Fin Ventanas Info Artista/Obra -->
 
 </div>
+
+<!-- <div class="container">
+  <div class="row lista" *ngFor="let autor of allAutores">
+    <p>{{autor.nombre}}</p>
+  </div>
+</div> -->

@@ -9,7 +9,6 @@ import { HttpClient } from '@angular/common/http';
 export class AutoresService {
 
   url:string
-  autor: Autor
 
   constructor(private httpClient: HttpClient) {
     this.url = 'http://localhost:3000/api/autores'
@@ -20,6 +19,6 @@ export class AutoresService {
   }
 
   getAutoresById(id){
-    return this.httpClient.get(`${this.url}/${this.autor.id}`)
+    return this.httpClient.get(`${this.url}/${id}`)
   }
 }
