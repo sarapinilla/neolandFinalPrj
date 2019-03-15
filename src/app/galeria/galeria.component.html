@@ -35,10 +35,10 @@
   <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of (piezas | filter : searchText)" >
       <p class="col-lg-3 col-md-3 col-sm-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
       <div class="col-lg-3 col-md-3 col-sm-3">
-        <p id="aut" *ngFor="let autor of (pieza.autores | filter : searchText)" (click)="getAutor(autor.fk_autor)">{{autor.nombre}}</p> 
+        <p id="aut" *ngFor="let autor of pieza.autores" (click)="getAutor(autor.fk_autor)">{{autor.nombre}}</p> 
       </div>
       <div class="col-lg-3 col-md-3 col-sm-3">
-        <p id="cat" *ngFor="let categoria of (pieza.categorias | filter : searchText)">{{categoria.tipologia}}</p> 
+        <p id="cat" *ngFor="let categoria of pieza.categorias">{{categoria.tipologia}}</p> 
       </div>
       <p class="col-lg-3 col-md-3 col-sm-3">{{pieza.year}}</p> 
       <div class="cover">

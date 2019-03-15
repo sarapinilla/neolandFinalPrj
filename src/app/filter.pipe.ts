@@ -9,12 +9,11 @@ export class FilterPipe implements PipeTransform {
         searchText = searchText.toLowerCase();
         return items.filter(it => {
             console.log(it)
-            if(it.titulo){
-                return it.titulo.toLowerCase().includes(searchText)
-            }else if(it.nombre){
-                return it.nombre.toLowerCase().includes(searchText)
-            }else if(it.tipologia){
-                return it.tipologia.toLowerCase().includes(searchText)
+            let autores = it.autores.map(aut => aut.nombre.toLowerCase()).join(',')
+            let categorias = it.categorias.map(cat => cat.tipologia.toLowerCase()).join(',')
+            console.log(categorias)
+            if(it.titulo.toLowerCase().includes(searchText) || autores.includes(searchText) || categorias.includes(searchText) || (""+it.year).includes(searchText)){
+                return true
             }
 
         });
