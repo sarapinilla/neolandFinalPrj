@@ -30,7 +30,7 @@
     <p class="col-lg-3 col-md-3 col-sm-4">Pieza</p>
     <p class="col-lg-3 col-md-3 col-sm-4">Autor</p>
     <p class="col-lg-3 col-md-3 col-sm-4">Categoría</p>
-    <p class="col-lg-3 col-md-3 ">Año</p>
+    <p class="col-lg-3 col-md-3 col-sm-4">Año</p>
   </div>
   <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of (piezas | filter : searchText)" >
       <p class="col-lg-3 col-md-3 col-sm-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
