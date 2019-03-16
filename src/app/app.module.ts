@@ -25,8 +25,6 @@ import { LoginGuard } from './login.guard';
 
 import { FilterPipe }from './filter.pipe'
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
