@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from '../admin.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'login',
@@ -7,9 +10,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private adminService: AdminService,
+    private router: Router
+    ) {
+    
+   }
 
   ngOnInit() {
   }
+//LOGIN ADMIN
+  singIn(user, password){
+    // console.log(user, password)
+    this.adminService.accessLogin(user,password).subscribe(res => {
+      localStorage.setItem('token', res.toString())
+      this.router.navigate(['admin','registros'])
 
+    })
+  }
 }

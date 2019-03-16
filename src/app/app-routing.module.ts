@@ -11,6 +11,7 @@ import { GaleriaComponent } from './galeria/galeria.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
+import { LoginGuard } from './login.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch:'full'},
@@ -27,12 +28,19 @@ const routes: Routes = [
   { path: 'registro', component: FormComponent},
   { path: 'contact', component: ContactComponent},
   //Users only:
+<<<<<<< HEAD
   { path: 'admin', component: LoginComponent, children:[ //añadir GUARD canActivatedChield
     { path: 'admin/registros', component: AdminComponent} 
   ]},
   // { path: 'admin/registros', component: AdminComponent},
   
+=======
+  { path: 'admin', component: LoginComponent}, //LogIn
+  { path: 'admin/registros', component: AdminComponent, canActivate: [LoginGuard]},//TablaRegistros + LogOut
+
+>>>>>>> 85e37f8346c1cd7b845e25008f710be24695d010
   { path: '**', component: MainComponent }
+  //FALTA PAG.404
 ];
 
 @NgModule({

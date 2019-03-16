@@ -21,6 +21,7 @@ import { AdminComponent } from './admin/admin.component';
 import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
+import { LoginGuard } from './login.guard';
 
 import { FilterPipe }from './filter.pipe'
 
@@ -52,7 +53,9 @@ import { FilterPipe }from './filter.pipe'
     HttpClientModule,
     DragDropModule
   ],
-  providers: [],
+  providers: [
+    LoginGuard
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
