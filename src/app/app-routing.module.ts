@@ -28,17 +28,9 @@ const routes: Routes = [
   { path: 'registro', component: FormComponent},
   { path: 'contact', component: ContactComponent},
   //Users only:
-<<<<<<< HEAD
-  { path: 'admin', component: LoginComponent, children:[ //añadir GUARD canActivatedChield
-    { path: 'admin/registros', component: AdminComponent} 
-  ]},
-  // { path: 'admin/registros', component: AdminComponent},
-  
-=======
   { path: 'admin', component: LoginComponent}, //LogIn
   { path: 'admin/registros', component: AdminComponent, canActivate: [LoginGuard]},//TablaRegistros + LogOut
 
->>>>>>> 85e37f8346c1cd7b845e25008f710be24695d010
   { path: '**', component: MainComponent }
   //FALTA PAG.404
 ];
