@@ -10,20 +10,20 @@
       <div class="profile">
         <p class="aut">{{a.nombre}}</p>
       </div>
-      <div class="social" *ngIf="a.be">
-        <a [href]="a.be">
+      <div class="social">
+        <a [href]="a.be" *ngIf="a.be" target="_blank">
           <p>
             behance
             <!-- <i class="fab fa-behance-square"></i> -->
           </p>
         </a>
-        <a [href]="a.ig" *ngIf="a.ig">
+        <a [href]="a.ig" *ngIf="a.ig" target="_blank">
           <p>
             instagram
             <!-- <i class="fab fa-instagram"></i> -->
           </p>
         </a>
-        <a [href]="a.web" *ngIf="a.web">
+        <a [href]="a.web" *ngIf="a.web" target="_blank">
           <p>
             website
           </p>
