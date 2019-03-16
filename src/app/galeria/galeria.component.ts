@@ -34,7 +34,6 @@ export class GaleriaComponent implements OnInit {
     showCover.style.display = 'block'
     showCover.style.margin = '0 auto'
     showCover.style.backgroundSize = 'cover'
-    
   }
 
 //Mostrar la cover img de la fila por donde se pasa el ratón - cambiar display a hidden

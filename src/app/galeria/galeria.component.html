@@ -25,30 +25,33 @@
  <!-- Fin Símbolos -->
 
  <!-- Inicio Lista Galería -->
-<div>
+<div class="listacontenedor">
   <div class="titulos row">
-    <p class="col-lg-3 col-md-3 col-sm-3">Pieza</p>
-    <p class="col-lg-3 col-md-3 col-sm-3">Autor</p>
-    <p class="col-lg-3 col-md-3 col-sm-3">Categoría</p>
-    <p class="col-lg-3 col-md-3 col-sm-3">Año</p>
+    <p class="col-lg-3 col-md-3 col-sm-4">Pieza</p>
+    <p class="col-lg-3 col-md-3 col-sm-4">Autor</p>
+    <p class="col-lg-3 col-md-3 col-sm-4">Categoría</p>
+    <p class="col-lg-3 col-md-3 ">Año</p>
   </div>
   <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of (piezas | filter : searchText)" >
       <p class="col-lg-3 col-md-3 col-sm-3" (click)="getPieza($event)">{{pieza.titulo}}</p>
+
       <div class="col-lg-3 col-md-3 col-sm-3">
         <p id="aut" *ngFor="let autor of pieza.autores" (click)="getAutor(autor.fk_autor)">{{autor.nombre}}</p> 
       </div>
+
       <div class="col-lg-3 col-md-3 col-sm-3">
         <p id="cat" *ngFor="let categoria of pieza.categorias">{{categoria.tipologia}}</p> 
       </div>
-      <p class="col-lg-3 col-md-3 col-sm-3">{{pieza.year}}</p> 
-      <div class="cover">
-        <img [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">
-      </div> 
-  </div>
-  <!-- <div class="cover" *ngFor="let pieza of piezas">
-    <img [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">
-  </div>  -->
 
+        <p class="col-lg-3 col-md-3 col-sm-3">{{pieza.year}}</p>
+
+        <div class="cover">
+          <img style="display:none;" class="piccover" [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">   <!-- *ngIf="showCover" -->
+        </div> 
+  </div>
+  <!-- *ngFor="let pieza of piezas" -->
+
+  
   <!-- Fin Lista Galería -->
 </div>
 
