@@ -86,7 +86,7 @@ customUrlUser:any
     //FORM AUTOR
       nombreautor: new FormControl('', [
         Validators.required,
-        Validators.maxLength(50)
+        Validators.maxLength(30)
       ]),
       email: new FormControl('@gmail.com', [
         Validators.required,

@@ -21,7 +21,7 @@
         <p class="info mb-5">
           Qué bien! Así que quieres unirte a nuestra familia?!! Estamos emocionados 🥳 <br> Empecemos con tu obra <span class="titania">(pieza) :</span><br>
           <br>
-          <span class="titania">a.</span><br> TITULO: dinos su nombre <br>INFO: hablános un poco de ella.<br>COVER: elige la foto de portada<br>PIEZA: súbela a nuestra plataforma.<br>CATEGORIAS: selecciona todas las que encajen con ella! <br>
+          <span class="titania">a.</span><br> TÍTULO: dinos su nombre <br>INFO: hablános un poco de ella.<br>COVER: elige la foto de portada<br>PIEZA: súbela a nuestra plataforma.<br>CATEGORIAS: selecciona hasta <span class="titania">3</span> categorías que encajen con ella! <br>
           <br>
           <span class="titania">b.</span><br>Al recibir tu petición, <br>la validaremos y en un período máximo de 5 días recibirás una respuesta! <br>
         </p>
@@ -47,7 +47,7 @@
             </small>
             <small *ngIf="formRegistro.controls.infopieza.errors?.maxlength && formRegistro.controls.infopieza.dirty"> ⚠️ Upss,info tiene una extensión máx. de {{formRegistro.controls.infopieza.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infopieza.errors.maxlength.actualLength}}
             </small>
-            <textarea class="form-control mb-4" type="text" formControlName="infopieza" id="textarea1" rows="4"></textarea>
+            <textarea class="form-control mb-4" type="textarea" formControlName="infopieza" id="textarea1" rows="4"></textarea>
           </div>
 
           <!-- COVER | PIEZA -->
@@ -115,7 +115,7 @@
         <div class="form-group">
         <label>mail</label><br>
 
-        <input class="mb-4" type="mail" formControlName="email"><br>
+        <input class="mb-4" type="email" formControlName="email"><br>
         </div>
         
         <!-- INFO -->
