@@ -100,22 +100,111 @@
   transform: translate(0px, -10px) rotate(-20deg);
 }
 
-.animation4{
+/* .animation4{
   -moz-transform: scale(1) rotate(0deg);
   -webkit-transform: scale(1) rotate(0deg);
   -o-transform: scale(1) rotate(0deg);
   -ms-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg);
   transition: 0.3s;
-}
+} */
 
-.animation4:hover{
+/* .animation4:hover{
   -moz-transform: scale(1.1) rotate(90deg);
   -webkit-transform: scale(1.1) rotate(90deg);
   -o-transform: scale(1.1) rotate(90deg);
   -ms-transform: scale(1.1) rotate(90deg);
   transform: scale(1.1) rotate(90deg);
+} */
+
+.animation1{
+  animation: bounce 1.5s infinite;
+  transform: rotate(0deg);
+  -webkit-animation: bounce 1.5s infinite;
+  -webkit-transform: rotate(0deg);
+  
 }
+.animation2{
+  animation: rot2 2s infinite alternate-reverse;
+  transform: rotate(-30deg);
+  -webkit-animation: rot2 2s infinite alternate-reverse;
+  -webkit-transform: rotate(-30deg);
+}
+.animation3{
+  animation: rot3 3s infinite alternate-reverse;
+  transform: rotate(60deg);
+  -webkit-animation: rot3 3s infinite alternate-reverse;
+  -webkit-transform: rotate(60deg);
+}
+.animation4{
+  animation: shake 1.3s infinite;
+  transform: rotate(8deg);
+  -webkit-animation: shake 1.3s infinite;
+  -webkit-transform: rotate(-8deg);
+}
+
+@-webkit-keyframes bounce {
+  0% {-webkit-transform:translate3d(0, -400px, 0); -webkit-animation-timing-function: ease-in; }
+ 40% {-webkit-transform:translate3d(0,    0px, 0); -webkit-animation-timing-function: ease-out; }
+ 55% {-webkit-transform:translate3d(0, -100px, 0); -webkit-animation-timing-function: ease-in; }
+ 70% {-webkit-transform:translate3d(0,    0px, 0); -webkit-animation-timing-function: ease-out; }
+ 85% {-webkit-transform:translate3d(0,  -40px, 0); -webkit-animation-timing-function: ease-in; }
+100% {-webkit-transform:translate3d(0,    0px, 0); }
+}
+
+@-webkit-keyframes rotate{
+   0% {-webkit-transform:translate3d(-45deg, 0, 0); -webkit-animation-timing-function: ease-in; }
+ 50% {-webkit-transform:translate3d(45deg,   0, 0); -webkit-animation-timing-function: ease-out; } 
+ 100% {-webkit-transform:translate3d(0deg, 0, 0);} 
+}
+.animation1:hover, .animation2:hover, .animation3:hover, .animation4:hover {
+  animation: swing 0s;
+  transform: rotate(0deg);
+  -webkit-animation: swing 0s ;
+  -webkit-transform: rotate(0deg);
+
+}
+
+ @keyframes rot2{
+  to{
+      transform: rotate(-30deg);
+  }
+  from{
+    transform: rotate(30deg);
+}
+}
+@-webkit-keyframes rot2{
+  50%{
+      -webkit-transform: rotate(-30deg);
+  }
+} 
+/* animacion3 */
+@keyframes rot3{
+  to{
+      transform: rotate(-30deg);
+  }
+  from{
+    transform: rotate(270deg);
+}
+}
+@-webkit-keyframes rot3{
+  50%{
+      -webkit-transform: rotate(-30deg);
+  }
+} 
+
+/* animcaion4 */
+
+@keyframes shake{
+  50%{
+  transform: rotate(5deg);
+}
+}
+@-webkit-keyframes shake{
+  50%{
+      -webkit-transform: rotate(5deg);
+  }
+} 
 
 /* menu dropdown */
 .titulo{
