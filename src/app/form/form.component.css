@@ -162,3 +162,10 @@ button:hover{
     width: 100%;
     margin: 0 auto;
 }
+
+.container:after{
+    clear:both;
+    height: 0;
+    content: "";
+    display: block;
+}

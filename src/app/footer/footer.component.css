@@ -1,0 +1,29 @@
+p{
+    text-align: center;
+    padding:10px;
+    border-top: 1px solid black;
+    font-family: Titania;
+    font-size: 1.2em;
+
+}
+
+.social{
+    text-align: center;
+    height: 2em;
+}
+
+.social div a{
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    height: 30px;
+}
+
+i{
+    font-size: 1em;
+    background-color: rgba (0,0,0,0.8);
+}
+
+i:hover{
+    background-color: #0000ff;
+}

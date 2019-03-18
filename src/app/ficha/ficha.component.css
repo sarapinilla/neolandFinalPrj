@@ -182,6 +182,14 @@ div .ventana .content img{
     height: 0 auto;
 }
 
+.container-fluid:after{
+    clear:both;
+    height: 0;
+    content: "";
+    display: block;
+}
+
+
 
 /* FIN VENTANAS INFORMACIÓN ARTISTA/OBRA */
 
