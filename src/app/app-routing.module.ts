@@ -7,6 +7,7 @@ import { FichaComponent } from './ficha/ficha.component';
 import { AboutComponent } from './about/about.component';
 import { FuncionamientoComponent } from './funcionamiento/funcionamiento.component';
 import { DownloadComponent } from './download/download.component';
+import { GaleriaurbanaComponent } from './galeriaurbana/galeriaurbana.component';
 import { GaleriaComponent } from './galeria/galeria.component';
 import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
@@ -19,7 +20,7 @@ const routes: Routes = [
   { path: 'home', component: MainComponent, children:[
     { path: 'home/about', component: AboutComponent},
     { path: 'home/funcionamiento', component: FuncionamientoComponent},
-    //{ path: 'home/galeriaurbana', component: UrbanaComponent},
+    { path: 'home/galeriaurbana', component: GaleriaurbanaComponent},
     { path: 'home/galeria', component: GaleriaComponent},
     { path: 'home/app', component:DownloadComponent}
   ]},

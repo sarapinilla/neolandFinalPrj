@@ -23,7 +23,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
 import { LoginGuard } from './login.guard';
 
-import { FilterPipe }from './filter.pipe'
+import { FilterPipe }from './filter.pipe';
+import { GaleriaurbanaComponent } from './galeriaurbana/galeriaurbana.component'
 
 
 
@@ -41,7 +42,8 @@ import { FilterPipe }from './filter.pipe'
     LoginComponent,
     ContactComponent,
     FormComponent,
-    FilterPipe
+    FilterPipe,
+    GaleriaurbanaComponent
   ],
   imports: [
     BrowserModule,
