@@ -15,11 +15,11 @@ export class GaleriaurbanaComponent implements OnInit {
 
   show(){
     let mapa = $('#mapa')
-    mapa.stop(true,true).animate({'left':'-100px'},1000)
+    mapa.stop(true,true).animate({'left':'-10%'},1000)
   }
 
   hide(){
     let mapa = $('#mapa')
-    mapa.stop(true,true).animate({'left':'-500px'},1000)
+    mapa.stop(true,true).animate({'left':'-70%'},1000)
   }
 }
