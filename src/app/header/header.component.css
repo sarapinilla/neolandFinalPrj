@@ -16,7 +16,7 @@
 }
 /* Icon-home__inside the navbar */ 
 .navbar-brand {
-  margin-left: -1em; 
+  margin-left: -1em;
 }
 .navbar-brand img{
   width:2em;
@@ -32,7 +32,7 @@
   margin-right: 4em;
 }
 
-/* Icons__CONTACT: ☻⁈ */ 
+/* Icon__REGISTRO */ 
 .contact{
   text-decoration: none;
   color: black;
