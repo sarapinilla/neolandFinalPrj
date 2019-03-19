@@ -16,7 +16,7 @@
 }
 /* Icon-home__inside the navbar */ 
 .navbar-brand {
-  margin-left: -1em; 
+  margin-left: -1em;
 }
 .navbar-brand img{
   width:2em;
@@ -32,7 +32,7 @@
   margin-right: 4em;
 }
 
-/* Icons__CONTACT: ☻⁈ */ 
+/* Icon__REGISTRO */ 
 .contact{
   text-decoration: none;
   color: black;
@@ -46,6 +46,7 @@
   /*text-decoration: underline; 
   /* text-decoration-style: wavy; */
 }
+
 /* menu dropdown */
 .titulo{
   height: 24px;
@@ -62,12 +63,193 @@ box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
 margin-top:5%;
 }
 
-
 /* navbar contraido: menu dropdown */
-.navbar-collapse .collapse .show{
-  color: rgba(0,0,0,.5);
-  background-color: #fff;
-  border-bottom: 1px solid black;
-  width: 120px;
-  margin: 0 auto;
+
+
+div .navbar-collapse.show{
+  /* background-color: white; */
+  border: 1px solid black;
+  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  
+  transition:0.7s;
+  /* border-radius:2%; */
+  /* box-shadow: 10px 10px 0px 0px rgba(0,0,0,1); */
+}
+
+/* .navbar-collapse.show{ } */
+
+/* MEDIA QUERY */
+
+@media (max-width: 575.98px)
+{
+
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+  /* ICON ANIMATE */
+/* animation */
+.animation1{
+  -moz-transform: scale(1) rotate(0deg);
+  -webkit-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+  -ms-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  transition: 0.3s;
+}
+
+.animation1:hover{
+  -moz-transform: scale(1);
+  -webkit-transform:translate(0px, 20px) scale(1);
+  -o-transform:translate(0px, 20px) scale(1);
+  -ms-transform:translate(0px, 20px) scale(1);
+  transform:translate(0px, 20px) scale(1);
+}
+
+.animation2{
+  -moz-transform: scale(1) rotate(0deg);
+  -webkit-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+  -ms-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  transition: 0.3s;
+}
+
+.animation2:hover{
+  -moz-transform: scale(1.1) rotate(40deg);
+  -webkit-transform: scale(1.1) rotate(40deg);
+  -o-transform: scale(1.1) rotate(40deg);
+  -ms-transform: scale(1.1) rotate(40deg);
+  transform: scale(1.1) rotate(40deg);
+}
+
+.animation3{
+  -moz-transform: scale(1) rotate(0deg);
+  -webkit-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+  -ms-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  transition: 0.3s;
+}
+
+.animation3:hover{
+  -moz-transform: translate(0px, -10px) rotate(-20deg);
+  -webkit-transform: translate(0px, -10px) rotate(-20deg);
+  -o-transform: translate(0px, -10px) rotate(-20deg);
+  -ms-transform: translate(0px, -10px) rotate(-20deg);
+  transform: translate(0px, -10px) rotate(-20deg);
+}
+
+/* .animation4{
+  -moz-transform: scale(1) rotate(0deg);
+  -webkit-transform: scale(1) rotate(0deg);
+  -o-transform: scale(1) rotate(0deg);
+  -ms-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  transition: 0.3s;
+} */
+
+/* .animation4:hover{
+  -moz-transform: scale(1.1) rotate(90deg);
+  -webkit-transform: scale(1.1) rotate(90deg);
+  -o-transform: scale(1.1) rotate(90deg);
+  -ms-transform: scale(1.1) rotate(90deg);
+  transform: scale(1.1) rotate(90deg);
+} */
+
+.animation1{
+  animation: bounce 1.5s infinite;
+  transform: rotate(0deg);
+  -webkit-animation: bounce 1.5s infinite;
+  -webkit-transform: rotate(0deg);
+  
+}
+.animation2{
+  animation: rot2 2s infinite alternate-reverse;
+  transform: rotate(-30deg);
+  -webkit-animation: rot2 2s infinite alternate-reverse;
+  -webkit-transform: rotate(-30deg);
+}
+.animation3{
+  animation: rot3 3s infinite alternate-reverse;
+  /* transform: rotate(60deg); */
+  -webkit-animation: rot3 3s infinite alternate-reverse;
+  /* -webkit-transform: rotate(60deg); */
+}
+.animation4{
+  animation: shake 1.3s infinite;
+  transform: rotate(8deg);
+  -webkit-animation: shake 1.3s infinite;
+  -webkit-transform: rotate(-8deg);
+}
+/* animacion1 */
+@-webkit-keyframes bounce {
+  0% {-webkit-transform:translate3d(0, -400px, 0); -webkit-animation-timing-function: ease-in; }
+ 40% {-webkit-transform:translate3d(0,    0px, 0); -webkit-animation-timing-function: ease-out; }
+ 55% {-webkit-transform:translate3d(0, -100px, 0); -webkit-animation-timing-function: ease-in; }
+ 70% {-webkit-transform:translate3d(0,    0px, 0); -webkit-animation-timing-function: ease-out; }
+ 85% {-webkit-transform:translate3d(0,  -40px, 0); -webkit-animation-timing-function: ease-in; }
+100% {-webkit-transform:translate3d(0,    0px, 0); }
+}
+
+@-webkit-keyframes rotate{
+   0% {-webkit-transform:translate3d(-45deg, 0, 0); -webkit-animation-timing-function: ease-in; }
+ 50% {-webkit-transform:translate3d(45deg,   0, 0); -webkit-animation-timing-function: ease-out; } 
+ 100% {-webkit-transform:translate3d(0deg, 0, 0);} 
+}
+
+/* animacion2 */
+@keyframes rot2{
+  to{
+      transform: rotate(-30deg);
+  }
+  from{
+    transform: rotate(30deg);
+}
+}
+/* animacion3 */
+@keyframes rot3{
+  0%{
+      transform: rotate(90deg);
+  }
+  /* 50%{
+    transform: rotate(0deg);
+} */
+100%{
+    transform: rotate(-90deg);
+}
+}
+
+/* animcaion4 */
+@keyframes shake{
+  50%{
+  transform: rotate(5deg);
+}
+}
+
+.animation1:hover, .animation2:hover, .animation3:hover, .animation4:hover {
+  animation: 0s;
+  transform: rotate(0deg);
+  -webkit-animation: 0s ;
+  -webkit-transform: rotate(0deg);
+
+}
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+   
 }

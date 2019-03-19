@@ -14,7 +14,7 @@
 /* Estilos texto */
 .info{
     width: 100%;
-    padding-top: 6%;
+    padding-top: 10%;
     padding-bottom: 15%;
     margin-left: 50px;
     font-size: 1.2em;
@@ -56,12 +56,13 @@ a:visited{
 
 .img{
   
-   padding-top: 5%;
-   padding-left: 20%;
+   padding-top: 7%;
+   margin:0 auto;
+  
    
 }
 
 .appimg{
-    width: 100%;
+    width: 80%;
     
 }

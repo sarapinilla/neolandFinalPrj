@@ -14,30 +14,39 @@ export class AdminComponent implements OnInit {
   constructor(
     private adminService: AdminService,
     private router: Router
-    ) {
+  ) {
     this.adminService.getAllPiezas().subscribe(res => {
       this.piezas = res
       console.log(this.piezas)
     })
 
-    
-   }
+
+  }
 
   ngOnInit() {
   }
-//Método cambiar ESTADO piezas (select)
-  mostrarPieza(pieza){
-  pieza.estado == 0 ? pieza.estado = 1 : pieza.estado = 0
-    console.log(pieza.estado)
-  }
-//BTN actualizar piezas seleccionadas
-  updateRegistros(){
-    this.adminService.updateTable(this.piezas).subscribe(res => {
+  
+  //Método cambiar ESTADO piezas (select)
+  mostrarPieza(pieza) {
+    pieza.estado == 0 ? pieza.estado = 1 : pieza.estado = 0
+    this.adminService.updateTable(pieza).subscribe(res => {
       console.log(res)
     })
   }
-//LOGOUT ADMIN
-  logOut(){
+
+  //BTN actualizar piezas seleccionadas
+  updateRegistros() {
+    // this.adminService.updateTable(this.piezas).subscribe(res => {
+    //   console.log(res)
+      this.adminService.getAllPiezas().subscribe(res => {
+        this.piezas = res
+        console.log(this.piezas)
+      })
+    // })
+  }
+
+  //LOGOUT ADMIN
+  logOut() {
     localStorage.removeItem('token')
     this.router.navigate(['/home'])
   }

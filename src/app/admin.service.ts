@@ -32,8 +32,10 @@ export class AdminService {
 
   //Actualizar la información piezas/autores/cat en la BD
   updateTable(pieza){
+    console.log(pieza)
     return this.httpClient.post(`${this.url}/admin/update`, {
-      'estado': pieza.estado
+      'estado': pieza.estado,
+      'id': pieza.id
       })
   }
 

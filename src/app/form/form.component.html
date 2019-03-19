@@ -21,7 +21,7 @@
         <p class="info mb-5">
           Qué bien! Así que quieres unirte a nuestra familia?!! Estamos emocionados 🥳 <br> Empecemos con tu obra <span class="titania">(pieza) :</span><br>
           <br>
-          <span class="titania">a.</span><br> TITULO: dinos su nombre <br>INFO: hablános un poco de ella.<br>COVER: elige la foto de portada<br>PIEZA: súbela a nuestra plataforma.<br>CATEGORIAS: selecciona todas las que encajen con ella! <br>
+          <span class="titania">a.</span><br> TÍTULO: dinos su nombre <br>INFO: hablános un poco de ella.<br>COVER: elige la foto de portada<br>PIEZA: súbela a nuestra plataforma.<br>CATEGORIAS: selecciona hasta <span class="titania">3</span> categorías que encajen con ella! <br>
           <br>
           <span class="titania">b.</span><br>Al recibir tu petición, <br>la validaremos y en un período máximo de 5 días recibirás una respuesta! <br>
         </p>
@@ -47,7 +47,7 @@
             </small>
             <small *ngIf="formRegistro.controls.infopieza.errors?.maxlength && formRegistro.controls.infopieza.dirty"> ⚠️ Upss,info tiene una extensión máx. de {{formRegistro.controls.infopieza.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infopieza.errors.maxlength.actualLength}}
             </small>
-            <textarea class="form-control mb-4" type="text" formControlName="infopieza" id="textarea1" rows="4"></textarea>
+            <textarea class="form-control mb-4" type="textarea" formControlName="infopieza" id="textarea1" rows="4"></textarea>
           </div>
 
           <!-- COVER | PIEZA -->
@@ -82,8 +82,7 @@
           <p class="mb-2" >categorías:</p><br>
           <div class="form-group row">   
             <div class="col-md-6 row" *ngFor= "let cat of categorias.controls; let i=index">
-              <input class="form-check-input" type="checkbox" 
-              [formControl]="cat"/> 
+              <input class="form-check-input single-cb" (change)="checkCat($event)" type="checkbox" [formControl]="cat" [checked]/> 
               <label class="col-md-6 ml-2 mb-3 categoriaslabel"> {{user.categorias[i].name}}</label>
             </div> 
           </div>
@@ -115,7 +114,7 @@
         <div class="form-group">
         <label>mail</label><br>
 
-        <input class="mb-4" type="mail" formControlName="email"><br>
+        <input class="mb-4" type="email" formControlName="email"><br>
         </div>
         
         <!-- INFO -->
@@ -168,6 +167,6 @@
     </div>
 
     <!-- BOTON -->
-    <button class="form-group col-md-2 col-sm-3 fluid-text text-center" type="submit" [disabled]="formRegistro.invalid"> Registrar </button> 
+    <button class="form-group col-md-2 col-sm-3 fluid-text text-center" type="submit" [disabled]="!formRegistro.invalid"> Registrar </button> 
   </form>
   </div>

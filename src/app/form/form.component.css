@@ -10,15 +10,6 @@
     color: black;
 }
 
-/* QUITAR EL FOCUS por defecto (HIGHLIGTHER BORDER) */
-*:focus {
-    outline: none;
-}
-
-input[type=password]:focus, input[type=email]:focus {
-    box-shadow: 0 0 5px black;
-    border-bottom: 1px solid black;
-  }
 
 /* class TITANIA */
 .titania{
@@ -161,4 +152,23 @@ button:hover{
     border: 0px;
     width: 100%;
     margin: 0 auto;
+}
+/* QUITAR EL FOCUS por defecto (HIGHLIGTHER BORDER) */
+*:focus{
+    outline: none;
+}
+
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus{
+    box-shadow: 0 0 5px black !important;
+    border: 1px solid black !important;;
+  }
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: black !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0,0,0,.25);
 }

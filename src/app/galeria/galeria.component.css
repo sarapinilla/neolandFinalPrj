@@ -4,7 +4,6 @@
     margin: 0px;
     border: 0px;
 }
-
 .container{
     margin-bottom: 80px;
     
@@ -59,7 +58,7 @@ input:hover{
 /* INICIO LISTA GALERÍA */
 
 .titulos p{
-    font-size: 1.5em;
+    font-size: 2em;
     display: inline;
     text-align: center;
     padding-bottom: 10px;
@@ -71,11 +70,6 @@ input:hover{
     border-bottom: 1px solid black;
     width: 100%;
     height: 50px; 
-}
-
-/* provisional por el escaso número de piezas */
-.lista:last-child{
-    margin-bottom: 400px;
 }
 
 
@@ -91,7 +85,7 @@ input:hover{
 .lista div{
     width: 100%;
     height: inherit;
-    padding: 10px;
+    padding: 10px 0px;
     text-align: center;
 }
 
@@ -108,18 +102,51 @@ input:hover{
     font-size: 1.1em;
 }
 
-.cover div{
-    width:100%;
-    height: 400px;
+/*MAGIC COVER-PIC*/
+
+.listacontenedor{
+    /* height: 100px; */
+    overflow: hidden; /*or auto*/
     position: relative;
+    margin-bottom: 250px; /*separacion downloadComponent*/
 }
 
-.cover div img{
+.piccover{
     justify-content: center;
     position: absolute;
-    top: -90px;
+    top: 44px;
+    width: 100%;
+    z-index: -1;
 }
-
-
-
 /* FIN LISTA GALERÍA */
+
+/* MEDIAS QUERY */
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) { 
+
+ }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+
+ }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) and (max-width: 1199.98px) { 
+
+
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+
+    
+ }
