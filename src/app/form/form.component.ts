@@ -92,7 +92,7 @@ export class FormComponent implements OnInit {
         Validators.required,
         Validators.maxLength(30)
       ]),
-      email: new FormControl('@gmail.com', [
+      email: new FormControl('', [
         Validators.required,
         Validators.pattern(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/)
       ]),
@@ -113,6 +113,12 @@ export class FormComponent implements OnInit {
     let titulopiezaControl = this.formRegistro.controls.titulopieza
     //valueChanges -> observable , por eso le ponemos .subscribe
     titulopiezaControl.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
+      // console.log(value)
+    })
+
+    let emailControl = this.formRegistro.controls.email
+    //valueChanges -> observable , por eso le ponemos .subscribe
+    emailControl.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
       // console.log(value)
     })
 
