@@ -23,7 +23,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
 import { LoginGuard } from './login.guard';
 
-import { FilterPipe }from './filter.pipe'
+import { FilterPipe }from './filter.pipe';
+import { FooterComponent } from './footer/footer.component'
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { FilterPipe }from './filter.pipe'
     LoginComponent,
     ContactComponent,
     FormComponent,
-    FilterPipe
+    FilterPipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
