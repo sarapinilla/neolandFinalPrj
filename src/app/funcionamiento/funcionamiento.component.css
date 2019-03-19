@@ -1,76 +1,499 @@
-*{
-    font-weight: 700;
-    box-sizing: border-box;
-    margin: 0px;
-    border: 0px;
+/* MEDIAS QUERY */
+@media (max-width: 575.98px){
+    *{
+        font-weight: 700;
+        box-sizing: border-box;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+    }
+    /* ANCLA HREF */
+    #jijiji{
+        padding-top: 75px;
+    } 
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .col-lg-8 {
+    /* flex: 0 0 66.666667%; */
+    max-width: 100%;
+    }
+
+    /* titulo */
+    h2{
+        font-size: 3em;
+        line-height: 100%;
+        /* border-bottom: 1px solid black; */
+        /* padding-right: 0px !important;
+        padding-left: 0px !important; */
+    }
+    /* lista */
+    .lista p{
+        font-size: 1em;
+        line-height: 140%;
+    }
+    /* poppins */
+    .poppinsItalic{
+        font-weight: 700;
+        font-style: italic;
+    }
+    
+    /* div contenedor imagen */
+    .img{
+        height: 200px;
+        position: relative;
+        float: left;
+        top: 40px; /*separacion lista-imagenes*/
+        margin-bottom: 40%;
+    }
+    /* p numeros */
+    .num{
+        font-size: 2em;
+        position: absolute;
+        top: -3%;
+    }
+    
+    /* IMÁGENES */
+    .uno{
+        width: 100%;
+        position: absolute;
+        margin: 0 0;
+        /* left: -15%; */
+    }
+    
+    .dos{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        left: 5%;
+    }
+    
+    .tres{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        top: 5%;
+        /* left: 30%; */
+    }
+
+    .cuatro{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        padding-top: 15%;
+        
+    }
 }
+/* Small devices (landscape phones, 576px and up) */
 
-.container{
-    margin-bottom: 550px;
+@media (min-width: 576px) and (max-width: 767.98px){
+    *{
+        font-weight: 700;
+        box-sizing: border-box;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+    }
+    /* ANCLA HREF */
+    #jijiji{
+        padding-top: 75px;
+    } 
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .col-lg-8 {
+    /* flex: 0 0 66.666667%; */
+    max-width: 100%;
+    }
+
+    /* titulo */
+    h2{
+        font-size: 3.6em;
+        line-height: 120%;
+        /* border-bottom: 1px solid black; */
+        /* padding-right: 0px !important;
+        padding-left: 0px !important; */
+    }
+    /* lista */
+    .lista p{
+        font-size: 1.2em;
+        line-height: 140%;
+    }
+    /* poppins */
+    .poppinsItalic{
+        font-weight: 700;
+        font-style: italic;
+    }
+    
+    /* div contenedor imagen */
+    .img{
+        height: 200px;
+        position: relative;
+        float: left;
+        top: 40px; /*separacion lista-imagenes*/
+        bottom: 200px;
+    }
+    /* p numeros */
+    .num{
+        font-size: 2.5em;
+        position: absolute;
+        top: -3%;
+    }
+    
+    /* IMÁGENES */
+    .uno{
+        width: 60%;
+        position: absolute;
+        margin: 0 0;
+        /* left: -15%; */
+    }
+    
+    .dos{
+        width: 60%;
+        position: absolute;
+        margin: 0 auto;
+        left: 5%;
+    }
+    
+    .tres{
+        width: 70%;
+        position: absolute;
+        margin: 0 auto;
+        top: 5%;
+        /* left: 30%; */
+    }
+
+    .cuatro{
+        width: 60%;
+        position: absolute;
+        margin: 0 auto;
+        padding-top: 15%;
+        
+    }
 }
-.container::before{
-    content: "";
-	height: 75px;
-	display:block;
-    clear: both;
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px){
+    *{
+        font-weight: 700;
+        box-sizing: border-box;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+    }
+    /* ANCLA HREF */
+    #jijiji{
+        padding-top: 75px;
+    } 
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .col-lg-8 {
+    /* flex: 0 0 66.666667%; */
+    max-width: 100%;
+    }
+
+    /* titulo */
+    h2{
+        font-size: 4.5em;
+        line-height: 120%;
+        /* border-bottom: 1px solid black; */
+        /* padding-right: 0px !important;
+        padding-left: 0px !important; */
+    }
+    /* lista */
+    .lista p{
+        font-size: 1.2em;
+        line-height: 140%;
+    }
+    /* poppins */
+    .poppinsItalic{
+        font-weight: 700;
+        font-style: italic;
+    }
+    
+    /* div contenedor imagen */
+    .img{
+        height: 400px;
+        position: relative;
+        float: left;
+        top: 40px; /*separacion lista-imagenes*/
+        bottom: 200px;
+    }
+    /* p numeros */
+    .num{
+        font-size: 2.5em;
+        position: absolute;
+        top: -3%;
+    }
+    
+    /* IMÁGENES */
+    .uno{
+        width: 100%;
+        position: absolute;
+        margin: 0 0;
+        /* left: -15%; */
+    }
+    
+    .dos{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        /* left: 20%; */
+    }
+    
+    .tres{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        /* left: 30%; */
+    }
+
+    .cuatro{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        padding-top: 20%;
+        /* left: 30%; */
+    }
 }
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px){
+    *{
+        font-weight: 700;
+        box-sizing: border-box;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+    }
+    /* ANCLA HREF */
+    #jijiji{
+        padding-top: 75px;
+    }
+    
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
 
-h2{
-    font-size: 5em;
+    .col-lg-8 {
+    /* flex: 0 0 66.666667%; */
+    max-width: 100%;
+    }
+
+    /* titulo */
+    h2{
+        font-size: 4.5em;
+        line-height: 120%;
+        /* border-bottom: 1px solid black; */
+        /* padding-right: 0px !important;
+        padding-left: 0px !important; */
+    }
+    /* lista */
+    .lista p{
+        font-size: 1.2em;
+        line-height: 140%;
+    }
+    /* poppins */
+    .poppinsItalic{
+        font-weight: 700;
+        font-style: italic;
+    }
+    
+    /* div contenedor imagen */
+    .img{
+        height: 400px;
+        position: relative;
+        float: left;
+        top: 40px; /*separacion lista-imagenes*/
+        bottom: 300px;
+    }
+    /* p numeros */
+    .num{
+        font-size: 2.5em;
+        position: absolute;
+        top: -3%;
+    }
+    
+    /* IMÁGENES */
+    .uno{
+        width: 100%;
+        position: absolute;
+        margin: 0 0;
+        /* left: -15%; */
+    }
+    
+    .dos{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        /* left: 20%; */
+    }
+    
+    .tres{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        /* left: 30%; */
+    }
+
+    .cuatro{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        padding-top: 10%;
+        /* left: 30%; */
+    }
 }
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px){
+    *{
+        font-weight: 700;
+        box-sizing: border-box;
+        margin: 0px;
+        border: 0px;
+        padding: 0px;
+    }
+    /* ANCLA HREF */
+    #jijiji{
+        padding-top: 75px;
+    }
+    
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+    /* titulo */
+    h2{
+        font-size: 5em;
+        /* border-bottom: 1px solid black; */
+        /* padding-right: 0px !important;
+        padding-left: 0px !important; */
+    }
+    /* lista */
+    .lista p{
+        font-size: 1.3em;
+        line-height: 160%;
+    }
+    /* poppins */
+    .poppinsItalic{
+        font-weight: 700;
+        font-style: italic;
+    }
+    
+    /* div contenedor imagen */
+    .img{
+        height: 400px;
+        position: relative;
+        float: left;
+        top: 40px; /*separacion lista-imagenes*/
+        bottom: 300px;
+    }
+    /* p numeros */
+    .num{
+        font-size: 2.5em;
+        position: absolute;
+        top: -3%;
+    }
+    
+    /* IMÁGENES */
+    .uno{
+        width: 100%;
+        position: absolute;
+        margin: 0 0;
+        /* left: -15%; */
+    }
+    
+    .dos{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        /* left: 20%; */
+    }
+    
+    .tres{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        /* left: 30%; */
+    }
 
-.lista{
-    margin-left: 50px;
-    font-size: 1.2em;
-    line-height: 160%;
-}
+    .cuatro{
+        width: 100%;
+        position: absolute;
+        margin: 0 auto;
+        padding-top: 10%;
+        /* left: 30%; */
+    }
 
-.poppinsItalic{
-    font-weight: 700;
-    font-style: italic;
-}
-
-.img{
-    height: 300px;
-    position: relative;
-    float: left;
-    top: 60px;
-    padding-top: 5%;
-    bottom: 300px;
-}
-
-.num{
-    font-size: 2.5em;
-    position: absolute;
-    top: -3%;
-}
-
-/* IMÁGENES */
-
-.uno{
-    width: 35%;
-    position: absolute;
-    margin: 0 auto;
-    left: 30%;
-}
-
-.dos{
-    width: 80%;
-    position: absolute;
-    margin: 0 auto;
-    left: 20%;
-
-}
-
-.tres{
-    width: 65%;
-    position: absolute;
-    margin: 0 auto;
-    left: 30%;
-}
-
-.cuatro{
-    position: absolute;
-    margin: 0 auto;
-    left: 30%;
 }
