@@ -34,7 +34,6 @@ h2{
 }
 
 #mapa{
-    width: 900px;
     height: 0 auto;
     margin: 20px;
     position: absolute;
@@ -65,7 +64,7 @@ h3{
 
 @media (max-width: 575.98px){
     .container{
-        margin-bottom: 100px;
+        margin-bottom: 20px;
     }
     
     .container::before{
@@ -93,11 +92,10 @@ h3{
     }
     
     #mapa{
-        width: 800px;
         height: 0 auto;
         margin: 20px;
         position: absolute;
-        left: -65%;
+        left: 10px;
         cursor: pointer;
         float: left;
     }
@@ -108,7 +106,7 @@ h3{
     }
     
     .secciones{
-        margin: 70px 0;
+        margin: 280px 0 0 0;
     }
     
     a{
@@ -116,17 +114,19 @@ h3{
     }
     
     h3{
-        margin: 0;
+        margin: 10px 0 0 0;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
         color:black;
-        font-size: 5em;
+        font-size: 2em;
     }
 }
-
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px){
     .container{
-        margin-bottom: 150px;
+        margin-bottom: 230px;
     }
     
     .container::before{
@@ -158,7 +158,7 @@ h3{
         height: 0 auto;
         margin: 20px;
         position: absolute;
-        left: -65%;
+        left: -20%;
         cursor: pointer;
         float: left;
     }
@@ -219,7 +219,7 @@ h3{
         height: 0 auto;
         margin: 20px;
         position: absolute;
-        left: -65%;
+        left: -25%;
         cursor: pointer;
         float: left;
     }
@@ -230,7 +230,7 @@ h3{
     }
     
     .secciones{
-        margin: 70px 80px 0;
+        margin: 70px 180px 0;
     }
     
     a{
@@ -247,7 +247,7 @@ h3{
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px){
     .container{
-        margin-bottom: 150px;
+        margin-bottom: 250px;
     }
     
     .container::before{
@@ -283,7 +283,7 @@ h3{
     }
     
     #mapa img{
-        width: 100%;
+        width: 90%;
         height: auto;
     }
     
