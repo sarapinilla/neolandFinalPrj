@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { finalize } from 'rxjs/operators'
 import { FormService } from '../form.service';
 
+import * as $ from 'jquery';
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
@@ -13,35 +15,37 @@ import { FormService } from '../form.service';
 })
 export class FormComponent implements OnInit {
 
-//FORM:
-formRegistro: FormGroup
+  //FORM:
+  formRegistro: FormGroup
 
-//ARRAY CATEGORIAS:
-user = {
-  categorias: [
-  { name: 'audio—visual', selected: false, id:'1' },
-  { name: `dig—gráfico`, selected: false, id:'2' },
-  { name: 'dig—web', selected: false, id:'3' },
-  { name: 'foto—grafía', selected: false, id:'4' },
-  { name: 'ilus—tración',selected: false,  id:'5' },
-  { name: 'insta—lación', selected: false, id:'6' },
-  { name: 'música',selected: false,  id:'7' },
-  { name: 'tattoo',selected: false, id:'8' },
-  { name: 'tipo—grafía',selected: false, id:'9' },
-  { name: '3D—Escultura',selected: false, id:'10' },
-  { name: 'otros',selected: false, id:'11' }
-  ]
-};
-//INSERT type FILE
-uploadPercent: Observable<number>;
-downloadURL: Observable<string>;
-urlImagen: string
+  checkboxesCount: number
 
-coverUrlImagen: string
-piezaUrlImagen: string
-autorUrlImagen: string
+  //ARRAY CATEGORIAS:
+  user = {
+    categorias: [
+      { name: 'audio—visual', selected: false, id: '1' },
+      { name: `dig—gráfico`, selected: false, id: '2' },
+      { name: 'dig—web', selected: false, id: '3' },
+      { name: 'foto—grafía', selected: false, id: '4' },
+      { name: 'ilus—tración', selected: false, id: '5' },
+      { name: 'insta—lación', selected: false, id: '6' },
+      { name: 'música', selected: false, id: '7' },
+      { name: 'tattoo', selected: false, id: '8' },
+      { name: 'tipo—grafía', selected: false, id: '9' },
+      { name: '3D—Escultura', selected: false, id: '10' },
+      { name: 'otros', selected: false, id: '11' }
+    ]
+  };
+  //INSERT type FILE
+  uploadPercent: Observable<number>;
+  downloadURL: Observable<string>;
+  urlImagen: string
 
-customUrlUser:any
+  coverUrlImagen: string
+  piezaUrlImagen: string
+  autorUrlImagen: string
+
+  customUrlUser: any
 
   constructor(
     private fb: FormBuilder,
@@ -50,17 +54,17 @@ customUrlUser:any
     this.formRegistro = this.fb.group({
       categorias: this.buildCategorias()
     });
-
-   }
+    this.checkboxesCount = 0
+  }
 
   ngOnInit() {
     this.formRegistro = new FormGroup({
-      
+
       titulopieza: new FormControl('', [
         Validators.required,
         Validators.maxLength(50)
       ]),
-      infopieza: new FormControl('',[
+      infopieza: new FormControl('', [
         Validators.required,
         Validators.maxLength(250)
       ]),
@@ -83,7 +87,7 @@ customUrlUser:any
         new FormControl(false)
       ]),
 
-    //FORM AUTOR
+      //FORM AUTOR
       nombreautor: new FormControl('', [
         Validators.required,
         Validators.maxLength(30)
@@ -103,28 +107,33 @@ customUrlUser:any
       web: new FormControl(''),
 
     }, [
-      this.validarImagen.bind(this)
-    ])
+        this.validarImagen.bind(this)
+      ])
 
     let titulopiezaControl = this.formRegistro.controls.titulopieza
     //valueChanges -> observable , por eso le ponemos .subscribe
-    titulopiezaControl.valueChanges.pipe(debounceTime(500)).subscribe((value)=>{
-      console.log(value)
+    titulopiezaControl.valueChanges.pipe(debounceTime(500)).subscribe((value) => {
+      // console.log(value)
     })
+
+    let categoriasControl = this.formRegistro.controls.categorias
+    if (categoriasControl.value >= 3) {
+      console.log('Esto no funciona')
+    }
 
   }
   //-->End OnInit()
 
   //Método submit Formulario:
-  manejarFormulario(){
+  manejarFormulario() {
     const formRegistroValue = Object.assign({}, this.formRegistro.value, {
       categorias: this.formRegistro.value.categorias.map((selected, i) => {
         return {
           id: this.user.categorias[i].id,
           selected
-       }
+        }
       })
-      
+
     });
 
     //Método para FILTRAR CATEGORIAS seleccionadas(true):
@@ -138,7 +147,7 @@ customUrlUser:any
     formRegistroValue.ig = ` https://www.instagram.com/${formRegistroValue.ig}`
     formRegistroValue.be = `https://www.behance.net/${formRegistroValue.be}`
     formRegistroValue.web = `https://www.${formRegistroValue.web}`
-    
+
     //FormService
     this.formService.postFormRegistro(formRegistroValue).subscribe((res) => {
       console.log(res)
@@ -150,7 +159,7 @@ customUrlUser:any
     this.formRegistro.reset()
   }
   //Fin del boton submit
-  
+
   //Metodos array CATEGORIAS:
   get categorias() {
     return this.formRegistro.get('categorias');
@@ -162,46 +171,61 @@ customUrlUser:any
     return this.fb.array(arr);
   }
 
-//Método type:file
-onChangeImage($event){
-  let inputName = $event.target.name
-  console.log(inputName)
-  const image = $event.target.files[0] //recupera el fichero del input
-  let r = Math.random().toString(36).substring(7);
-  const filePath = `images/${inputName}/${r}.jpg`; //ruta file
-  const fileRef = this.storage.ref(filePath);
-  const task = this.storage.upload(filePath, image); //tarea de ejecución para subir la imagen al contenedor de firebase
+  
+  //limite de checkboxes (3):
+  checkCat($event) {
 
-  // observe percentage changes
-  this.uploadPercent = task.percentageChanges();
-  // get notified when the download URL is available (cuando se termina de subir)
-  task.snapshotChanges().pipe(
-    finalize(() => {
-      this.downloadURL = fileRef.getDownloadURL() //url pública para recuperar las imágenes
-      this.downloadURL.subscribe(url => {
-        console.log(url)
-          if(inputName == 'coverpic'){
+    if($event.target.checked){
+      if(this.checkboxesCount == 3){
+        $event.target.checked = false
+      }else{
+        this.checkboxesCount++
+      }
+    }else{
+      this.checkboxesCount--
+    }
+  }
+
+  //Método type:file
+  onChangeImage($event) {
+    let inputName = $event.target.name
+    console.log(inputName)
+    const image = $event.target.files[0] //recupera el fichero del input
+    let r = Math.random().toString(36).substring(7);
+    const filePath = `images/${inputName}/${r}.jpg`; //ruta file
+    const fileRef = this.storage.ref(filePath);
+    const task = this.storage.upload(filePath, image); //tarea de ejecución para subir la imagen al contenedor de firebase
+
+    // observe percentage changes
+    this.uploadPercent = task.percentageChanges();
+    // get notified when the download URL is available (cuando se termina de subir)
+    task.snapshotChanges().pipe(
+      finalize(() => {
+        this.downloadURL = fileRef.getDownloadURL() //url pública para recuperar las imágenes
+        this.downloadURL.subscribe(url => {
+          console.log(url)
+          if (inputName == 'coverpic') {
             this.coverUrlImagen = url //guarda la url en un string que hemos creado nosotros
-          }else if(inputName == 'piezapic'){
+          } else if (inputName == 'piezapic') {
             this.piezaUrlImagen = url
-          }else if(inputName == 'autorpic'){
+          } else if (inputName == 'autorpic') {
             this.autorUrlImagen = url
-          }else {
+          } else {
             console.log(url)
           }
-        })     
-      }) 
+        })
+      })
     )
-    .subscribe()
-}
+      .subscribe()
+  }
 
-//Validador FILE image:
+  //Validador FILE image:
 
-  validarImagen(group){
-    if(this.coverUrlImagen,this.piezaUrlImagen,this.autorUrlImagen) {
+  validarImagen(group) {
+    if (this.coverUrlImagen, this.piezaUrlImagen, this.autorUrlImagen) {
       return null
-    }else{
-      return { imagen: 'Upss, el archivo de la pieza no se ha subido'}
+    } else {
+      return { imagen: 'Upss, el archivo de la pieza no se ha subido' }
     }
   }
 
