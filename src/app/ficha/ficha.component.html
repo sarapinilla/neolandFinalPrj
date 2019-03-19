@@ -1,7 +1,7 @@
 <div class="container-fluid">
 
   <!-- Inicio Sidebar Archivo -->
-  <div class="menu col-lg-3 col-md-6 col-sm-12" *ngFor="let a of autor">
+  <div class="menu col-lg-6 col-md-6 col-sm-12" *ngFor="let a of autor">
     <!-- añadir responsive collapse -->
     <div class="menu-artista">
       <div class="title">
@@ -31,13 +31,13 @@
       </div>
     </div>
     <div class="menu-pieza">
-      <div class="title">
+      <div class="title" id="obrasDropdown">
         <p>obras</p>
       </div>
 
       <!-- según se pinche en cada carpeta, la cover y la descripcion de la obra/No.X va cambiando -->
-      <div class="piezas row"> 
-        <button *ngFor="let p of a.piezas" (click)="showCover(p)"> 
+      <div class="piezas row dropdown-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> 
+        <button *ngFor="let p of a.piezas" (click)="showCover(p)" class="d-none d-md-block d-lg-block d-xl-block" aria-labelledby="navbarDropdownMenuLink"> 
           <img src="../../assets/images/recurso-carpeta.svg" alt="folder">
           <p>{{p.titulo}}</p>
         </button>
@@ -47,8 +47,8 @@
   </div>
   <!-- Fin Sidebar Archivo -->
   <!-- Inicio Ventanas Info Artista/Obra -->
-  <div class="col-lg-9" *ngFor="let a of autor">
-      <div class="ventana" id="a" cdkDrag>
+  <div class="col-lg-6 col-md-6 col-sm-12" *ngFor="let a of autor">
+      <div class="ventana col-sm-12" id="a" cdkDrag>
         <div class="header">
           <p>artista/info</p>
         </div>
@@ -58,7 +58,7 @@
         </div>
       </div>
   
-      <div class="ventana" id="no" cdkDrag *ngIf="piezaSelected">
+      <div class="ventana col-sm-12" id="no" cdkDrag *ngIf="piezaSelected">
           <div class="header">
               <p>obra/{{piezaSelected.titulo}}</p>
           </div>
@@ -77,3 +77,73 @@
     <p>{{autor.nombre}}</p>
   </div>
 </div> -->
+
+
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-white scrolling-navbar fixed-top">
+    <!--Icono brand-->
+      <div class="container">
+      <a class="navbar-brand nav-link" href="home" title="home"><img class="brand" src="../../assets/images/logo-min.svg" width="20em" height="" alt="home"><span class="sr-only">(current)</span></a>
+    </div>
+    
+    <!--button collapse-->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <!--Iconos navegavion-->
+      <div class="navbar-collapse collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav mr-auto">
+    
+    <!--# FUNCIONAMIENTO-->
+          <li class="nav-item">
+            <a class="nav-link men  animation1" href="#funcionamiento" title="¿cómo funcionamos?" >
+              <img src="../../assets/images/simbolo2.svg" width="30em" height="" alt="thenewoldgallery_simbolo"></a>
+          </li>
+    
+    <!--# GALERIA URBANA-->
+          <li class="nav-item dropdown">
+            <a class="nav-link men animation2" href="#" title="galería urbana" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../../assets/images/simbolo1.svg" width="30em" height="" alt="thenewoldgallery_simbolo">
+            </a>
+          <!--# disabled ITEMS GALERIA URBANA-->
+            <div class="dropdown-menu disabled" aria-labelledby="navbarDropdownMenuLink">
+              <p class="dropdown-item disabled titulo">Galería urbana</p>
+              <a class="dropdown-item" href="#calendario">🗓Calendario</a>
+              <a class="dropdown-item" href="#noexpos">🤳🏼No.Expos</a>
+            </div>
+          </li>
+    
+    <!--# GALERIA VIRTUAL--> 
+          <li class="nav-item dropdown">
+            <a class="nav-link men animation3" href="#" title="galería" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <img src="../../assets/images/simbolo3.svg" width="30em" height="" alt="thenewoldgallery_simbolo">
+            </a>
+            <!--# ITEMS: SEARCH & LISTA --> 
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <p class="dropdown-item disabled titulo">Galería</p>
+              <!-- <a class="dropdown-item" href="#busqueda">🔍Search</a> -->
+              <a class="dropdown-item" href="#galeria">👁Lista</a>
+            </div>
+          </li>
+    
+    <!--# APP--> 
+          <li class="nav-item">
+            <a class="nav-link men animation4" href="#download" title="nuestra app" ><img src="../../assets/images/simbolo4.svg" width="30em" height="" alt="app_thenogallery"></a>
+          </li>
+        </ul>
+    
+    <!--REGISTRO-->
+        <ul class="navbar-nav nav-flex-icon">
+          <li class="contact1"><a class="contact" href="registro" title="Registra tu pieza!"> ⤷ Participa! </a></li>
+        </ul>
+        
+      </div>
+    </nav>
+    Collapse
+    
+    
+    
+    
