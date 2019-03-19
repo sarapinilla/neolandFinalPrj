@@ -47,7 +47,58 @@
   /* text-decoration-style: wavy; */
 }
 
-/* ICON ANIMATE */
+/* menu dropdown */
+.titulo{
+  height: 24px;
+  color: black;
+  font-size: 1em;
+  font-family: titania;
+  border-bottom: 1px solid black;
+  margin-top:-10px;
+}
+
+div .dropdown-menu.show{
+border: 1px solid black;
+box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+margin-top:5%;
+}
+
+/* navbar contraido: menu dropdown */
+
+
+div .navbar-collapse.show{
+  /* background-color: white; */
+  border: 1px solid black;
+  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+  
+  transition:0.7s;
+  /* border-radius:2%; */
+  /* box-shadow: 10px 10px 0px 0px rgba(0,0,0,1); */
+}
+
+/* .navbar-collapse.show{ } */
+
+/* MEDIA QUERY */
+
+@media (max-width: 575.98px)
+{
+
+}
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px) { 
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px) { 
+
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+
+  /* ICON ANIMATE */
 /* animation */
 .animation1{
   -moz-transform: scale(1) rotate(0deg);
@@ -194,58 +245,6 @@
   -webkit-transform: rotate(0deg);
 
 }
-
-/* menu dropdown */
-.titulo{
-  height: 24px;
-  color: black;
-  font-size: 1em;
-  font-family: titania;
-  border-bottom: 1px solid black;
-  margin-top:-10px;
-}
-
-div .dropdown-menu.show{
-border: 1px solid black;
-box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-margin-top:5%;
-}
-
-/* navbar contraido: menu dropdown */
-
-
-div .navbar-collapse.show{
-  /* background-color: white; */
-  border: 1px solid black;
-  box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
-  
-  transition:0.7s;
-  /* border-radius:2%; */
-  /* box-shadow: 10px 10px 0px 0px rgba(0,0,0,1); */
-}
-
-/* .navbar-collapse.show{ } */
-
-/* MEDIA QUERY */
-
-@media (max-width: 575.98px)
-{
-
-}
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px) { 
-
-}
-
-/* Medium devices (tablets, 768px and up) */
-@media (min-width: 768px) and (max-width: 991.98px) { 
-
-
-}
-
-/* Large devices (desktops, 992px and up) */
-@media (min-width: 992px) and (max-width: 1199.98px) { 
-
 
 }
 
