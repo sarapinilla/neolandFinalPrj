@@ -43,8 +43,8 @@ export class GaleriaComponent implements OnInit {
   }
 
 // Redireccionar a url donde se aloja la pieza
-  getPieza($event){
-    console.log(this.piezasService.getPiezasById($event.id))
+  getPieza(piezaId){
+    this.router.navigate(['pieza', piezaId])
   }
 
 //Redireccionar al componente ficha según la id del autor

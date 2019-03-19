@@ -34,7 +34,7 @@
   </div>
   <div class="lista row" (mouseover)="showCover(pieza.id)" (mouseout)="hideCover(pieza.id)" *ngFor="let pieza of (piezas | filter : searchText)" >
  
-       <p class="col-lg-3 col-md-3 col-sm-3" (click)="getPieza($event)">{{pieza.titulo}}</p> 
+       <p class="col-lg-3 col-md-3 col-sm-3" (click)="getPieza(pieza.id)">{{pieza.titulo}}</p> 
 
       <div class="col-lg-3 col-md-3 col-sm-3">
         <p id="aut" *ngFor="let autor of pieza.autores" (click)="getAutor(autor.fk_autor)">{{autor.nombre}}</p> 

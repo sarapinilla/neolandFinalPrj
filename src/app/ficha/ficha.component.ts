@@ -10,7 +10,7 @@ import { Autor } from '../models/autor.model';
 })
 export class FichaComponent implements OnInit {
 
-  allAutores: any
+  // allAutores: any
   autor: any
   autorId: any
   piezaSelected: any
