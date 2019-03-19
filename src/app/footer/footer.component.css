@@ -1,16 +1,18 @@
 *{
     font-family: Titania;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: 300;
     line-height: 160%;
+    color: black;
+    background-color: mediumpurple;
 }
 
 .social{
     border-top: 1px solid black;
     width: 100%;
     height: 0 auto;
-    margin: 10px;
-    padding-top: 20px;
+    padding: 20px;
+    margin-top:30px;
 }
 
 span .poppins{
@@ -26,7 +28,7 @@ span .poppins{
 .social a{
     display: inline;
     text-align: center;
-    color: black;
+    color: white;
     margin-right: 15px;
     font-size: 0.9em;
 }
@@ -35,10 +37,9 @@ span .poppins{
     color: #0000ff;
 }
 
-/* Small devices (landscape phones, 576px and up) */
-@media (min-width: 576px) and (max-width: 767.98px){
+@media (max-width: 575.98px){
     *{
-        font-size: 1.1em;
+        font-size: 1em;
         line-height: auto;
     }
 
@@ -60,7 +61,38 @@ span .poppins{
     .social a{
         display: inline;
         text-align: center;
-        color: black;
+        color: white;
+        margin-right: 10px;
+        font-size: 0.8em;
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px){
+    *{
+        font-size: 1em;
+        line-height: auto;
+    }
+
+    .social{
+        width: 100%;
+        height: 0 auto;
+    }
+
+    span .poppins{
+        font-family: Poppins;
+        font-weight: 700;
+        font-size: 0.8em;
+    }
+    
+    .message{
+        font-size: 0.8em;
+    }
+
+    .social a{
+        display: inline;
+        text-align: center;
+        color: white;
         margin-right: 10px;
         font-size: 0.8em;
     }
@@ -69,7 +101,7 @@ span .poppins{
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px){
     *{
-        font-size:  1.2em;
+        font-size:  1em;
         line-height: auto;
     }
 
@@ -91,7 +123,7 @@ span .poppins{
     .social a{
         display: inline;
         text-align: center;
-        color: black;
+        color: white;
         margin-right: 15px;
         font-size: 0.9em;
     }
