@@ -1,0 +1,360 @@
+*{
+    font-weight: 700;
+    box-sizing: border-box;
+    margin: 0px;
+    border: 0px;
+}
+
+.container{
+    margin-bottom: 50px;
+}
+
+.container::before{
+    content: "";
+	height: 75px;
+	display:block;
+    clear: both;
+}
+
+h2{
+    font-size: 5em;
+}
+
+.info p{
+    margin: 15px 0;
+    font-size: 1.3em;
+}
+
+.info p .titania{
+    font-size: 1.1em;
+}
+
+.titania{
+    font-family: Titania;
+}
+
+#mapa{
+    width: 900px;
+    height: 0 auto;
+    margin: 20px;
+    position: absolute;
+    left: -50%;
+    cursor: pointer;
+    float: left;
+}
+
+#mapa img{
+    width: 100%;
+    height: auto;
+}
+
+.secciones{
+    margin: 150px 400px 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+h3{
+    margin: 30px;
+    color:black;
+    font-size: 7em;
+}
+
+
+@media (max-width: 575.98px){
+    .container{
+        margin-bottom: 100px;
+    }
+    
+    .container::before{
+        content: "";
+        height: 75px;
+        display:block;
+        clear: both;
+    }
+    
+    h2{
+        font-size: 5em;
+    }
+    
+    .info p{
+        margin: 15px 0;
+        font-size: 1.3em;
+    }
+    
+    .info p .titania{
+        font-size: 1.1em;
+    }
+    
+    .titania{
+        font-family: Titania;
+    }
+    
+    #mapa{
+        width: 800px;
+        height: 0 auto;
+        margin: 20px;
+        position: absolute;
+        left: -65%;
+        cursor: pointer;
+        float: left;
+    }
+    
+    #mapa img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .secciones{
+        margin: 70px 0;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    h3{
+        margin: 0;
+        color:black;
+        font-size: 5em;
+    }
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767.98px){
+    .container{
+        margin-bottom: 150px;
+    }
+    
+    .container::before{
+        content: "";
+        height: 75px;
+        display:block;
+        clear: both;
+    }
+    
+    h2{
+        font-size: 5em;
+    }
+    
+    .info p{
+        margin: 15px 0;
+        font-size: 1.3em;
+    }
+    
+    .info p .titania{
+        font-size: 1.1em;
+    }
+    
+    .titania{
+        font-family: Titania;
+    }
+    
+    #mapa{
+        width: 800px;
+        height: 0 auto;
+        margin: 20px;
+        position: absolute;
+        left: -65%;
+        cursor: pointer;
+        float: left;
+    }
+    
+    #mapa img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .secciones{
+        margin: 70px 20px 0;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    h3{
+        margin: 30px;
+        color:black;
+        font-size: 5em;
+    }
+}
+
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px){
+    .container{
+        margin-bottom: 200px;
+    }
+    
+    .container::before{
+        content: "";
+        height: 75px;
+        display:block;
+        clear: both;
+    }
+    
+    h2{
+        font-size: 5em;
+    }
+    
+    .info p{
+        margin: 15px 0;
+        font-size: 1.3em;
+    }
+    
+    .info p .titania{
+        font-size: 1.1em;
+    }
+    
+    .titania{
+        font-family: Titania;
+    }
+    
+    #mapa{
+        width: 800px;
+        height: 0 auto;
+        margin: 20px;
+        position: absolute;
+        left: -65%;
+        cursor: pointer;
+        float: left;
+    }
+    
+    #mapa img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .secciones{
+        margin: 70px 80px 0;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    h3{
+        margin: 0;
+        color:black;
+        font-size: 5em;
+    }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px){
+    .container{
+        margin-bottom: 150px;
+    }
+    
+    .container::before{
+        content: "";
+        height: 75px;
+        display:block;
+        clear: both;
+    }
+    
+    h2{
+        font-size: 5em;
+    }
+    
+    .info p{
+        margin: 15px 0;
+        font-size: 1.3em;
+    }
+    
+    .info p .titania{
+        font-size: 1.1em;
+    }
+    
+    .titania{
+        font-family: Titania;
+    }
+    
+    #mapa{
+        margin: 20px;
+        position: absolute;
+        left: -50%;
+        cursor: pointer;
+        float: left;
+    }
+    
+    #mapa img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .secciones{
+        margin: 150px 300px 0;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    h3{
+        margin: 30px;
+        color:black;
+        font-size: 6.5em;
+    }
+}
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px){
+    .container{
+        margin-bottom: 150px;
+    }
+    
+    .container::before{
+        content: "";
+        height: 75px;
+        display:block;
+        clear: both;
+    }
+    
+    h2{
+        font-size: 5em;
+    }
+    
+    .info p{
+        margin: 15px 0;
+        font-size: 1.3em;
+    }
+    
+    .info p .titania{
+        font-size: 1.1em;
+    }
+    
+    .titania{
+        font-family: Titania;
+    }
+    
+    #mapa{
+        margin: 20px;
+        position: absolute;
+        left: -50%;
+        cursor: pointer;
+        float: left;
+    }
+    
+    #mapa img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .secciones{
+        margin: 150px 300px 0;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    h3{
+        margin: 30px;
+        color:black;
+        font-size: 6.5em;
+    }
+}

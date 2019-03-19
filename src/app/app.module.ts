@@ -25,6 +25,9 @@ import { LoginGuard } from './login.guard';
 
 import { FilterPipe }from './filter.pipe';
 import { FooterComponent } from './footer/footer.component'
+import { GaleriaurbanaComponent } from './galeriaurbana/galeriaurbana.component'
+
+
 
 @NgModule({
   declarations: [
@@ -41,7 +44,8 @@ import { FooterComponent } from './footer/footer.component'
     ContactComponent,
     FormComponent,
     FilterPipe,
-    FooterComponent
+    FooterComponent,
+    GaleriaurbanaComponent
   ],
   imports: [
     BrowserModule,
