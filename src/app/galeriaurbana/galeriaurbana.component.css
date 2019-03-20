@@ -285,7 +285,7 @@
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px){
     .container-fluid{
-        margin-bottom: 220px;
+        margin-bottom: 180px;
     }
     
     .container-fluid::before{
@@ -328,7 +328,7 @@
     }
     
     .secciones{
-        margin: 70px 180px 0;
+        margin: 5px 180px 0;
     }
     
     a{
@@ -438,12 +438,12 @@
     }
     
     #mapa img{
-        width: 900px;
+        width: 800px;
         height: auto;
     }
     
     .secciones{
-        margin: 150px 300px 0;
+        margin: 170px 300px 0;
     }
     
     a{
