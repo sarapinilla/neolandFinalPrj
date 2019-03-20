@@ -121,7 +121,7 @@ button{
     border: 1px solid black;
     transition: 0.5s;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 0px; /*boton no solapado al footer*/
     margin-bottom: 10px;
     float: right;
 }
