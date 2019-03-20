@@ -124,7 +124,6 @@
     }
 }
 /* Small devices (landscape phones, 576px and up) */
-
 @media (min-width: 576px) and (max-width: 767.98px){
     *{
         font-weight: 700;
@@ -508,7 +507,7 @@
         border: 0px;
         padding: 0px;
     }
-    #jijiji{
+    #download{
         padding-top: 75px;
     }
     /* .container-fluid::before{
@@ -523,7 +522,7 @@
         padding-left: 0px !important;
         /* margin-right: auto;
         margin-left: auto; */
-        /* margin-bottom: 550px; */
+        margin-bottom: 1%;
     }
     .col-sm-12{
         width: 100%;
