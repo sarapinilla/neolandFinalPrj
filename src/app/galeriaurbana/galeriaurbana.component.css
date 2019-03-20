@@ -5,81 +5,55 @@
     border: 0px;
 }
 
-.container{
-    margin-bottom: 50px;
-}
-
-.container::before{
-    content: "";
-	height: 75px;
-	display:block;
-    clear: both;
-}
-
-h2{
-    font-size: 5em;
-}
-
-.info p{
-    margin: 15px 0;
-    font-size: 1.3em;
-}
-
-.info p .titania{
-    font-size: 1.1em;
-}
-
-.titania{
-    font-family: Titania;
-}
-
-#mapa{
-    height: 0 auto;
-    margin: 20px;
-    position: absolute;
-    cursor: pointer;
-    float: left;
-}
-
-#mapa img{
-    width: 100%;
-    height: auto;
-}
-
-.secciones{
-    margin: 150px 400px 0;
-}
-
-a{
-    text-decoration: none;
-}
-
-h3{
-    margin: 30px;
-    color:black;
-    font-size: 7em;
-}
-
-
 @media (max-width: 575.98px){
-    .container{
+    .container-fluid{
         margin-bottom: 20px;
     }
-    
-    .container::before{
+     /* ANCLA HREF */
+    .container-fluid::before{
         content: "";
         height: 75px;
         display:block;
         clear: both;
     }
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .col-lg-8 {
+    /* flex: 0 0 66.666667%; */
+    max-width: 100%;
+    }
+    /* ANCLA HREF */
+    .jijiji{
+        padding-top: 20%; /*75px*/
+    } 
+    
     
     h2{
-        font-size: 5em;
+        font-size: 3.6em;
+        line-height: 100%;
     }
     
     .info p{
         margin: 15px 0;
-        font-size: 1.3em;
+        /* font-size: 1.3em; */
+        font-size: 1em;
+        line-height: 140%;
     }
     
     .info p .titania{
@@ -90,7 +64,7 @@ h3{
         font-family: Titania;
     }
     
-    #mapa{
+    div #mapa{
         height: 0 auto;
         margin: 20px;
         position: static;
@@ -98,7 +72,7 @@ h3{
         float: left;
     }
     
-    #mapa img{
+    div #mapa img{
         width: 100%;
         height: auto;
     }
@@ -110,6 +84,13 @@ h3{
     a{
         text-decoration: none;
     }
+    /* btn REGITRAR */
+    a{
+        transition: 0.5s;
+        margin: 0 auto;
+        margin-top: 60px;
+        margin-bottom: 10px;
+    }
     
     h3{
         margin: 10px 0 0 0;
@@ -117,32 +98,64 @@ h3{
         border: 1px solid black;
         border-radius: 10px;
         color:black;
-        font-size: 2em;
+        font-size: 1.7em;
+        text-align-last: center;
+    }
+    h3:hover{
+        box-shadow: 4px 4px black;
     }
 }
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) and (max-width: 767.98px){
-    .container{
-        margin-bottom: 230px;
+    .container-fluid{
+        margin-bottom: 20px;
     }
-    
-    .container::before{
+     /* ANCLA HREF */
+    .container-fluid::before{
         content: "";
         height: 75px;
         display:block;
         clear: both;
     }
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    h2, .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .col-lg-8 {
+    /* flex: 0 0 66.666667%; */
+    max-width: 100%;
+    }
+    /* ANCLA HREF */
+    .jijiji{
+        padding-top: 20%; /*75px*/
+    } 
     
     h2{
-        font-size: 5em;
+        font-size: 3em;
+        line-height: 100%;
     }
     
     .info p{
         margin: 15px 0;
-        font-size: 1.3em;
+        /* font-size: 1.3em; */
+        font-size: 1em;
+        line-height: 140%;
     }
-    
     .info p .titania{
         font-size: 1.1em;
     }
@@ -152,7 +165,7 @@ h3{
     }
     
     #mapa{
-        width: 800px;
+        width: 80%;
         height: 0 auto;
         margin: 20px;
         position: absolute;
@@ -183,11 +196,99 @@ h3{
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) and (max-width: 991.98px){
-    .container{
+    /* .container-fluid{
+        margin-bottom: 20px;
+    } */
+     /* ANCLA HREF */
+    .container-fluid::before{
+        content: "";
+        height: 75px;
+        display:block;
+        clear: both;
+    }
+    .container-fluid{
+        width: 100%; 
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+        /* margin-right: auto;
+        margin-left: auto; */
+        /* margin-bottom: 550px; */
+    }
+    .col-sm-12{
+        width: 100%;
+        padding-right: 0px;
+        padding-left: 0px;
+    }
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+        padding-right: 0px !important;
+        padding-left: 0px !important;
+    }
+
+    .col-lg-8 {
+    /* flex: 0 0 66.666667%; */
+    max-width: 100%;
+    }
+    /* ANCLA HREF */
+    .jijiji{
+        padding-top: 20%; /*75px*/
+    } 
+    
+    h2{
+        font-size: 3em;
+        /* line-height: 100%; */
+    }
+    
+    .info p{
+        /* margin: 15px 0; */
+        /* font-size: 1.3em; */
+        font-size: 1em;
+        line-height: 140%;
+    }
+    .info p .titania{
+        font-size: 1.1em;
+    }
+    
+    .titania{
+        font-family: Titania;
+    }
+    
+    div #mapa{
+        width: 80%;
+        height: 0 auto;
+        margin: 20px;
+        position: absolute;
+        left: -20%;
+        cursor: pointer;
+        float: left;
+    }
+    
+   div #mapa img{
+        width: 100%;
+        height: auto;
+    }
+    
+    .secciones{
+        margin: 70px 20px 0;
+    }
+    
+    a{
+        text-decoration: none;
+    }
+    
+    h3{
+        margin: 30px;
+        color:black;
+        font-size: 3.7em;
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991.98px){
+    .container-fluid{
         margin-bottom: 220px;
     }
     
-    .container::before{
+    .container-fluid::before{
         content: "";
         height: 75px;
         display:block;
@@ -195,7 +296,7 @@ h3{
     }
     
     h2{
-        font-size: 5em;
+        font-size: 4em;
     }
     
     .info p{
