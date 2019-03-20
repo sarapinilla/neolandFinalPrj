@@ -94,6 +94,10 @@ input:hover{
     font-weight: 500;
 }
 
+.lista:hover{
+    color: mediumspringgreen;
+}
+
 #aut{
     font-size: 1.3em;
 }
