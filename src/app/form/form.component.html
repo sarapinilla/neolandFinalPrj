@@ -104,16 +104,20 @@
         <div class="form-group">
           <label>nombre</label><br>
           <!-- validaciones -->
-          <small *ngIf="formRegistro.controls.nombreautor.errors?.required && formRegistro.controls.nombreautor.dirty"> ⚠️ El campo nombre es obligatorio
-            </small>
-            <small *ngIf="formRegistro.controls.nombreautor.errors?.maxlength && formRegistro.controls.nombreautor.dirty"> ⚠️ El campo nombre tiene una extensión máx. de {{formRegistro.controls.nombreautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombreautor.errors.maxlength.actualLength}}
-            </small>
+
+          <small *ngIf="formRegistro.controls.nombreautor.errors?.required && formRegistro.controls.nombreautor.dirty"> ⚠️ Oh vaya,campo obligatorio
+          </small>
+
+          <small *ngIf="formRegistro.controls.nombreautor.errors?.maxlength && formRegistro.controls.nombreautor.dirty"> ⚠️ Upss,titulo tiene una extensión máx. de {{formRegistro.controls.nombreautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.nombreautor.errors.maxlength.actualLength}}
+          </small>
           <input class="mb-4" type="text" formControlName="nombreautor">
         </div>
         <!-- MAIL -->
         <div class="form-group">
         <label>mail</label><br>
-
+        <!-- validaciones -->
+        <small *ngIf="formRegistro.controls.email.errors?.required && formRegistro.controls.email.dirty"> ⚠️ Oh vaya,campo obligatorio
+        </small>
         <input class="mb-4" type="email" formControlName="email"><br>
         </div>
         
@@ -122,9 +126,10 @@
           <label>info</label><br>
           <!-- validaciones -->
           <small *ngIf="formRegistro.controls.infoautor.errors?.required && formRegistro.controls.infoautor.dirty"> ⚠️ Oh vaya,campo obligatorio
-            </small>
-            <small *ngIf="formRegistro.controls.infoautor.errors?.maxlength && formRegistro.controls.infoautor.dirty"> ⚠️Upss, campo info tiene una extensión máx. de {{formRegistro.controls.infoautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infoautor.errors.maxlength.actualLength}}
-            </small>
+          </small>
+
+          <small *ngIf="formRegistro.controls.infoautor.errors?.maxlength && formRegistro.controls.infoautor.dirty"> ⚠️Upss, campo info tiene una extensión máx. de {{formRegistro.controls.infoautor.errors.maxlength.requiredLength}} ,actualmente hay escritos {{formRegistro.controls.infoautor.errors.maxlength.actualLength}}
+          </small>
           <textarea class="form-control mb-4" type="textarea" formControlName="infoautor" id="textarea2" rows="3"></textarea>
         </div>
         <!-- FOTO PERFIL -->
