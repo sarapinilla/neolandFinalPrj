@@ -15,88 +15,12 @@
 	display:block;
     clear: both;
 }
-a{
-    color: black;
-    font-family: Titania;
-    font-weight: 400;
-    font-size: 1.1em;
-    text-decoration: none;
-    transition:0.4s;
-  }
-  
-a:hover {
-    color:black;
-    text-decoration: underline;
-    cursor: pointer;
-  }
 
 .container-fluid{
     margin: 30px 0;
 }
 
-
 /* INICIO SIDEBAR ARCHIVO */
-
-div .menu{
-    height: 600px;
-    left: auto;
-    float: left;
-    margin-right: 20px;
-}
-
-.menu-artista{
-    height: 40%;
-    width: 100%;
-    position: absolute;
-}
-
-.menu-pieza{
-    height: 60%;
-    width: 100%;
-    position: absolute;
-    top: 250px;
-}
-
-div .title{
-    width: 100%;
-    height: 45px;
-    padding: 10px 15px 0;
-    margin-bottom: 15px;
-    border: 1px solid black;
-    border-radius: 10px;
-    font-size: 1.2em;
-}
-
-div .profile{
-    width: 60%;
-    height: 70%;
-    padding: 10px;
-    margin-right: 5%;
-    border: 1px solid black;
-    border-radius: 10px;
-    float: left;
-}
-
-div .aut{
-    font-size: 2em;
-}
-
-div .social{
-    width: 35%;
-    height: 70%;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    float: left;
-}
-
-div .piezas{
-    width: 100%;
-    height: 80%;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-}
 
 div .piezas button{
     text-decoration: none;
@@ -107,45 +31,10 @@ div .piezas button{
     margin: 2px 5px;
 }
 
-div .piezas button:hover{
-    color: #0000ff;
-}
-
-div .piezas a img{
-    position: absolute;
-}
-
-div .piezas a p{
-    position: absolute;
-    left:25%;
-    top:50%;
-}
 
 /* FIN SIDEBAR ARCHIVO */
 
 /* INICIO VENTANAS INFORMACIÓN ARTISTA/OBRA */
-
-div .ventana{
-    width: 400px;
-    height: 400px;
-    float: left;
-    margin: 15px;
-    border: 1px solid black;
-    border-radius: 10px;
-    background-color: white;
-    /* cursor: move; */
-}
-
-/* POSICION RELATIVE PROVISIONAL */
-#a{
-    position: relative;
-    left: 50px;
-    top:100px;
-}
-
-#no{
-    position: relative;
-}
 
 div .header{
     width: 100%;
@@ -273,14 +162,20 @@ div .ventana .content img{
         border-radius: 10px;
         float: left;
     }
-    
-    div .piezas{
-        width: 0%;
-        height: 0%;
-        padding: 0px;
-        border: 0px;
+
+    div .social img{
+        width: 40px;
+        margin: 5px;
     }
     
+    div .piezas{
+        width: 100%;
+        height: 80%;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 10px;
+    }
+
     div .piezas button{
         text-decoration: none;
         color: black;
@@ -368,13 +263,13 @@ div .ventana .content img{
     
     .menu-artista{
         height: 40%;
-        width: 50%;
+        width: 45%;
         position: absolute;
     }
     
     .menu-pieza{
         height: 60%;
-        width: 50%;
+        width: 45%;
         position: absolute;
         top: 250px;
     }
@@ -410,6 +305,11 @@ div .ventana .content img{
         border: 1px solid black;
         border-radius: 10px;
         float: left;
+    }
+
+    div .social img{
+        width: 40px;
+        margin: 5px;
     }
     
     div .piezas{
@@ -471,6 +371,7 @@ div .ventana .content img{
     #no{
         position: absolute;
         left: 350px;
+        top: 380px;
     }
 }
 
@@ -552,6 +453,11 @@ div .ventana .content img{
         float: left;
         font-size: 0.9em;
     }
+
+    div .social img{
+        width: 40px;
+        margin: 5px;
+    }
     
     div .piezas{
         width: 100%;
@@ -604,14 +510,14 @@ div .ventana .content img{
     /* POSICION RELATIVE */
     #a{
         position: absolute;
-        left: 450px;
+        left: 390px;
         top: 15px;
         margin: 0px;
     }
     
     #no{
         position: absolute;
-        left: 450px;
+        left: 390px;
         top: 380px;
         margin: 0px;
     }
@@ -695,6 +601,11 @@ div .ventana .content img{
         border-radius: 10px;
         float: left;
     }
+
+    div .social img{
+        width: 40px;
+        margin: 5px;
+    }
     
     div .piezas{
         width: 100%;
@@ -747,14 +658,14 @@ div .ventana .content img{
     /* POSICION RELATIVE */
     #a{
         position: absolute;
-        left: 500px;
+        left: 350px;
         top: 15px;
         margin: 0px;
     }
     
     #no{
         position: absolute;
-        left: 780px;
+        left: 600px;
         top: 60px;
         margin: 0px;
     }
@@ -837,6 +748,11 @@ div .ventana .content img{
         border-radius: 10px;
         float: left;
     }
+
+    div .social img{
+        width: 40px;
+        margin: 5px;
+    }
     
     div .piezas{
         width: 100%;
@@ -889,7 +805,7 @@ div .ventana .content img{
     /* POSICION RELATIVE */
     #a{
         position: absolute;
-        left: 500px;
+        left: 450px;
         top: 15px;
         margin: 0px;
     }
