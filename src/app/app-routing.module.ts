@@ -13,6 +13,7 @@ import { ContactComponent } from './contact/contact.component';
 import { LoginComponent } from './login/login.component';
 import { AdminComponent } from './admin/admin.component';
 import { LoginGuard } from './login.guard';
+import { PiezaComponent } from './pieza/pieza.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch:'full'},
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'ficha/:autorId', component: FichaComponent},
   { path: 'registro', component: FormComponent},
   { path: 'contact', component: ContactComponent},
+  { path: 'pieza/:piezaId', component: PiezaComponent},
   //Users only:
   { path: 'admin', component: LoginComponent}, //LogIn
   { path: 'admin/registros', component: AdminComponent, canActivate: [LoginGuard]},//TablaRegistros + LogOut

@@ -22,12 +22,11 @@ import { LoginComponent } from './login/login.component';
 import { ContactComponent } from './contact/contact.component';
 import { FormComponent } from './form/form.component';
 import { LoginGuard } from './login.guard';
-
 import { FilterPipe }from './filter.pipe';
+
 import { FooterComponent } from './footer/footer.component'
 import { GaleriaurbanaComponent } from './galeriaurbana/galeriaurbana.component'
-
-
+import { PiezaComponent } from './pieza/pieza.component'
 
 @NgModule({
   declarations: [
@@ -45,7 +44,8 @@ import { GaleriaurbanaComponent } from './galeriaurbana/galeriaurbana.component'
     FormComponent,
     FilterPipe,
     FooterComponent,
-    GaleriaurbanaComponent
+    GaleriaurbanaComponent,
+    PiezaComponent
   ],
   imports: [
     BrowserModule,
