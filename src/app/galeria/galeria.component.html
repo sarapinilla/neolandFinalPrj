@@ -1,4 +1,4 @@
-<div class="container" id="galeria">
+<div class="container-fluid jijiji" id="galeria">
   <div class="cabecera col col-lg-12">
     <h2>Galería</h2>
     <div class="md-form mt-0 col col-lg-4">
@@ -44,7 +44,7 @@
         <p id="cat" *ngFor="let categoria of pieza.categorias">{{categoria.tipologia}}</p> 
       </div> 
 
-        <p class="col-lg-3 col-md-3 d-sm-none d-md-block">{{pieza.year}}</p>
+        <p id="yr" class="col-lg-3 col-md-3 d-sm-none d-md-block">{{pieza.year}}</p>
 
         <div class="cover">
           <img style="display:none;" class="piccover" [id]="'coverhidden'+pieza.id" [src]="pieza.coverpieza">   <!-- *ngIf="showCover" -->
