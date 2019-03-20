@@ -50,7 +50,7 @@ div .dropdown-menu.show{
   border-bottom: 1px solid black;
   background-color: white;
 }
- 
+
 .nav-item:hover, .contact1:hover{
   background-color:mediumspringgreen; /* mediumpurple */
 }
@@ -264,6 +264,11 @@ div .dropdown-menu.show{
   margin-left: 4em;
   margin-right: 4em;
 }
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #16181b;
+  text-decoration: none;
+  background-color: mediumspringgreen;
+}
 
 /* Icon__REGISTRO */ 
 .contact{
@@ -458,6 +463,15 @@ div .dropdown-menu.show{
 .men{
   margin-left: 4em;
   margin-right: 4em;
+}
+.dropdown-item, .dropdown-item{
+  transition: 0.8s;
+  transition-property: initial;
+}
+.dropdown-item:focus, .dropdown-item:hover {
+  color: #16181b;
+  text-decoration: none;
+  background-color: mediumspringgreen;
 }
 
 /* Icon__REGISTRO */ 
