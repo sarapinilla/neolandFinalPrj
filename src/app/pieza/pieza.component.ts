@@ -17,7 +17,7 @@ export class PiezaComponent implements OnInit {
     private piezasService: PiezasService
   ) { 
     this.activatedRoute.params.subscribe((params) => {
-      this.piezaId = params.piezaId  
+      this.piezaId = params.piezaId
     })
 
     this.piezasService.getPiezasById(this.piezaId).subscribe(res =>{

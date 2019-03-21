@@ -5,12 +5,18 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyCUb5p2xNB8W0FMYyGpZ61gtrVkiIsOQnc",
-    authDomain: "thenogallery-prueba.firebaseapp.com",
-    databaseURL: "https://thenogallery-prueba.firebaseio.com",
-    projectId: "thenogallery-prueba",
-    storageBucket: "thenogallery-prueba.appspot.com",
-    messagingSenderId: "465844072389"
+    apiKey: "AIzaSyDUBarwUDCCfM2m03WiRRSMvQpN_XsJNJQ",
+    authDomain: "neolandfinal.firebaseapp.com",
+    databaseURL: "https://neolandfinal.firebaseio.com",
+    projectId: "neolandfinal",
+    storageBucket: "neolandfinal.appspot.com",
+    messagingSenderId: "915606608190"
+    // apiKey: "AIzaSyCUb5p2xNB8W0FMYyGpZ61gtrVkiIsOQnc",
+    // authDomain: "thenogallery-prueba.firebaseapp.com",
+    // databaseURL: "https://thenogallery-prueba.firebaseio.com",
+    // projectId: "thenogallery-prueba",
+    // storageBucket: "thenogallery-prueba.appspot.com",
+    // messagingSenderId: "465844072389"
   }
 };
 
