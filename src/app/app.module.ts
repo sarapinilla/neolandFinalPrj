@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage'
 import { environment } from 'src/environments/environment';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 //COMPONENTES:
 import { DragDropModule } from '@angular/cdk/drag-drop'
 
@@ -27,6 +28,7 @@ import { FilterPipe }from './filter.pipe';
 import { FooterComponent } from './footer/footer.component'
 import { GaleriaurbanaComponent } from './galeriaurbana/galeriaurbana.component'
 import { PiezaComponent } from './pieza/pieza.component'
+import { ErrorComponent } from './error/error.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,8 @@ import { PiezaComponent } from './pieza/pieza.component'
     FilterPipe,
     FooterComponent,
     GaleriaurbanaComponent,
-    PiezaComponent
+    PiezaComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
@@ -57,9 +60,7 @@ import { PiezaComponent } from './pieza/pieza.component'
     HttpClientModule,
     DragDropModule
   ],
-  providers: [
-    LoginGuard
-  ],
+  providers: [LoginGuard, {provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

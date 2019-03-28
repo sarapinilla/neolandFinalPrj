@@ -12,6 +12,7 @@ export class GaleriaComponent implements OnInit {
 
   piezas: any
   arrPiezas: any
+  searchText: any
 
 
   constructor(

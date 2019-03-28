@@ -81,7 +81,7 @@
           <!-- multiple select CATEGORIAS -->
           <p class="mb-2" >categorías:</p><br>
           <div class="form-group row">   
-            <div class="col-md-6 row" *ngFor= "let cat of categorias.controls; let i=index">
+            <div class="col-md-6 row" *ngFor= "let cat of categorias['controls']; let i=index">
               <input class="form-check-input single-cb" (change)="checkCat($event)" type="checkbox" [formControl]="cat" [checked]/> 
               <label class="col-md-6 ml-2 mb-3 categoriaslabel"> {{user.categorias[i].name}}</label>
             </div> 
