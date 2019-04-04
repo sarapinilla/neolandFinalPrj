@@ -11,7 +11,8 @@ export class AutoresService {
   url:string
 
   constructor(private httpClient: HttpClient) {
-    this.url = 'http://localhost:3000/api/autores'
+    // this.url = 'http://localhost:3000/api/autores'
+    this.url = 'http://back.thenogallery.es/api/autores'
    }
 
   getAllAutores(){
